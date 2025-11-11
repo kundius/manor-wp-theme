@@ -1,0 +1,287 @@
+.advantages {
+  background: url('../images/advantages-bg2.jpg') repeat 50% 50%;
+  background-position: 50% calc(50% + (300px * var(--progress)));
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.advantages-layout {
+  display: flex;
+}
+
+.advantages-layout__calc {
+  width: 50%;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.advantages-layout__warranty {
+  width: 29%;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.advantages-layout__payment {
+  width: 21%;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.advantage-calc {
+  width: 100%;
+  min-width: 0;
+  background: url('../images/advantage-calc-bg.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  padding: 113px 90px 102px 116px;
+}
+
+.advantage-calc__title {
+  font-size: 42px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
+  width: min-content;
+  position: relative;
+}
+
+.advantage-calc__title::before {
+  content: '';
+  width: 20px;
+  height: 222px;
+  position: absolute;
+  left: -56px;
+  top: 50%;
+  margin-top: -111px;
+  border-left: 6px solid #fff;
+  border-top: 6px solid #fff;
+  border-bottom: 6px solid #fff;
+  transform: scale(calc(1 + ((1 - var(--progress)) * 0.5)))
+    translateX(calc((200% - (200% * var(--progress))) * -1));
+}
+
+.advantage-calc__form {
+  margin-top: 68px;
+  position: relative;
+}
+
+.advantage-calc__form-label {
+  pointer-events: none;
+  user-select: none;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  line-height: 1;
+  position: absolute;
+  left: 32px;
+  top: 16px;
+}
+
+.advantage-calc__form-input {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.18);
+  padding-left: 32px;
+  padding-right: 344px;
+  font-weight: 500;
+  font-family: 'Gilroy', sans-serif;
+  font-size: 24px;
+  color: #fff;
+  height: 92px;
+  padding-top: 32px;
+  width: 100%;
+}
+
+.advantage-calc__form-input::placeholder {
+  color: #fff;
+}
+
+.advantage-calc__form-submit {
+  position: absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: rgb(255, 255, 255);
+  right: 6px;
+  top: 6px;
+  height: 80px;
+  padding-left: 48px;
+  padding-right: 48px;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #272935;
+  transition-duration: 150ms;
+}
+
+.advantage-calc__form-submit:hover {
+  background-color: #e1e5ee;
+  transition-duration: 300ms;
+}
+
+.advantage-calc__rules {
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
+  margin-top: 34px;
+  text-wrap: balance;
+}
+
+.advantage-calc__rules a {
+  text-decoration: underline;
+}
+
+.advantage-calc__rules a:hover {
+  text-decoration: none;
+}
+
+.advantage-warranty {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(204, 204, 204, 0.15);
+  background-color: rgba(250, 248, 246, 0.51);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  min-width: 0;
+  padding: 68px 80px 60px 90px;
+}
+
+.advantage-warranty__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.advantage-warranty__title-num {
+  font-size: 208px;
+  line-height: 160px;
+  font-family: 'Gilroy', sans-serif;
+  color: #c73f3b;
+}
+
+.advantage-warranty__title-val {
+  font-size: 48px;
+  line-height: 40px;
+  font-weight: 700;
+  color: #c73f3b;
+  padding-top: 12px;
+  margin-left: 10px;
+}
+
+.advantage-warranty__subtitle {
+  font-size: 36px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.advantage-warranty__desc {
+  font-size: 18px;
+  color: #fcfcfc;
+  color: rgba(252, 252, 252, 0.82);
+  line-height: 1.333;
+  margin-top: 64px;
+  position: relative;
+  padding-right: 40px;
+}
+
+.advantage-warranty__desc::after {
+  content: '';
+  width: 9px;
+  height: 88px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -44px;
+  border-right: 3px solid #fff;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transform: scale(calc(1 + ((1 - var(--progress)) * 0.5)))
+    translate(calc((200% - (200% * var(--progress)))));
+}
+
+.advantage-payment {
+  background-color: rgba(104, 104, 104, 0.588);
+  width: 100%;
+  min-width: 0;
+  padding: 56px 48px 48px 52px;
+}
+
+.advantage-payment__title {
+  font-size: 60px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.advantage-payment__subtitle {
+  font-size: 48px;
+  line-height: 32px;
+  color: #fff;
+  /* height: 228px; */
+  height: calc(32px + (196px * var(--progress)));
+  padding: 0 5px;
+}
+
+.advantage-payment__line {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.advantage-payment__line-step {
+  padding-left: 40px;
+  position: relative;
+}
+
+.advantage-payment__line-step::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+.advantage-payment__line-step::after {
+  content: '';
+  width: 1px;
+  background: #fff;
+  position: absolute;
+  left: 14px;
+  top: 8px;
+  bottom: -40px;
+}
+
+.advantage-payment__line-step:last-child:after {
+  display: none;
+}
+
+.advantage-payment__step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.advantage-payment__step-title {
+  color: #fff;
+  font-size: 18px;
+  line-height: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background: #333232;
+  margin-left: -12px;
+  margin-bottom: 2px;
+}
+
+.advantage-payment__step-desc {
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+}

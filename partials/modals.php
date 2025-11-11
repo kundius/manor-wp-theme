@@ -1,8 +1,8 @@
 <div id="modal-call" aria-hidden="true" class="modal">
   <div class="modal__overlay" tabindex="-1" data-modal-close>
     <div class="modal__container modal__container--default" role="dialog" aria-modal="true">
-        
-      <div class="modal__content">
+
+      <div class="modal__dialog">
         <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
 
         <div class="modal__title"><?php echo carbon_get_theme_option('crb_callback_title'); ?></div>
@@ -14,8 +14,7 @@
           class="modal-form"
           data-feedack-form
           data-feedack-form-goal="<?php echo carbon_get_theme_option('crb_callback_goal'); ?>"
-          data-feedack-form-action="feedback_form"
-        >
+          data-feedack-form-action="feedback_form">
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
           <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
@@ -60,8 +59,8 @@
 <div id="feedack-modal" aria-hidden="true" class="modal">
   <div class="modal__overlay" tabindex="-1" data-modal-close>
     <div class="modal__container modal__container--default" role="dialog" aria-modal="true">
-        
-      <div class="modal__content">
+
+      <div class="modal__dialog">
         <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
 
         <div class="modal__title" data-feedack-modal-title>Обратная связь</div>
@@ -73,8 +72,7 @@
           class="modal-form"
           data-feedack-form
           data-feedack-form-goal="FEEDBACK_MODAL"
-          data-feedack-form-action="feedback_form"
-        >
+          data-feedack-form-action="feedback_form">
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
           <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
@@ -117,8 +115,8 @@
 <div id="faq-modal" aria-hidden="true" class="modal">
   <div class="modal__overlay" tabindex="-1" data-modal-close>
     <div class="modal__container modal__container--default" role="dialog" aria-modal="true">
-        
-      <div class="modal__content">
+
+      <div class="modal__dialog">
         <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
 
         <div class="modal__title"><?php echo carbon_get_theme_option('crb_faq_title'); ?></div>
@@ -130,8 +128,7 @@
           action="<?php echo admin_url('admin-ajax.php') ?>"
           data-feedack-form
           data-feedack-form-goal="<?php echo carbon_get_theme_option('crb_faq_goal'); ?>"
-          data-feedack-form-action="faq_form"
-        >
+          data-feedack-form-action="faq_form">
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
           <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
@@ -190,8 +187,8 @@
 <div id="review-modal" aria-hidden="true" class="modal">
   <div class="modal__overlay" tabindex="-1" data-modal-close>
     <div class="modal__container container" role="dialog" aria-modal="true">
-        
-      <div class="modal__content">
+
+      <div class="modal__dialog">
         <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
 
         <div class="modal__title"><?php echo carbon_get_theme_option('crb_review_form_title'); ?></div>
@@ -203,8 +200,7 @@
           action="<?php echo admin_url('admin-ajax.php') ?>"
           data-feedack-form
           data-feedack-form-goal="<?php echo carbon_get_theme_option('crb_review_form_goal'); ?>"
-          data-feedack-form-action="review_form"
-        >
+          data-feedack-form-action="review_form">
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
           <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">

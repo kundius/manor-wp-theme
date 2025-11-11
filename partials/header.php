@@ -23,10 +23,14 @@
       <span class="header-callback__text">
         Заказать звонок
       </span>
-      <span class="header-callback__arrow"></span>
-      <span class="header-callback__line-s"></span>
-      <span class="header-callback__line-m"></span>
-      <span class="header-callback__line-r"></span>
+      <span class="icon icon-arrow-right"></span>
+      <span class="header-callback__l-l-1"></span>
+      <span class="header-callback__l-l-2"></span>
+      <span class="header-callback__l-l-3"></span>
+      <span class="header-callback__l-c"></span>
+      <span class="header-callback__l-r-1"></span>
+      <span class="header-callback__l-r-2"></span>
+      <span class="header-callback__l-r-3"></span>
     </button>
   </div>
 </div>
