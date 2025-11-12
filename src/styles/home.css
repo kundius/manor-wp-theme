@@ -606,6 +606,7 @@
   line-height: 1;
   padding-top: 18px;
   text-align: center;
+  width: 100%;
 }
 
 .phone-control__input::placeholder {

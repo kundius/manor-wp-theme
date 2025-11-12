@@ -539,16 +539,16 @@ Template Name: Главная
       </div>
     </div>
 
-    <div class="portfolio-preview">
+    <section class="portfolio-section">
       <div class="container">
-        <div class="portfolio-preview__header" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
-          <div class="portfolio-preview__header-inner">
-            <div class="portfolio-preview__title">
+        <div class="portfolio-section__header" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+          <div class="portfolio-section__header-inner">
+            <div class="portfolio-section__title">
               Наши работы
             </div>
           </div>
         </div>
-        <div class="portfolio-preview__list">
+        <div class="portfolio-section__list">
 
           <div class="portfolio-embla" data-portfolio-embla>
             <div class="portfolio-embla__viewport" data-portfolio-embla-viewport>
@@ -647,12 +647,137 @@ Template Name: Главная
 
         </div>
       </div>
-    </div>
-    .
+    </section>
+
+    <section class="features-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+      <div class="container">
+        <div class="features-section__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+          <h2 class="features-section__title-inner">
+            Каркасные дома<br>
+            СК Поместье
+          </h2>
+        </div>
+
+        <div class="features-section__core">
+          <div class="features-section__item features-section__item--1">
+            <h3 class="features-section__item-title">
+              Почему стоит заказать проект загородного дома в СК «Поместье»
+            </h3>
+            <div class="features-section__item-desc">
+              <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, </p>
+              <ul>
+                <li>
+                  Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский YНабор слов,
+                </li>
+                <li>
+                  но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э.,
+                </li>
+                <li>
+                  то есть более двух тысячелетий назад. Ричард МакКлинток,
+                </li>
+                <li>
+                  профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="features-section__item features-section__item--2">
+            <h3 class="features-section__item-title">
+              Готовые загородные дома:<br>
+              проекты и цены
+            </h3>
+            <div class="features-section__item-desc">
+              <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов</p>
+            </div>
+          </div>
+
+          <div class="features-section__item features-section__item--3">
+            <h3 class="features-section__item-title">
+              Энергоэффективность<br>
+              экономия на отоплении до 50%
+            </h3>
+          </div>
+
+          <div class="features-section__core-intro">
+            Строительная компания «Поместье» – производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России.
+          </div>
+
+          <div
+            class="features-section__core-figure">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="631px"
+              height="540px">
+              <path fill-rule="evenodd" fill="rgb(225, 229, 238)"
+                d="M630.1000,156.1000 L432.1000,-0.000 L55.958,180.371 L-0.000,414.999 L577.1000,539.1000 L630.1000,156.1000 Z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feedback-section">
+      <div class="container">
+        <div class="feedback-section__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+          Если вы хотите узнать стоимость индивидуальной разработки или уточнить цены по типовому проекту – свяжитесь с нами, менеджер предоставит бесплатную консультацию и даст ответы на вопросы
+        </div>
+        <div class="feedback-section__form">
+          <div class="feedback-form" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+            <div class="feedback-form__side">
+              <div class="feedback-form__person">
+                <div class="feedback-form__person-photo"></div>
+                <div class="feedback-form__person-name">
+                  Фамилия И.О.
+                </div>
+                <div class="feedback-form__person-job">
+                  Менеджер компании
+                </div>
+              </div>
+              <div class="feedback-form__phone">
+                <div class="feedback-form__phone-lbl">
+                  Телефон для связи
+                </div>
+                <div class="feedback-form__phone-val">
+                  8-960-209-79-33
+                </div>
+              </div>
+            </div>
+            <div class="feedback-form__main">
+              <div class="feedback-form__header">
+                <div class="feedback-form__header-icon"></div>
+                <div class="feedback-form__header-title">
+                  Получить<br>
+                  консультацию специалиста
+                </div>
+                <div class="feedback-form__header-desc">
+                  Выбор дома - это непростая задача со множеством переменных. Мы проконсультируем вас по любым вопросам
+                </div>
+              </div>
+              <div class="feedback-form__input phone-control">
+                <span class="phone-control__label">Ваш телефон</span>
+                <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="phone-control__input">
+              </div>
+              <button type="submit" class="feedback-form__submit">Отправить заявку</button>
+              <div class="feedback-form__rules">
+                Нажимая на кнопку, я даю своё <a href="">согласие на взаимодействие и обработку персональных данных</a>
+              </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="519px" height="449px" class="feedback-form__figure-gray">
+              <path fill-rule="evenodd" fill="rgb(225, 229, 238)" d="M-0.000,77.227 L122.118,-0.001 L501.041,102.371 L518.1000,448.999 L26.938,425.651 L-0.000,77.227 Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="912px" height="497px" class="feedback-form__figure-red">
+              <path fill-rule="evenodd" fill="rgb(201, 65, 60)" d="M-0.000,142.999 L349.1000,-0.001 L891.1000,110.999 L911.1000,496.999 L47.1000,466.999 L-0.000,142.999 Z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="grow">
       <div class="container">
         <div class="page-content">
-          <?php the_content(); ?>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
       </div>
     </div>
