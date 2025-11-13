@@ -2,6 +2,7 @@
   background: url('../images/intro-bg.jpg') no-repeat 50% 0;
   margin-top: -120px;
   background-size: cover;
+  background-position-y: calc(0% + (200px * var(--progress)));
 }
 
 .intro__container {
@@ -87,7 +88,7 @@
 
 .intro__enum {
   width: 865px;
-  margin-top: 98px;
+  padding-top: 98px;
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -104,6 +105,8 @@
   position: absolute;
   right: -100px;
   bottom: -10px;
+  transform: scale(calc(1 + ((1 - var(--progress)) * 0.5)))
+    translate(calc((200% - (200% * var(--progress)))));
 }
 
 .intro__enum-item {

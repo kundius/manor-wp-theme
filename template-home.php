@@ -16,7 +16,7 @@ Template Name: Главная
   <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
-    <section class="intro">
+    <section class="intro" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
       <div class="container intro__container">
         <div class="intro__vertical-text" data-scroll data-scroll-speed="-0.2"></div>
         <div class="intro__title">Каркасные дома</div>
@@ -37,7 +37,7 @@ Template Name: Главная
             <span class="icon icon-arrow-right"></span>
           </a>
         </div>
-        <div class="intro__enum">
+        <div class="intro__enum" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 60%">
           <div class="intro__enum-item">
             <div class="intro__enum-item-check">
               <span class="icon icon-check"></span>
