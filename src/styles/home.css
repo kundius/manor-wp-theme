@@ -201,6 +201,14 @@
   transition-duration: 300ms;
 }
 
+.v-social--light .v-social__item {
+  color: #afadad;
+}
+
+.v-social--light .v-social__item:hover {
+  color: #fff;
+}
+
 .catalog-preview {
 }
 

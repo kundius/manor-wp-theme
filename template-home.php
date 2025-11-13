@@ -774,14 +774,6 @@ Template Name: Главная
       </div>
     </section>
 
-    <div class="grow">
-      <div class="container">
-        <div class="page-content">
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div>
-      </div>
-    </div>
-
     <?php get_template_part('partials/footer'); ?>
   </div>
 </body>

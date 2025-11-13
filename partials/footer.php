@@ -1,112 +1,108 @@
-<div class="footer">
+<section class="footer">
   <div class="container">
-    <div class="footer-layout">
-      <div class="footer-layout__contacts">
-        <div class="footer-contacts">
-          <div class="footer-contacts__title">
-            Контактная информация
-          </div>
-          <div class="footer-contacts__text">
-            Наш телефон: {crb_theme_phone}<br />
-            <br />
-            {crb_theme_working_hours_short},<br />
-            {crb_theme_working_hours_pause}
-          </div>
-          <div class="footer-contacts__call">
-            <button type="button" class="control-button" data-modal-open="modal-call">
-              <span>Заказать звонок</span>
-              <span class="icon icon-phone"></span>
-            </button>
-          </div>
-          <?php if ($address = carbon_get_theme_option('crb_theme_address')): ?>
-          <div class="footer-contacts__address">
-            <strong>Адрес офиса:</strong><br />
-            <?php echo $address; ?>
-          </div>
-          <?php endif; ?>
-        </div>
+    <div class="footer-primary">
+      <div class="footer-primary__logo">
+        <a href="/" class="footer__logo" target="_blank">
+          <img src="<?php bloginfo('template_url'); ?>/assets/logo-footer.png" alt="" width="163" height="60" />
+        </a>
       </div>
-      
-      <?php
-      wp_nav_menu([
-        'menu' => 'Меню в подвале',
-        'container' => null,
-        'menu_class' => 'footer-menu',
-      ]);
-      ?>
-    </div>
-  </div>
-</div>
-
-<div class="footer-bottom">
-  <div class="container footer-bottom__container">
-    <div class="footer-bottom__copyright">
-      <?php echo nl2br(carbon_get_theme_option('crb_footer_copyright')); ?>
-    </div>
-    <div class="footer-bottom__links">
-      <a href="#">Политика конфиденциальности</a>
-    </div>
-    <div class="footer-bottom__info">
-      <?php echo nl2br(carbon_get_theme_option('crb_footer_info')); ?>
-    </div>
-  </div>
-</div>
-
-<div class="drawer" data-drawer="nav">
-  <div class="drawer__body">
-    <button class="drawer__close" data-drawer-close>
-      закрыть меню
-      <span class="icon icon-close"></span>
-    </button>
-    <div class="drawer__content">
-      <div class="drawer__nav" data-drawer-nav></div>
-
-      <?php if (is_multisite()): ?>
-      <div class="drawer__region">
-        <div class="drawer-region">
-          <div class="drawer-region__label">Ваш регион:</div>
-          <div class="drawer-region__select">
-            <div class="drawer-region-select" data-city-select role="combobox" aria-expanded="false" aria-haspopup="true" aria-label="Выбор города">
-              <button class="drawer-region-select__trigger" data-city-select-trigger>
-                <span><?php echo get_blog_details(get_current_blog_id())->blogname; ?></span>
-              </button>
-              <div class="drawer-region-select__list" role="listbox" data-city-select-listbox>
-                <?php $sites = get_sites([ 'site__not_in' => get_current_blog_id() ]); ?>
-                <?php foreach ($sites as $site): ?>
-                <a href="<?php echo get_site_url($site->blog_id); ?>" role="option" tabindex="-1">
-                  <?php echo get_blog_details($site->blog_id)->blogname; ?>
-                </a>
-                <?php endforeach; ?>
+      <div class="footer-primary__phone">
+        <div class="footer-contacts">
+          <div class="footer-contacts__item">
+            <div class="footer-contacts__item-icon">
+              <div class="icon icon-phone-circle"></div>
+            </div>
+            <div class="footer-contacts__item-body">
+              <div class="footer-contacts__item-val">
+                8 (800) 707-73-53
+              </div>
+              <div class="footer-contacts__item-desc">
+                звонок по России бесплатный
+              </div>
+            </div>
+          </div>
+          <div class="footer-contacts__item">
+            <div class="footer-contacts__item-icon">
+              <div class="icon icon-whatsapp"></div>
+            </div>
+            <div class="footer-contacts__item-body">
+              <div class="footer-contacts__item-val">
+                8-960-209-79-33
               </div>
             </div>
           </div>
         </div>
       </div>
-      <?php endif; ?>
-
-      <div class="drawer__contacts">
-        <div class="drawer-social">
-          <?php if ($telegram = carbon_get_theme_option('crb_theme_telegram')): ?>
-          <a href="tg://resolve?domain=<?php echo $telegram; ?>" class="drawer-social__telegram">
-            <span class="icon icon-telegram"></span>
-          </a>
-          <?php endif; ?>
-          <?php if ($whatsapp = carbon_get_theme_option('crb_theme_whatsapp')): ?>
-          <a href="whatsapp://send?text=Hello&phone=<?php echo $whatsapp; ?>" class="drawer-social__whatsapp">
-            <span class="icon icon-whatsapp"></span>
-          </a>
-          <?php endif; ?>
+      <div class="footer-primary__contacts">
+        <div class="footer__contacts">
+          ИНН / КПП 5313003320 / 531301001<br>
+          ОГРН 1155321006367<br>
+          Расчетный счёт 40702810301090000240<br>
+          БИК 044959746<br>
+          К/с 30101810900000000746<br>
+          в ПАО УКБ «Новобанк»
         </div>
-        
-        <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone'); ?>" class="drawer-phone">
-          <span class="drawer-phone__number"><?php echo carbon_get_theme_option('crb_theme_phone'); ?></span>
-          <span class="drawer-phone__time"><?php echo carbon_get_theme_option('crb_theme_working_hours_short'); ?></span>
+      </div>
+      <div class="footer-primary__nav">
+        <ul class="footer__nav">
+          <li><a href="#">Каркасные дома</a></li>
+          <li><a href="#">Акции</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Наши работы</a></li>
+          <li><a href="#">Гарантии</a></li>
+          <li><a href="#">Доставка и оплата</a></li>
+          <li><a href="#">Договор</a></li>
+          <li><a href="#">Кредит</a></li>
+          <li><a href="#">Материнский капитал</a></li>
+          <li><a href="#">Статьи</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-primary__links">
+        <div class="footer__links">
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Пользовательское соглашение</a>
+        </div>
+        <div class="footer__notice">
+          Вся информация на сайте носит <span>исключительно</span> информационный характер и ни при каких условиях не является публичной офертой, опредеяемой положениями Статьи 437 ГК РФ.
+        </div>
+      </div>
+      <div class="footer-primary__social">
+        <div class="v-social v-social--light">
+          <a href="#" class="v-social__item">
+            <span class="icon icon-vk"></span>
+          </a>
+          <a href="#" class="v-social__item">
+            <span class="icon icon-max"></span>
+          </a>
+          <a href="#" class="v-social__item">
+            <span class="icon icon-rutube"></span>
+          </a>
+          <a href="#" class="v-social__item">
+            <span class="icon icon-ok"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-secondary">
+      <div class="footer-secondary__copyright">
+        <div class="footer__copyright">
+          © СК «Поместье» 2015 - 2025
+        </div>
+      </div>
+      <div class="footer-secondary__sitemap">
+        <a href="#" class="footer__sitemap">
+          Карта сайта
+        </a>
+      </div>
+      <div class="footer-secondary__vendor">
+        <a href="https://domenart-studio.ru/" class="footer__creator" target="_blank">
+          <img src="<?php bloginfo('template_url'); ?>/assets/creator.png" alt="creator" width="138" height="30" />
         </a>
       </div>
     </div>
   </div>
-  <div class="drawer__overlay" data-drawer-close></div>
-</div>
+</section>
 
 <?php get_template_part('partials/modals'); ?>
 
