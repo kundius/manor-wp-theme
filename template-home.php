@@ -26,7 +26,7 @@ Template Name: Главная
             на первом месте
           </div>
           <div class="intro__content-desc">
-            Строительная компания «Поместье» – производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России
+            Строительная компания «Поместье» - производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России
           </div>
         </div>
         <div class="intro__action">
@@ -514,7 +514,7 @@ Template Name: Главная
                 <div class="advantage-payment__line-step">
                   <div class="advantage-payment__step">
                     <div class="advantage-payment__step-title">
-                      1 этап –
+                      1 этап -
                     </div>
                     <div class="advantage-payment__step-desc">
                       завоз материалов на участок
@@ -524,7 +524,7 @@ Template Name: Главная
                 <div class="advantage-payment__line-step">
                   <div class="advantage-payment__step">
                     <div class="advantage-payment__step-title">
-                      2 этап –
+                      2 этап -
                     </div>
                     <div class="advantage-payment__step-desc">
                       после подписания
@@ -700,7 +700,7 @@ Template Name: Главная
           </div>
 
           <div class="features-section__core-intro">
-            Строительная компания «Поместье» – производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России.
+            Строительная компания «Поместье» - производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России.
           </div>
 
           <div
@@ -720,7 +720,7 @@ Template Name: Главная
     <section class="feedback-section">
       <div class="container">
         <div class="feedback-section__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
-          Если вы хотите узнать стоимость индивидуальной разработки или уточнить цены по типовому проекту – свяжитесь с нами, менеджер предоставит бесплатную консультацию и даст ответы на вопросы
+          Если вы хотите узнать стоимость индивидуальной разработки или уточнить цены по типовому проекту - свяжитесь с нами, менеджер предоставит бесплатную консультацию и даст ответы на вопросы
         </div>
         <div class="feedback-section__form">
           <div class="feedback-form" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">

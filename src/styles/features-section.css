@@ -17,6 +17,7 @@
   font-size: 60px;
   font-weight: 500;
   line-height: 1.25;
+  width: auto;
 }
 
 .features-section__title-inner::first-line {

@@ -9,6 +9,10 @@
   padding-top: 192px;
   padding-bottom: 152px;
   position: relative;
+
+  @media (--max-3xl) {
+    padding-bottom: 96px;
+  }
 }
 
 .intro__vertical-text {
@@ -20,6 +24,10 @@
   background-size: cover;
   width: 45px;
   height: 577px;
+
+  @media (--max-3xl) {
+    zoom: 0.85;
+  }
 }
 
 .intro__title {
@@ -31,10 +39,18 @@
   font-weight: 500;
   width: min-content;
   margin-bottom: 74px;
+
+  @media (--max-3xl) {
+    zoom: 0.85;
+  }
 }
 
 .intro__content {
   width: 520px;
+
+  @media (--max-3xl) {
+    zoom: 0.85;
+  }
 }
 
 .intro__content-title {
@@ -55,6 +71,10 @@
 .intro__action {
   width: 400px;
   margin-top: 88px;
+
+  @media (--max-3xl) {
+    zoom: 0.85;
+  }
 }
 
 .intro-action {
@@ -93,6 +113,10 @@
   display: flex;
   align-items: flex-start;
   gap: 48px;
+
+  @media (--max-3xl) {
+    zoom: 0.85;
+  }
 }
 
 .intro__enum::after {
@@ -276,6 +300,10 @@
 .catalog-preview__content {
   padding-left: 116px;
   position: relative;
+
+  @media (--max-3xl) {
+    padding-left: 64px;
+  }
 }
 
 .catalog-preview__desc {
@@ -629,6 +657,10 @@
   padding: 48px 60px 60px 116px;
   min-width: 0;
   background-position: calc(100% + (40% - (40% * var(--progress)))) 0;
+
+  @media (--max-3xl) {
+    padding-left: 64px;
+  }
 }
 
 .equipment-main__title {
@@ -651,6 +683,10 @@
 .equipment-card {
   border: 1px solid rgb(255, 255, 255, 0.3);
   padding: 26px 48px 26px 28px;
+
+  @media (--max-3xl) {
+    padding-right: 28px;
+  }
 }
 
 .equipment-card__header {
@@ -771,6 +807,10 @@
   width: 50%;
   min-width: 0;
   flex-shrink: 0;
+
+  @media (--max-3xl) {
+    padding-right: 116px;
+  }
 }
 
 .home-primary__catalog-showcase {
@@ -779,6 +819,10 @@
   flex-shrink: 0;
   margin-top: -246px;
   /* transform: translateY(calc(64x * var(--progress))); */
+
+  @media (--max-3xl) {
+    margin-top: -196px;
+  }
 }
 
 .home-primary__equipment {
