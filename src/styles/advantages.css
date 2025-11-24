@@ -1,8 +1,23 @@
 .advantages {
-  background: url('../images/advantages-bg2.jpg') repeat 50% 50%;
+  background-repeat: repeat;
+  background-image: url('../images/advantages-bg2.jpg');
   background-position: 50% calc(50% + (300px * var(--progress)));
+  background-size: auto auto;
+
   padding-top: 110px;
   padding-bottom: 110px;
+  position: relative;
+  z-index: 1;
+
+  @media (--max-3xl) {
+    padding-top: calc(110px * 0.8);
+    padding-bottom: calc(110px * 0.8);
+  }
+
+  @media (--max-2xl) {
+    padding-top: calc(110px * 0.66);
+    padding-bottom: calc(110px * 0.66);
+  }
 }
 
 .advantages-layout {
@@ -33,6 +48,14 @@
   background: url('../images/advantage-calc-bg.jpg') no-repeat 50% 50%;
   background-size: cover;
   padding: 113px 90px 102px 116px;
+
+  @media (--max-3xl) {
+    zoom: 0.8;
+  }
+
+  @media (--max-2xl) {
+    zoom: 0.66;
+  }
 }
 
 .advantage-calc__title {
@@ -89,6 +112,12 @@
   height: 92px;
   padding-top: 32px;
   width: 100%;
+
+  /* @media (--max-3xl) {
+    padding-left: 24px;
+    padding-right: 304px;
+    height: 80px;
+  } */
 }
 
 .advantage-calc__form-input::placeholder {
@@ -114,6 +143,12 @@
   justify-content: center;
   color: #272935;
   transition-duration: 150ms;
+
+  /* @media (--max-3xl) {
+    height: 68px;
+    padding-left: 36px;
+    padding-right: 36px;
+  } */
 }
 
 .advantage-calc__form-submit:hover {
@@ -146,6 +181,14 @@
   width: 100%;
   min-width: 0;
   padding: 68px 80px 60px 90px;
+
+  @media (--max-3xl) {
+    zoom: 0.8;
+  }
+
+  @media (--max-2xl) {
+    zoom: 0.66;
+  }
 }
 
 .advantage-warranty__title {
@@ -175,6 +218,7 @@
   color: rgb(255, 255, 255);
   font-weight: bold;
   line-height: 1.2;
+  width: min-content;
 }
 
 .advantage-warranty__desc {
@@ -207,6 +251,14 @@
   width: 100%;
   min-width: 0;
   padding: 56px 48px 48px 52px;
+
+  @media (--max-3xl) {
+    zoom: 0.8;
+  }
+
+  @media (--max-2xl) {
+    zoom: 0.66;
+  }
 }
 
 .advantage-payment__title {

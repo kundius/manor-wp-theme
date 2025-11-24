@@ -16,72 +16,74 @@ Template Name: Главная
   <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
-    <section class="intro" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
-      <div class="container intro__container">
-        <div class="intro__vertical-text" data-scroll data-scroll-speed="-0.2"></div>
-        <div class="intro__title">Каркасные дома</div>
-        <div class="intro__content">
-          <div class="intro__content-title">
-            Качество<br>
-            на первом месте
-          </div>
-          <div class="intro__content-desc">
-            Строительная компания «Поместье» - производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России
-          </div>
-        </div>
-        <div class="intro__action">
-          <a href="#" class="intro-action">
-            <div class="intro-action__text">
-              Каталог проектов
+    <section class="intro-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+      <div class="container">
+        <div class="intro-content">
+          <div class="intro-content__vertical-text" data-scroll data-scroll-speed="-0.2"></div>
+          <div class="intro-content__title">Каркасные дома</div>
+          <div class="intro-content__content">
+            <div class="intro-content__content-title">
+              Качество<br>
+              на первом месте
             </div>
-            <span class="icon icon-arrow-right"></span>
-          </a>
-        </div>
-        <div class="intro__enum" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 60%">
-          <div class="intro__enum-item">
-            <div class="intro__enum-item-check">
-              <span class="icon icon-check"></span>
-            </div>
-            <div class="intro__enum-item-text">
-              Без отделки
-              или&nbsp;«под ключ»</div>
-          </div>
-          <div class="intro__enum-item">
-            <div class="intro__enum-item-check">
-              <span class="icon icon-check"></span>
-            </div>
-            <div class="intro__enum-item-text">
-              Типовые проекты
-              или&nbsp;по Вашему эскизу</div>
-          </div>
-          <div class="intro__enum-item">
-            <div class="intro__enum-item-check">
-              <span class="icon icon-check"></span>
-            </div>
-            <div class="intro__enum-item-text">
-              Стоимость не меняется ни после подписания договора, ни в ходе строительства
+            <div class="intro-content__content-desc">
+              Строительная компания «Поместье» - производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России
             </div>
           </div>
-        </div>
-        <div class="intro__contacts">
-          <div class="v-social">
-            <a href="#" class="v-social__item">
-              <span class="icon icon-vk"></span>
-            </a>
-            <a href="#" class="v-social__item">
-              <span class="icon icon-max"></span>
-            </a>
-            <a href="#" class="v-social__item">
-              <span class="icon icon-rutube"></span>
-            </a>
-            <a href="#" class="v-social__item">
-              <span class="icon icon-ok"></span>
+          <div class="intro-content__actions">
+            <a href="#" class="intro-content__action">
+              <div class="intro-content__action-text">
+                Каталог проектов
+              </div>
+              <span class="icon icon-arrow-right"></span>
             </a>
           </div>
-          <a href="mailto:info@skpomestie.ru" class="v-email">
-            <span class="icon icon-mail"></span>
-            info@skpomestie.ru
-          </a>
+          <div class="intro-content__enum" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 60%">
+            <div class="intro-content__enum-item">
+              <div class="intro-content__enum-item-check">
+                <span class="icon icon-check"></span>
+              </div>
+              <div class="intro-content__enum-item-text">
+                Без отделки
+                или&nbsp;«под ключ»</div>
+            </div>
+            <div class="intro-content__enum-item">
+              <div class="intro-content__enum-item-check">
+                <span class="icon icon-check"></span>
+              </div>
+              <div class="intro-content__enum-item-text">
+                Типовые проекты
+                или&nbsp;по Вашему эскизу</div>
+            </div>
+            <div class="intro-content__enum-item">
+              <div class="intro-content__enum-item-check">
+                <span class="icon icon-check"></span>
+              </div>
+              <div class="intro-content__enum-item-text">
+                Стоимость не меняется ни после подписания договора, ни в ходе строительства
+              </div>
+            </div>
+          </div>
+          <div class="intro-content__contacts">
+            <div class="v-social">
+              <a href="#" class="v-social__item">
+                <span class="icon icon-vk"></span>
+              </a>
+              <a href="#" class="v-social__item">
+                <span class="icon icon-max"></span>
+              </a>
+              <a href="#" class="v-social__item">
+                <span class="icon icon-rutube"></span>
+              </a>
+              <a href="#" class="v-social__item">
+                <span class="icon icon-ok"></span>
+              </a>
+            </div>
+            <a href="mailto:info@skpomestie.ru" class="v-email">
+              <span class="icon icon-mail"></span>
+              info@skpomestie.ru
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -649,21 +651,21 @@ Template Name: Главная
       </div>
     </section>
 
-    <section class="features-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+    <section class="features" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
       <div class="container">
-        <div class="features-section__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
-          <h2 class="features-section__title-inner">
+        <div class="features__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+          <h2 class="features__title-inner">
             Каркасные дома<br>
             СК Поместье
           </h2>
         </div>
 
-        <div class="features-section__core">
-          <div class="features-section__item features-section__item--1">
-            <h3 class="features-section__item-title">
+        <div class="features__core">
+          <div class="features__item features__item--1">
+            <h3 class="features__item-title">
               Почему стоит заказать проект загородного дома в СК «Поместье»
             </h3>
-            <div class="features-section__item-desc">
+            <div class="features__item-desc">
               <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, </p>
               <ul>
                 <li>
@@ -682,29 +684,29 @@ Template Name: Главная
             </div>
           </div>
 
-          <div class="features-section__item features-section__item--2">
-            <h3 class="features-section__item-title">
+          <div class="features__item features__item--2">
+            <h3 class="features__item-title">
               Готовые загородные дома:<br>
               проекты и цены
             </h3>
-            <div class="features-section__item-desc">
+            <div class="features__item-desc">
               <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов</p>
             </div>
           </div>
 
-          <div class="features-section__item features-section__item--3">
-            <h3 class="features-section__item-title">
+          <div class="features__item features__item--3">
+            <h3 class="features__item-title">
               Энергоэффективность<br>
               экономия на отоплении до 50%
             </h3>
           </div>
 
-          <div class="features-section__core-intro">
+          <div class="features__core-intro">
             Строительная компания «Поместье» - производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России.
           </div>
 
           <div
-            class="features-section__core-figure">
+            class="features__core-figure">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="631px"
@@ -717,12 +719,12 @@ Template Name: Главная
       </div>
     </section>
 
-    <section class="feedback-section">
+    <section class="feedback">
       <div class="container">
-        <div class="feedback-section__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+        <div class="feedback__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
           Если вы хотите узнать стоимость индивидуальной разработки или уточнить цены по типовому проекту - свяжитесь с нами, менеджер предоставит бесплатную консультацию и даст ответы на вопросы
         </div>
-        <div class="feedback-section__form">
+        <div class="feedback__form">
           <div class="feedback-form" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
             <div class="feedback-form__side">
               <div class="feedback-form__person">
