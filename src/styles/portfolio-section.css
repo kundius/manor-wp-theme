@@ -1,4 +1,5 @@
 .portfolio-section {
+  overflow: hidden;
   padding-top: calc(132px * var(--global-scale));
   padding-bottom: calc(132px * var(--global-scale));
 

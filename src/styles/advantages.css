@@ -1,4 +1,5 @@
 .advantages {
+  overflow: hidden;
   background-repeat: repeat;
   background-image: url('../images/advantages-bg2.jpg');
   background-position: 50% calc(50% + (calc(300px * var(--global-scale)) * var(--progress)));

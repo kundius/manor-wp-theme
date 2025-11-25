@@ -72,6 +72,10 @@
   @media (--max-lg) {
     zoom: calc(768 / 1920);
   }
+
+  @media (--max-md) {
+    display: none;
+  }
 }
 
 .intro-content__title {
@@ -234,6 +238,10 @@
   bottom: -10px;
   transform: scale(calc(1 + ((1 - var(--progress)) * 0.5)))
     translate(calc((200% - (200% * var(--progress)))));
+
+  @media (--max-lg) {
+    display: none;
+  }
 }
 
 .intro-content__enum-item {

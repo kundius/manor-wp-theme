@@ -1,4 +1,5 @@
 .features {
+  overflow: hidden;
   padding-top: calc(80px * var(--global-scale));
   padding-bottom: calc(64px * var(--global-scale));
 

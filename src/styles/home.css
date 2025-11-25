@@ -775,6 +775,7 @@
   }
 
   @media (--max-md) {
+    overflow: hidden;
     padding-top: 64px;
     padding-bottom: 64px;
   }

@@ -1,4 +1,5 @@
 .feedback {
+  overflow: hidden;
   padding-top: calc(64px * var(--global-scale));
   padding-bottom: calc(104px * var(--global-scale));
 
