@@ -36,6 +36,10 @@
     --header-before: 12px;
   }
 
+  @media (--max-md) {
+    --header-before: 0px;
+  }
+
   @media (--min-md) {
     --container-width: 768px;
     --container-padding: 16px;

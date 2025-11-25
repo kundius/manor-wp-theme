@@ -18,6 +18,10 @@
   @media (--max-lg) {
     margin-bottom: 64px;
   }
+
+  @media (--max-md) {
+    margin-bottom: 64px;
+  }
 }
 
 .features__title-inner {
@@ -28,42 +32,53 @@
   font-weight: 500;
   line-height: 1.25;
   min-width: 0;
+
+  @media (--max-md) {
+    padding: 0 32px;
+    font-size: 36px;
+  }
 }
 
 .features__title-inner::first-line {
   font-size: 36px;
   font-weight: bold;
+
+  @media (--max-md) {
+    font-size: 24px;
+  }
 }
 
 .features__title-inner::before {
   content: '';
   width: 9px;
-  height: 96px;
+  height: 120%;
   position: absolute;
   left: 0;
   top: 50%;
-  margin-top: -48px;
   border-left: 3px solid #131313;
   border-top: 3px solid #131313;
   border-bottom: 3px solid #131313;
-  transform: scale(calc(1 + ((1 - var(--progress)) * 0.5)))
+  transform: translateY(-50%) scale(calc(1 + ((1 - var(--progress)) * 0.5)))
     translate(calc((200% - (200% * var(--progress))) * -1));
 }
 
-/* .features__title-inner::after {
+.features__title-inner::after {
   content: '';
   width: 9px;
-  height: 96px;
+  height: 120%;
   position: absolute;
   right: 0;
   top: 50%;
-  margin-top: -48px;
   border-right: 3px solid #131313;
   border-top: 3px solid #131313;
   border-bottom: 3px solid #131313;
-  transform: scale(calc(1 + ((1 - var(--progress)) * 0.5)))
+  transform: translateY(-50%) scale(calc(1 + ((1 - var(--progress)) * 0.5)))
     translate(calc((200% - (200% * var(--progress)))));
-} */
+
+  @media (--min-md) {
+    display: none;
+  }
+}
 
 .features__core {
   width: 100%;
@@ -96,6 +111,12 @@
   border-bottom: 1px solid #dfdfdf;
   margin-bottom: 42px;
   padding-bottom: 12px;
+
+  @media (--max-md) {
+    padding-left: 48px;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 .features__item-title::after {
@@ -130,6 +151,10 @@
     right: initial;
     margin-top: 64px;
   }
+
+  @media (--max-md) {
+    margin-top: 48px;
+  }
 }
 
 .features__item--2 {
@@ -141,6 +166,10 @@
     left: initial;
     margin-top: 64px;
   }
+
+  @media (--max-md) {
+    margin-top: 48px;
+  }
 }
 
 .features__item--3 {
@@ -151,6 +180,10 @@
     top: initial;
     left: initial;
     margin-top: 64px;
+  }
+
+  @media (--max-md) {
+    margin-top: 48px;
   }
 }
 
@@ -194,6 +227,11 @@
     left: 12px;
     top: 12px;
     transform: translateY(-50%);
+  }
+
+  @media (--max-md) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

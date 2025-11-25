@@ -101,7 +101,9 @@ Template Name: Главная
                   Каталог
                 </div>
                 <a href="#" class="catalog-preview__more">
-                  Смотреть все
+                  <span class="catalog-preview__more-text">
+                    Смотреть все
+                  </span>
                   <span class="icon icon-arrow-right"></span>
                 </a>
               </div>
@@ -1098,7 +1100,7 @@ Template Name: Главная
                 </button>
               </div>
               <a href="#" class="portfolio-embla__all">
-                Смотреть все построенные объекты
+                <span>Смотреть все <span class="max-md:hidden">построенные объекты</span></span>
                 <span class="icon icon-arrow-right"></span>
               </a>
             </div>
@@ -1184,8 +1186,8 @@ Template Name: Главная
         <div class="feedback__form">
           <div class="feedback-form" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
             <div class="feedback-form__side">
+              <div class="feedback-form__photo"></div>
               <div class="feedback-form__person">
-                <div class="feedback-form__person-photo"></div>
                 <div class="feedback-form__person-name">
                   Фамилия И.О.
                 </div>

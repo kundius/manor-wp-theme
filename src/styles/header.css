@@ -11,6 +11,10 @@
   @media (--max-lg) {
     top: calc((32px + var(--header-before) + var(--header-height)));
   }
+
+  @media (--max-md) {
+    right: calc(var(--container-padding) / 2 + 4px);
+  }
 }
 
 .header {
@@ -50,6 +54,10 @@
     grid-template-columns: auto 24px auto 2fr auto 24px auto;
     grid-template-areas: 'toggle . logo . phone . call';
   }
+
+  @media (--max-md) {
+    grid-template-columns: auto 12px auto 2fr auto 12px auto;
+  }
 }
 
 .header-logo {
@@ -58,6 +66,11 @@
   flex-shrink: 0;
   width: 133px;
   height: 49px;
+
+  @media (--max-md) {
+    width: calc(133px * 0.8);
+    height: calc(49px * 0.8);
+  }
 }
 
 .header-logo img {
@@ -78,6 +91,10 @@
 
   @media (--min-lg) {
     display: none;
+  }
+
+  @media (--max-md) {
+    margin-left: calc(var(--container-padding) / 2 * -1);
   }
 }
 .header-toggle:hover {
@@ -182,6 +199,10 @@
   @media (--max-xl) {
     font-size: 12px;
   }
+
+  @media (--max-md) {
+    display: none;
+  }
 }
 
 .header-callback {
@@ -201,6 +222,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  @media (--max-md) {
+    margin-right: calc(var(--container-padding) / 2 * -1);
+  }
 }
 
 .header-callback::before {
