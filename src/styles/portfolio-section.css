@@ -1,15 +1,10 @@
 .portfolio-section {
-  padding-top: 132px;
-  padding-bottom: 132px;
+  padding-top: calc(132px * var(--global-scale));
+  padding-bottom: calc(132px * var(--global-scale));
 
-  @media (--max-3xl) {
-    padding-top: calc(132px * 0.8);
-    padding-bottom: calc(132px * 0.8);
-  }
-
-  @media (--max-2xl) {
-    padding-top: calc(132px * 0.66);
-    padding-bottom: calc(132px * 0.66);
+  @media (--max-lg) {
+    padding-top: 96px;
+    padding-bottom: 96px;
   }
 }
 
@@ -20,13 +15,12 @@
   align-items: center;
   height: 96px;
   margin-bottom: 148px;
+  zoom: var(--global-scale);
 
-  @media (--max-3xl) {
-    zoom: 0.8;
-  }
-
-  @media (--max-2xl) {
-    zoom: 0.66;
+  @media (--max-lg) {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 96px;
   }
 }
 
@@ -77,17 +71,12 @@
 
 .portfolio-section__list {
   position: relative;
-  margin-left: 116px;
-  margin-right: 116px;
+  margin-left: calc(116px * var(--global-scale));
+  margin-right: calc(116px * var(--global-scale));
 
-  @media (--max-3xl) {
-    margin-left: calc(116px * 0.8);
-    margin-right: calc(116px * 0.8);
-  }
-
-  @media (--max-2xl) {
-    margin-left: calc(116px * 0.66);
-    margin-right: calc(116px * 0.66);
+  @media (--max-lg) {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -101,13 +90,14 @@
   bottom: 0;
   right: 0;
   background: #fff;
+  zoom: var(--global-scale);
 
-  @media (--max-3xl) {
-    zoom: 0.8;
-  }
-
-  @media (--max-2xl) {
-    zoom: 0.66;
+  @media (--max-lg) {
+    position: relative;
+    left: initial;
+    bottom: initial;
+    right: initial;
+    margin-top: 40px;
   }
 }
 
@@ -184,7 +174,7 @@
 }
 
 .portfolio-embla {
-  --slide-spacing: 32px;
+  --slide-spacing: calc(32px * var(--global-scale));
 
   position: relative;
   z-index: 20;
@@ -209,13 +199,10 @@
 
 .portfolio-card {
   display: flex;
+  zoom: var(--global-scale);
 
-  @media (--max-3xl) {
+  @media (--max-lg) {
     zoom: 0.8;
-  }
-
-  @media (--max-2xl) {
-    zoom: 0.66;
   }
 }
 
@@ -269,6 +256,10 @@
   flex-direction: column;
   justify-content: center;
   padding-bottom: calc(72px + 32px);
+
+  @media (--max-lg) {
+    padding-bottom: 0;
+  }
 }
 
 .portfolio-card__header {
@@ -319,6 +310,11 @@
   font-weight: 700;
   color: #000;
   margin-bottom: 48px;
+
+  @media (--max-lg) {
+    font-size: 56px;
+    margin-bottom: 36px;
+  }
 }
 
 .portfolio-card__desc {
@@ -327,6 +323,10 @@
   color: #000;
   line-height: 1.2;
   min-height: calc(18px * 1.2 * 7);
+
+  @media (--max-lg) {
+    min-height: calc(18px * 1.2 * 4);
+  }
 }
 
 .protfolio-modal .modal__container {

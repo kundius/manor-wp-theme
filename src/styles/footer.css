@@ -18,10 +18,43 @@
     grid-template-columns: auto 24px auto 1fr auto 1fr auto 24px auto;
     grid-template-rows: auto 24px 1fr;
   }
+
+  @media (--max-xl) {
+    grid-template-columns: auto 12px auto 1fr auto 1fr auto 12px auto;
+    grid-template-rows: auto 12px 1fr;
+  }
+
+  @media (--max-lg) {
+    /* grid-template-columns:
+      max-content minmax(12px, 1fr) auto minmax(12px, 1fr) auto minmax(12px, 1fr)
+      auto;
+    grid-template-rows: auto 12px auto 12px auto;
+    gap: 0px 0px;
+    grid-template-areas:
+      'logo . nav . links . social'
+      '. . nav . links . social'
+      'phone . nav . links . social'
+      '. . nav . links . social'
+      'contacts . nav . links . social'; */
+    grid-template-columns: auto minmax(12px, 1fr) auto minmax(12px, 1fr) auto minmax(12px, 1fr) auto;
+    grid-template-rows: auto 12px auto 12px auto;
+    gap: 0px 0px;
+    grid-template-areas:
+      'logo . phone phone phone . social'
+      '. . . . . . social'
+      'contacts . nav . links . social'
+      '. . . . . . .'
+      '. . . . . . .';
+  }
 }
 
 .footer-primary__logo {
   grid-area: logo;
+
+  @media (--max-lg) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .footer-primary__phone {
@@ -30,21 +63,37 @@
 
 .footer-primary__contacts {
   grid-area: contacts;
+
+  @media (--max-lg) {
+    padding: 6px 0;
+  }
 }
 
 .footer-primary__nav {
   grid-area: nav;
   padding: 24px 0;
+
+  @media (--max-lg) {
+    padding: 0;
+  }
 }
 
 .footer-primary__links {
   grid-area: links;
   padding: 30px 0;
+
+  @media (--max-lg) {
+    padding: 6px 0;
+  }
 }
 
 .footer-primary__social {
   grid-area: social;
   padding: 12px 0;
+
+  @media (--max-lg) {
+    padding: 6px 0;
+  }
 }
 
 .footer-secondary {
@@ -102,6 +151,10 @@
 
 .footer__logo {
   display: flex;
+
+  @media (--max-lg) {
+    zoom: 0.9;
+  }
 }
 
 .footer-contacts {
@@ -112,6 +165,16 @@
 
   @media (--max-2xl) {
     gap: 24px;
+  }
+
+  @media (--max-xl) {
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  @media (--max-lg) {
+    gap: 24px;
+    flex-direction: row;
   }
 }
 

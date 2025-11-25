@@ -16,10 +16,25 @@
   --icon-chevron-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E");
   --icon-chevron-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
   --icon-fullscreen: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 7V5a2 2 0 0 1 2-2h2'/%3E%3Cpath d='M17 3h2a2 2 0 0 1 2 2v2'/%3E%3Cpath d='M21 17v2a2 2 0 0 1-2 2h-2'/%3E%3Cpath d='M7 21H5a2 2 0 0 1-2-2v-2'/%3E%3Crect width='10' height='8' x='7' y='8' rx='1'/%3E%3C/svg%3E");
+  --icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18'/%3E%3Cpath d='m6 6 12 12'/%3E%3C/svg%3E");
+  --icon-menu: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 5h16'/%3E%3Cpath d='M4 12h16'/%3E%3Cpath d='M4 19h16'/%3E%3C/svg%3E");
 
   --container-width: 100%;
   --container-padding: 16px;
+  --header-before: 64px;
   --header-height: 56px;
+
+  @media (--max-3xl) {
+    --header-before: 48px;
+  }
+
+  @media (--max-2xl) {
+    --header-before: 24px;
+  }
+
+  @media (--max-xl) {
+    --header-before: 12px;
+  }
 
   @media (--min-md) {
     --container-width: 768px;
@@ -58,7 +73,15 @@
   }
 
   @media (--max-2xl) {
-    --global-scale: 0.66;
+    --global-scale: 0.7;
+  }
+
+  @media (--max-xl) {
+    --global-scale: 0.54;
+  }
+
+  @media (--max-lg) {
+    --global-scale: 1;
   }
 }
 /* 
@@ -90,6 +113,14 @@
 
 .icon-fullscreen {
   mask-image: var(--icon-fullscreen);
+}
+
+.icon-menu {
+  mask-image: var(--icon-menu);
+}
+
+.icon-close {
+  mask-image: var(--icon-close);
 }
 
 .icon-check {
