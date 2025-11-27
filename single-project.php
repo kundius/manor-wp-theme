@@ -194,16 +194,153 @@ $current_post_id = get_the_ID();
             </div>
           </div>
           <div class="project-layout__params">
-            <div class="outline h-[240px]">project-layout__params</div>
+            <div class="project-params">
+              <div class="project-params__title">Технические характеристики:</div>
+              <div class="project-params__list">
+                <div class="project-params__row">
+                  <div class="project-params__label">
+                    Материал
+                  </div>
+                  <div class="project-params__value">
+                    <?php if ($material = carbon_get_the_post_meta('material')): ?>
+                      <?php echo $material; ?>
+                    <?php else: ?>
+                      -
+                    <?php endif; ?>
+                  </div>
+                </div>
+                <div class="project-params__row">
+                  <div class="project-params__label">
+                    Размер
+                  </div>
+                  <div class="project-params__value">
+                    <?php if ($dimensions = carbon_get_the_post_meta('dimensions')): ?>
+                      <?php echo $dimensions; ?>
+                    <?php else: ?>
+                      -
+                    <?php endif; ?>
+                  </div>
+                </div>
+                <div class="project-params__row">
+                  <div class="project-params__label">
+                    Общая S
+                  </div>
+                  <div class="project-params__value">
+                    <?php if ($total_area = carbon_get_the_post_meta('total_area')): ?>
+                      <?php echo $total_area; ?> м<sup>2</sup>
+                    <?php else: ?>
+                      -
+                    <?php endif; ?>
+                  </div>
+                </div>
+                <div class="project-params__row">
+                  <div class="project-params__label">
+                    Застройки S
+                  </div>
+                  <div class="project-params__value">
+                    <?php if ($footprint_area = carbon_get_the_post_meta('footprint_area')): ?>
+                      <?php echo $footprint_area; ?> м<sup>2</sup>
+                    <?php else: ?>
+                      -
+                    <?php endif; ?>
+                  </div>
+                </div>
+                <div class="project-params__row">
+                  <div class="project-params__label">
+                    Комнат
+                  </div>
+                  <div class="project-params__value">
+                    <?php if ($room_count = carbon_get_the_post_meta('room_count')): ?>
+                      <?php echo $room_count; ?>
+                    <?php else: ?>
+                      -
+                    <?php endif; ?>
+                  </div>
+                </div>
+                <div class="project-params__row">
+                  <div class="project-params__label">
+                    Сроки
+                  </div>
+                  <div class="project-params__value">
+                    <?php if ($duration = carbon_get_the_post_meta('duration')): ?>
+                      <?php echo $duration; ?>
+                    <?php else: ?>
+                      -
+                    <?php endif; ?>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="project-layout__contact">
-            <div class="outline h-[330px]">project-layout__contact</div>
+            <div class="project-contact">
+              <div class="project-contact__title">
+                Не знаете с чего начать? Наши менеджеры дадут подробную бесплатную консультацию
+              </div>
+              <div class="project-contact__desc">Деловое общение, без спама, без sms</div>
+              <button type="button" class="project-contact__feedback">Проконсультироваться</button>
+              <div class="project-contact__socials">
+                <a href="#" class="project-contact__social project-contact__social--whatsapp">
+                  <span class="project-contact__social-ico">
+                    <span class="icon icon-whatsapp"></span>
+                  </span>
+                  <span class="project-contact__social-lbl">
+                    Написать в<br>
+                    Whatsapp
+                  </span>
+                </a>
+                <a href="#" class="project-contact__social project-contact__social--telegram">
+                  <span class="project-contact__social-ico">
+                    <span class="icon icon-telegram"></span>
+                  </span>
+                  <span class="project-contact__social-lbl">
+                    Написать в<br>
+                    Telegram
+                  </span>
+                </a>
+                <a href="#" class="project-contact__social project-contact__social--vk">
+                  <span class="project-contact__social-ico">
+                    <span class="icon icon-vk"></span>
+                  </span>
+                  <span class="project-contact__social-lbl">
+                    Перейти в<br>
+                    Вконтакте
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
           <div class="project-layout__discount">
             <div class="outline h-[180px]">layout__discount</div>
           </div>
           <div class="project-layout__benefits">
-            <div class="outline h-[180px]">layout__benefits</div>
+            <div class="project-benefits">
+              <div class="project-benefits__item">
+                <div class="project-benefits__item-ico">
+                  <img src="<?php bloginfo('template_url'); ?>/assets/benefit-1.png" alt="">
+                </div>
+                <div class="project-benefits__item-txt">
+                  В проект можно внести любые изменения по желанию заказчика
+                </div>
+              </div>
+              <div class="project-benefits__item">
+                <div class="project-benefits__item-ico">
+                  <img src="<?php bloginfo('template_url'); ?>/assets/benefit-2.png" alt="">
+                </div>
+                <div class="project-benefits__item-txt">
+                  Возможна оплата строительства дома для ПМЖ сертификатом материнского капитала
+                </div>
+              </div>
+              <div class="project-benefits__item">
+                <div class="project-benefits__item-ico">
+                  <img src="<?php bloginfo('template_url'); ?>/assets/benefit-3.png" alt="">
+                </div>
+                <div class="project-benefits__item-txt">
+                  Вы можете воспользоваться выгодным кредитом от банков-партнеров: Т-Банк, Альфа Банк, Сбербанк, МТС Банк, Локо Банк, Совком Банк, ОТП Банк, Кредит Европа Банк, Ренесанс банк.<br>
+                  <a href="#">Консультация по кредиту</a>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="project-layout__components">
             <div class="outline h-[500px]">layout__components</div>
