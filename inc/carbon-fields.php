@@ -167,14 +167,14 @@ function register_carbon_fields_blocks()
 {
   global $theme_options_container;
 
-  // Container::make('post_meta', 'Проект')
-  //   ->where('post_type', '=', 'project')
-  //   ->add_fields([
-  //     Field::make('text', 'time', 'Сроки ремонта'),
-  //     Field::make('text', 'area', 'Площадь'),
-  //     Field::make('text', 'price', 'Цена'),
-  //     Field::make('media_gallery', 'gallery', 'Галерея'),
-  //   ]);
+  Container::make('post_meta', 'Проект')
+    ->where('post_type', '=', 'project')
+    ->add_fields([
+      // Field::make('text', 'time', 'Сроки ремонта'),
+      // Field::make('text', 'area', 'Площадь'),
+      // Field::make('text', 'price', 'Цена'),
+      Field::make('media_gallery', 'gallery', 'Галерея'),
+    ]);
 
   // Пример встраиваемого в контент блока
   // Block::make('contacts_info', 'Контактная информация')

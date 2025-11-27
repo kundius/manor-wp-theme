@@ -16,27 +16,6 @@ Template Name: Главная
   <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
-    <div class="float-contacts">
-      <div class="v-social">
-        <a href="#" class="v-social__item">
-          <span class="icon icon-vk"></span>
-        </a>
-        <a href="#" class="v-social__item">
-          <span class="icon icon-max"></span>
-        </a>
-        <a href="#" class="v-social__item">
-          <span class="icon icon-rutube"></span>
-        </a>
-        <a href="#" class="v-social__item">
-          <span class="icon icon-ok"></span>
-        </a>
-      </div>
-      <a href="mailto:info@skpomestie.ru" class="v-email">
-        <span class="icon icon-mail"></span>
-        info@skpomestie.ru
-      </a>
-    </div>
-
     <section class="intro-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
       <div class="container">
         <div class="intro-content">
@@ -1000,16 +979,16 @@ Template Name: Главная
       </div>
     </div>
 
-    <section class="portfolio-section">
+    <section class="portfolio">
       <div class="container">
-        <div class="portfolio-section__header" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
-          <div class="portfolio-section__header-inner">
-            <div class="portfolio-section__title">
+        <div class="portfolio__header" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+          <div class="portfolio__header-inner">
+            <div class="portfolio__title">
               Наши работы
             </div>
           </div>
         </div>
-        <div class="portfolio-section__list">
+        <div class="portfolio__list">
 
           <div class="portfolio-embla" data-portfolio-embla>
             <div class="portfolio-embla__viewport" data-portfolio-embla-viewport>

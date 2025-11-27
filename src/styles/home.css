@@ -469,6 +469,7 @@
 
   @media (--max-md) {
     padding: 36px;
+    width: 100%;
   }
 }
 
@@ -865,6 +866,7 @@
 
   @media (--max-lg) {
     max-width: 100%;
+    width: 100%;
   }
 }
 
