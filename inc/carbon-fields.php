@@ -170,11 +170,35 @@ function register_carbon_fields_blocks()
   Container::make('post_meta', 'Проект')
     ->where('post_type', '=', 'project')
     ->add_fields([
-      // Field::make('text', 'time', 'Сроки ремонта'),
-      // Field::make('text', 'area', 'Площадь'),
-      // Field::make('text', 'price', 'Цена'),
+      Field::make('text', 'material', 'Материал'),
+      Field::make('text', 'dimensions', 'Размер'),
+      Field::make('text', 'total_area', 'Общая площадь'),
+      Field::make('text', 'footprint_area', 'Площадь застройки'),
+      Field::make('text', 'room_count', 'Количество комнат'),
+      Field::make('text', 'duration', 'Сроки'),
+      Field::make('text', 'price', 'Цена'),
       Field::make('media_gallery', 'gallery', 'Галерея'),
     ]);
+
+  $packages = new WP_Query([
+    'post_type' => 'package',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'orderby' => 'menu_order',
+    'order' => 'ASC'
+  ]);
+
+  if ($packages->have_posts()) {
+    $packages_container = Container::make('post_meta', 'Комплектации')->where('post_type', '=', 'project');
+    while ($packages->have_posts()) {
+      $packages->the_post();
+      $packages_container->add_tab(get_the_title(), [
+        Field::make('checkbox', 'package_' . get_the_ID() . '_is_active', 'Использовать комплектацию'),
+        Field::make('text', 'package_' . get_the_ID() . '_price', 'Цена')
+      ]);
+    }
+    wp_reset_postdata();
+  }
 
   // Пример встраиваемого в контент блока
   // Block::make('contacts_info', 'Контактная информация')

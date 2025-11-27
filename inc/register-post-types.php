@@ -30,4 +30,32 @@ function register_post_types()
     'query_var' => true,
     'show_ui' => true,
   ]);
+
+  register_post_type('package', [
+    'label' => null,
+    'labels' => [
+      'name' => 'Комплектации',
+      'singular_name' => 'Комплектация',
+      'add_new' => 'Добавить комплектацию',
+      'add_new_item' => 'Добавить комплектацию',
+      'edit_item' => 'Редактировать комплектацию',
+      'new_item' => 'Новая комплектация',
+      'view_item' => 'Смотреть комплектацию',
+      'search_items' => 'Искать комплектации',
+      'not_found' => 'Не найдено',
+      'not_found_in_trash' => 'Не найдено в корзине',
+      'parent_item_colon' => '',
+      'menu_name' => 'Комплектации',
+    ],
+    'description' => '',
+    'public' => true,
+    'menu_icon' => 'dashicons-media-document',
+    'supports' => ['title', 'editor'],
+    'taxonomies' => [],
+    'hierarchical' => false,
+    'has_archive' => false,
+    'rewrite' => false,
+    'query_var' => false,
+    'show_ui' => true,
+  ]);
 }

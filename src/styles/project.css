@@ -11,8 +11,12 @@
     'discount . benefits'
     '. . .'
     'components components components';
-  grid-template-columns: 1fr 54px 1fr;
-  grid-template-rows: 44px auto 20px auto 20px 1fr 24px auto 64px auto;
+  grid-template-columns: 1fr calc(54px * var(--global-scale)) 1fr;
+  grid-template-rows:
+    calc(44px * var(--global-scale)) auto calc(20px * var(--global-scale)) auto calc(
+      20px * var(--global-scale)
+    )
+    1fr calc(24px * var(--global-scale)) auto calc(64px * var(--global-scale)) auto;
   gap: 0;
 }
 
@@ -42,6 +46,130 @@
 
 .project-layout__components {
   grid-area: components;
+}
+
+.project-layout__prices-inner {
+  margin-left: calc(54px * var(--global-scale) * -1);
+}
+
+.project-packages {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(204, 204, 204);
+  background-color: rgba(255, 255, 255, 0.8);
+  zoom: var(--global-scale);
+  padding: 16px 72px 48px 54px;
+}
+
+.project-packages__title {
+  font-size: 18px;
+  font-family: 'Gilroy';
+  color: rgb(48, 52, 55);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.project-packages__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-package {
+  display: flex;
+  cursor: pointer;
+  background-color: rgba(201, 65, 60, 0.8);
+}
+
+.project-package:hover {
+  background-color: rgb(201, 65, 60);
+}
+
+.project-package__body {
+  flex-grow: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-package__name {
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.project-package__price {
+  display: flex;
+  align-items: baseline;
+}
+
+.project-package__price-lbl {
+  font-size: 16px;
+  line-height: 1;
+  color: #fff;
+  margin-right: 16px;
+}
+
+.project-package__price-val {
+  font-family: 'Gilroy';
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+}
+
+.project-package__price-cur {
+  font-family: 'Gilroy';
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+  margin-left: 4px;
+}
+
+.project-package__help {
+  width: 86px;
+  flex-shrink: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.302);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.project-package__help-ico {
+  border: 3px solid currentColor;
+  font-family: 'Gilroy';
+  color: rgba(230, 243, 255, 0.6);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: bold;
+  font-size: 20px;
+
+  .project-package:hover & {
+    color: #fff;
+  }
+}
+
+.project-package__help-txt {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.702);
+  line-height: 1;
+  text-align: center;
+
+  .project-package:hover & {
+    color: #fff;
+  }
 }
 
 .gallery {

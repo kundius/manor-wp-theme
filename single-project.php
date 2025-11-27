@@ -1,5 +1,13 @@
 <?php
 $gallery = carbon_get_post_meta(get_the_ID(), 'gallery');
+$packages = new WP_Query([
+  'post_type' => 'package',
+  'post_status' => 'publish',
+  'posts_per_page' => -1,
+  'orderby' => 'menu_order',
+  'order' => 'ASC'
+]);
+$current_post_id = get_the_ID();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
@@ -142,7 +150,48 @@ $gallery = carbon_get_post_meta(get_the_ID(), 'gallery');
 
           </div>
           <div class="project-layout__prices">
-            <div class="outline h-[200px]">layout__prices</div>
+            <div class="project-layout__prices-inner">
+              <?php if ($packages->have_posts()): ?>
+                <div class="project-packages">
+                  <div class="project-packages__title">Комплектации</div>
+                  <div class="project-packages__grid">
+                    <?php while ($packages->have_posts()): ?>
+                      <?php $packages->the_post(); ?>
+                      <?php $is_active = carbon_get_post_meta($current_post_id, 'package_' . get_the_ID() . '_is_active'); ?>
+                      <?php if ($is_active): ?>
+                        <?php $price = carbon_get_post_meta($current_post_id, 'package_' . get_the_ID() . '_price'); ?>
+                        <div class="project-package">
+                          <div class="project-package__body">
+                            <div class="project-package__name"><?php the_title() ?></div>
+                            <div class="project-package__price">
+                              <div class="project-package__price-lbl">
+                                Цена от:
+                              </div>
+                              <div class="project-package__price-val">
+                                <?php echo number_format($price, 0, ',', ' '); ?>
+                              </div>
+                              <div class="project-package__price-cur">
+                                ₽
+                              </div>
+                            </div>
+                          </div>
+                          <div class="project-package__help">
+                            <div class="project-package__help-ico">
+                              ?
+                            </div>
+                            <div class="project-package__help-txt">
+                              Что входит<br>
+                              в стоимость?
+                            </div>
+                          </div>
+                        </div>
+                      <?php endif ?>
+                    <?php endwhile ?>
+                  </div>
+                </div>
+                <?php wp_reset_postdata() ?>
+              <?php endif ?>
+            </div>
           </div>
           <div class="project-layout__params">
             <div class="outline h-[240px]">project-layout__params</div>
