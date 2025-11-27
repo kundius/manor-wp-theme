@@ -170,5 +170,5 @@ a.breadcrumbs__item {
 }
 
 .page-section__breadcrumbs {
-  margin-bottom: 32px;
+  margin-bottom: calc(16px * var(--global-scale));
 }
