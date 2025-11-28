@@ -6,12 +6,17 @@
   position: relative;
   z-index: 1;
   padding-top: calc((var(--header-before) + var(--header-height)) + (64px * var(--global-scale)));
+  margin-bottom: 80px;
 
-  /* @media (--max-lg) {
-    background-size: calc(1920px * (768 / 1920)) calc(717px * (768 / 1920)), cover;
-    padding-top: calc(40px + var(--header-before) + var(--header-height));
-    padding-bottom: 0;
-  } */
+  @media (--max-lg) {
+    margin-bottom: 64px;
+    padding-top: calc((var(--header-before) + var(--header-height)) + 48px);
+  }
+
+  @media (--max-md) {
+    margin-bottom: 48px;
+    padding-top: calc((var(--header-before) + var(--header-height)) + 40px);
+  }
 }
 
 .page-section__bg {
@@ -26,6 +31,11 @@
   background-image: url('../images/page-bg.jpg'), url('../images/page-bg.jpg');
   background-size: calc(1920px * var(--global-scale)) calc(717px * var(--global-scale)), cover;
   background-position-y: calc(0% + ((200px * var(--global-scale)) * var(--progress))), 0;
+
+  @media (--max-lg) {
+    height: calc(717px * (768 / 1920));
+    background-size: calc(1920px * (768 / 1920)) calc(717px * (768 / 1920)), cover;
+  }
 }
 
 .page-section__bg::before {
@@ -65,6 +75,11 @@
 .breadcrumbs {
   display: flex;
   zoom: var(--global-scale);
+
+  @media (--max-lg) {
+    filter: drop-shadow(0px 0px 20px #fff) drop-shadow(0px 0px 20px #fff)
+      drop-shadow(0px 0px 20px #fff);
+  }
 }
 
 .breadcrumbs__list {
@@ -136,7 +151,7 @@ a.breadcrumbs__item {
 }
 
 .page-section__title {
-  padding-left: 48px;
+  padding-left: 44px;
   position: relative;
   font-size: 120px;
   line-height: 1;
@@ -147,23 +162,55 @@ a.breadcrumbs__item {
   line-height: 1;
   margin-bottom: 68px;
   zoom: var(--global-scale);
+
+  @media (--max-lg) {
+    font-size: 96px;
+    margin-bottom: 48px;
+    max-width: 100%;
+    padding-left: 32px;
+    filter: drop-shadow(0px 0px 30px #fff) drop-shadow(0px 0px 30px #fff)
+      drop-shadow(0px 0px 30px #fff);
+  }
+  @media (--max-md) {
+    margin-bottom: 36px;
+    padding-left: 24px;
+  }
 }
 
 .page-section__title::before {
   content: '';
   position: absolute;
   width: 9px;
-  height: 96px;
+  height: 100px;
   left: 0;
-  top: 12px;
+  top: 15px;
   border-left: 3px solid currentColor;
   border-top: 3px solid currentColor;
   border-bottom: 3px solid currentColor;
+
+  @media (--max-lg) {
+    height: 80px;
+    top: 10px;
+    border-left-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+  }
+  @media (--max-md) {
+    top: 5px;
+    height: 50px;
+  }
 }
 
 .page-section__title--small {
   font-size: 72px;
   line-height: 1.2;
+
+  @media (--max-lg) {
+    font-size: 56px;
+  }
+  @media (--max-md) {
+    font-size: 36px;
+  }
 }
 
 .page-section__title--small::before {
@@ -171,4 +218,6 @@ a.breadcrumbs__item {
 
 .page-section__breadcrumbs {
   margin-bottom: calc(16px * var(--global-scale));
+  position: relative;
+  z-index: 20;
 }

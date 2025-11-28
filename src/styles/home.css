@@ -269,7 +269,7 @@
   position: relative;
   zoom: var(--global-scale);
 
-  @media (--max-lg) {
+  @media (--max-md) {
     zoom: 0.5;
   }
 }

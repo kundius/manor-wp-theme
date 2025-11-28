@@ -1,12 +1,14 @@
 .float-contacts {
   position: absolute;
-  top: calc((108px + var(--header-before) + var(--header-height)));
+  top: calc((48px + var(--header-before) + var(--header-height)));
   right: calc(((100vw - var(--container-width)) / 2) + var(--container-padding));
   display: flex;
   flex-direction: column;
   gap: 48px;
   align-items: center;
   z-index: 90;
+  width: 0;
+  margin: 0 24px;
 
   @media (--max-lg) {
     top: calc((12px + var(--header-before) + var(--header-height)));
@@ -14,7 +16,7 @@
   }
 
   @media (--max-md) {
-    right: calc(var(--container-padding) / 2 + 4px);
+    right: calc(var(--container-padding) / 2);
   }
 }
 
