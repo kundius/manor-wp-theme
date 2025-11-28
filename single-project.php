@@ -477,6 +477,398 @@ $work_scheme = [
       </div>
     </section>
 
+    <section class="project-similar">
+      <div class="container">
+        <div class="project-similar__header" data-scroll="" data-scroll-css-progress="" data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+          <div class="project-similar__title">
+            Похожие проекты
+          </div>
+        </div>
+
+        <div class="similar-embla" data-similar-embla>
+          <div class="similar-embla__viewport" data-similar-embla-viewport>
+            <div class="similar-embla__container">
+              <div class="similar-embla__slide">
+                <div class="project-card">
+                  <div class="project-card__media">
+                    <div class="project-card__flag project-card__flag--yellow">
+                      Лучшая цена
+                    </div>
+                    <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
+                  </div>
+                  <div class="project-card__title">
+                    КД 4 х 4 «Леонид»
+                  </div>
+                  <div class="project-card__data">
+                    <div class="project-card__params">
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-area"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          16 м<sup>2</sup>
+                        </div>
+                      </div>
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-calendar"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          10 дней
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-card__price">
+                      <div class="project-card__price-lbl">
+                        от
+                      </div>
+                      <div class="project-card__price-val">
+                        590 000
+                      </div>
+                      <div class="project-card__price-cur">
+                        Р
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-card__actions">
+                    <button class="project-card__action project-card__action--order">
+                      Заказать
+                    </button>
+                    <a href="#" class="project-card__action project-card__action--show">
+                      Смотреть проект
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="similar-embla__slide">
+                <div class="project-card">
+                  <div class="project-card__media">
+                    <div class="project-card__flag project-card__flag--yellow">
+                      Лучшая цена
+                    </div>
+                    <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
+                  </div>
+                  <div class="project-card__title">
+                    КД 4 х 4 «Леонид 2»
+                  </div>
+                  <div class="project-card__data">
+                    <div class="project-card__params">
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-area"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          16 м<sup>2</sup>
+                        </div>
+                      </div>
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-calendar"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          10 дней
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-card__price">
+                      <div class="project-card__price-lbl">
+                        от
+                      </div>
+                      <div class="project-card__price-val">
+                        590 000
+                      </div>
+                      <div class="project-card__price-cur">
+                        Р
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-card__actions">
+                    <button class="project-card__action project-card__action--order">
+                      Заказать
+                    </button>
+                    <a href="#" class="project-card__action project-card__action--show">
+                      Смотреть проект
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="similar-embla__slide">
+                <div class="project-card">
+                  <div class="project-card__media">
+                    <div class="project-card__flag project-card__flag--yellow">
+                      Лучшая цена
+                    </div>
+                    <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
+                  </div>
+                  <div class="project-card__title">
+                    КД 4 х 4 «Леонид 3»
+                  </div>
+                  <div class="project-card__data">
+                    <div class="project-card__params">
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-area"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          16 м<sup>2</sup>
+                        </div>
+                      </div>
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-calendar"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          10 дней
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-card__price">
+                      <div class="project-card__price-lbl">
+                        от
+                      </div>
+                      <div class="project-card__price-val">
+                        590 000
+                      </div>
+                      <div class="project-card__price-cur">
+                        Р
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-card__actions">
+                    <button class="project-card__action project-card__action--order">
+                      Заказать
+                    </button>
+                    <a href="#" class="project-card__action project-card__action--show">
+                      Смотреть проект
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="similar-embla__slide">
+                <div class="project-card">
+                  <div class="project-card__media">
+                    <div class="project-card__flag project-card__flag--yellow">
+                      Лучшая цена
+                    </div>
+                    <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
+                  </div>
+                  <div class="project-card__title">
+                    КД 4 х 4 «Леонид 4»
+                  </div>
+                  <div class="project-card__data">
+                    <div class="project-card__params">
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-area"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          16 м<sup>2</sup>
+                        </div>
+                      </div>
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-calendar"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          10 дней
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-card__price">
+                      <div class="project-card__price-lbl">
+                        от
+                      </div>
+                      <div class="project-card__price-val">
+                        590 000
+                      </div>
+                      <div class="project-card__price-cur">
+                        Р
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-card__actions">
+                    <button class="project-card__action project-card__action--order">
+                      Заказать
+                    </button>
+                    <a href="#" class="project-card__action project-card__action--show">
+                      Смотреть проект
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="similar-embla__slide">
+                <div class="project-card">
+                  <div class="project-card__media">
+                    <div class="project-card__flag project-card__flag--yellow">
+                      Лучшая цена
+                    </div>
+                    <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
+                  </div>
+                  <div class="project-card__title">
+                    КД 4 х 4 «Леонид 5»
+                  </div>
+                  <div class="project-card__data">
+                    <div class="project-card__params">
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-area"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          16 м<sup>2</sup>
+                        </div>
+                      </div>
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-calendar"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          10 дней
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-card__price">
+                      <div class="project-card__price-lbl">
+                        от
+                      </div>
+                      <div class="project-card__price-val">
+                        590 000
+                      </div>
+                      <div class="project-card__price-cur">
+                        Р
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-card__actions">
+                    <button class="project-card__action project-card__action--order">
+                      Заказать
+                    </button>
+                    <a href="#" class="project-card__action project-card__action--show">
+                      Смотреть проект
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="similar-embla__slide">
+                <div class="project-card">
+                  <div class="project-card__media">
+                    <div class="project-card__flag project-card__flag--yellow">
+                      Лучшая цена
+                    </div>
+                    <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
+                  </div>
+                  <div class="project-card__title">
+                    КД 4 х 4 «Леонид 6»
+                  </div>
+                  <div class="project-card__data">
+                    <div class="project-card__params">
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-area"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          16 м<sup>2</sup>
+                        </div>
+                      </div>
+                      <div class="project-card__param">
+                        <div class="project-card__param-ico">
+                          <span class="icon icon-calendar"></span>
+                        </div>
+                        <div class="project-card__param-val">
+                          10 дней
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-card__price">
+                      <div class="project-card__price-lbl">
+                        от
+                      </div>
+                      <div class="project-card__price-val">
+                        590 000
+                      </div>
+                      <div class="project-card__price-cur">
+                        Р
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-card__actions">
+                    <button class="project-card__action project-card__action--order">
+                      Заказать
+                    </button>
+                    <a href="#" class="project-card__action project-card__action--show">
+                      Смотреть проект
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="similar-embla__control" type="button" data-similar-embla-prev>
+            <span class="icon icon-chevron-left"></span>
+          </button>
+          <button class="similar-embla__control" type="button" data-similar-embla-next>
+            <span class="icon icon-chevron-right"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="feedback">
+      <div class="container">
+        <div class="feedback__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+          Если вы хотите узнать стоимость индивидуальной разработки или уточнить цены по типовому проекту - свяжитесь с нами, менеджер предоставит бесплатную консультацию и даст ответы на вопросы
+        </div>
+        <div class="feedback__form">
+          <div class="feedback-form" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+            <div class="feedback-form__side">
+              <div class="feedback-form__photo"></div>
+              <div class="feedback-form__person">
+                <div class="feedback-form__person-name">
+                  Фамилия И.О.
+                </div>
+                <div class="feedback-form__person-job">
+                  Менеджер компании
+                </div>
+              </div>
+              <div class="feedback-form__phone">
+                <div class="feedback-form__phone-lbl">
+                  Телефон для связи
+                </div>
+                <div class="feedback-form__phone-val">
+                  8-960-209-79-33
+                </div>
+              </div>
+            </div>
+            <div class="feedback-form__main">
+              <div class="feedback-form__header">
+                <div class="feedback-form__header-icon"></div>
+                <div class="feedback-form__header-title">
+                  Получить<br>
+                  консультацию специалиста
+                </div>
+                <div class="feedback-form__header-desc">
+                  Выбор дома - это непростая задача со множеством переменных. Мы проконсультируем вас по любым вопросам
+                </div>
+              </div>
+              <div class="feedback-form__input phone-control">
+                <span class="phone-control__label">Ваш телефон</span>
+                <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="phone-control__input">
+              </div>
+              <button type="submit" class="feedback-form__submit">Отправить заявку</button>
+              <div class="feedback-form__rules">
+                Нажимая на кнопку, я даю своё <a href="">согласие на взаимодействие и обработку персональных данных</a>
+              </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="519px" height="449px" class="feedback-form__figure-gray">
+              <path fill-rule="evenodd" fill="rgb(225, 229, 238)" d="M-0.000,77.227 L122.118,-0.001 L501.041,102.371 L518.1000,448.999 L26.938,425.651 L-0.000,77.227 Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="912px" height="497px" class="feedback-form__figure-red">
+              <path fill-rule="evenodd" fill="rgb(201, 65, 60)" d="M-0.000,142.999 L349.1000,-0.001 L891.1000,110.999 L911.1000,496.999 L47.1000,466.999 L-0.000,142.999 Z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <?php get_template_part('partials/footer'); ?>
   </div>
 </body>

@@ -27,6 +27,7 @@ import { initMobileMenu } from './src/scripts/mobile-menu'
 import { initProjectMedia } from './src/scripts/project-media'
 import { initGallery } from './src/scripts/gallery'
 import { initProjectPackages } from './src/scripts/project-packages'
+import { initSimilarEmbla } from './src/scripts/similar-embla'
 
 new MaskInput('[data-maska]')
 
@@ -41,3 +42,4 @@ initMobileMenu()
 initProjectMedia()
 initGallery()
 initProjectPackages()
+initSimilarEmbla()
