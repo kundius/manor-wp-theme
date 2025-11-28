@@ -26,6 +26,7 @@ import { initPortfolioModal } from './src/scripts/portfolio-modal'
 import { initMobileMenu } from './src/scripts/mobile-menu'
 import { initProjectMedia } from './src/scripts/project-media'
 import { initGallery } from './src/scripts/gallery'
+import { initProjectPackages } from './src/scripts/project-packages'
 
 new MaskInput('[data-maska]')
 
@@ -39,3 +40,4 @@ initPortfolioModal()
 initMobileMenu()
 initProjectMedia()
 initGallery()
+initProjectPackages()
