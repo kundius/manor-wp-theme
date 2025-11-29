@@ -1,5 +1,7 @@
 <?php
-$gallery = carbon_get_post_meta(get_the_ID(), 'gallery');
+$gallery = carbon_get_the_post_meta('gallery');
+$extended_title = carbon_get_the_post_meta('extended_title');
+$display_title = $extended_title ?: get_the_title();
 $packages = new WP_Query([
   'post_type' => 'package',
   'post_status' => 'publish',
@@ -8,24 +10,6 @@ $packages = new WP_Query([
   'order' => 'ASC'
 ]);
 $current_post_id = get_the_ID();
-$inquiry_options = [
-  'Увеличить/уменьшить площадь',
-  'Изменить материалы отделки',
-  'Сделать перепланировку',
-  'Изменить материал кровли',
-  'Добавить утеплитель',
-  'Изменить высоту потолков',
-  'Увеличить/изменить окна',
-  'Добавить/убрать терассу, крыльцо и др.'
-];
-$work_scheme = [
-  1 => 'Заполните <a href="#">форму заявки</a> или позвоните нам<br> по бесплатному номеру<br> <a href="tel:88007077353"><strong>8 (800) 707-73-53</strong></a>',
-  2 => 'Связываемся с вами для уточнения деталей, вносим изменения, подбираем комплектацию,  составляем подробное техническое описание',
-  3 => 'Заключаем договор: договоренности отражаем в комплектации, пропишем гарантию, фиксируем стоимость',
-  4 => 'Вы оплачиваете 70% стоимости после завоза материал0в на участок',
-  5 => 'Строим точно в срок с соблюдением регламентов, используя современные инструменты',
-  6 => '30% оплачивается по окончании строительства и подписания акта приема-передачи объекта',
-];
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
@@ -53,22 +37,22 @@ $work_scheme = [
               <meta itemprop="position" content="1" />
             </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <a class="breadcrumbs__item" itemprop="item" href="/">
-                <span itemprop="name">Каркасные дома</span>
+              <a class="breadcrumbs__item" itemprop="item" href="<?php the_permalink(11); ?>">
+                <span itemprop="name"><?php echo get_the_title(11); ?></span>
               </a>
               <meta itemprop="position" content="2" />
             </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
               <span class="breadcrumbs__item" itemprop="item" aria-current="page">
-                <span itemprop="name"><?php the_title() ?></span>
+                <span itemprop="name"><?php the_title(); ?></span>
               </span>
               <meta itemprop="position" content="3" />
             </li>
           </ol>
         </div>
 
-        <h1 class="page-section__title page-section__title--small">
-          <?php the_title() ?>
+        <h1 class="page-section__title<?php if (mb_strlen($display_title) > 20): ?> page-section__title--small<?php endif; ?>">
+          <?php echo nl2br($display_title); ?>
         </h1>
 
         <div class="project-layout">
@@ -416,66 +400,8 @@ $work_scheme = [
       </div>
     </div>
 
-    <section class="project-inquiry" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
-      <div class="container">
-        <div class="project-inquiry__layout">
-          <div class="project-inquiry__layout-left">
-            <div class="project-inquiry__content">
-              <div class="project-inquiry__title">
-                Понравился проект, но хотите внести изменения?
-              </div>
-              <div class="project-inquiry__desc">
-                Рассчитаем стоимость за 1 день
-              </div>
-            </div>
-          </div>
-          <div class="project-inquiry__layout-right">
-            <form action="" class="project-inquiry__form">
-              <div class="project-inquiry__options">
-                <?php foreach ($inquiry_options as $inquiry_option): ?>
-                  <label class="project-inquiry__option">
-                    <input type="checkbox" name="option[]" value="<?php echo $inquiry_option; ?>" class="project-inquiry__option-input">
-                    <span class="project-inquiry__option-checkbox"></span>
-                    <span class="project-inquiry__option-label">
-                      <?php echo $inquiry_option; ?>
-                    </span>
-                  </label>
-                <?php endforeach; ?>
-              </div>
-              <div class="project-inquiry__control">
-                <span class="project-inquiry__control-label">Телефон</span>
-                <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="project-inquiry__control-input">
-                <button type="submit" class="project-inquiry__control-submit">Получить расчёт</button>
-              </div>
-              <div class="project-inquiry__rules">
-                Нажимая на кнопку, я даю своё <a href="">согласие на взаимодействие и обработку персональных данных</a>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="work-scheme">
-      <div class="container">
-        <div class="work-scheme__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
-          <div class="work-scheme__title-inner">Схема работы</div>
-        </div>
-        <div class="work-scheme__list">
-          <?php foreach ($work_scheme as $key => $item): ?>
-            <div class="work-scheme__item">
-              <div class="work-scheme__item-num">
-                <?php echo $key; ?>
-              </div>
-              <div class="work-scheme__item-check"></div>
-              <div class="work-scheme__item-desc">
-                <?php echo $item; ?>
-              </div>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
-    </section>
+    <?php get_template_part('partials/project-inquiry'); ?>
+    <?php get_template_part('partials/work-scheme'); ?>
 
     <section class="project-similar">
       <div class="container">
@@ -812,63 +738,7 @@ $work_scheme = [
       </div>
     </section>
 
-    <section class="feedback">
-      <div class="container">
-        <div class="feedback__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
-          Если вы хотите узнать стоимость индивидуальной разработки или уточнить цены по типовому проекту - свяжитесь с нами, менеджер предоставит бесплатную консультацию и даст ответы на вопросы
-        </div>
-        <div class="feedback__form">
-          <div class="feedback-form" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
-            <div class="feedback-form__side">
-              <div class="feedback-form__photo"></div>
-              <div class="feedback-form__person">
-                <div class="feedback-form__person-name">
-                  Фамилия И.О.
-                </div>
-                <div class="feedback-form__person-job">
-                  Менеджер компании
-                </div>
-              </div>
-              <div class="feedback-form__phone">
-                <div class="feedback-form__phone-lbl">
-                  Телефон для связи
-                </div>
-                <div class="feedback-form__phone-val">
-                  8-960-209-79-33
-                </div>
-              </div>
-            </div>
-            <div class="feedback-form__main">
-              <div class="feedback-form__header">
-                <div class="feedback-form__header-icon"></div>
-                <div class="feedback-form__header-title">
-                  Получить<br>
-                  консультацию специалиста
-                </div>
-                <div class="feedback-form__header-desc">
-                  Выбор дома - это непростая задача со множеством переменных. Мы проконсультируем вас по любым вопросам
-                </div>
-              </div>
-              <div class="feedback-form__input phone-control">
-                <span class="phone-control__label">Ваш телефон</span>
-                <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="phone-control__input">
-              </div>
-              <button type="submit" class="feedback-form__submit">Отправить заявку</button>
-              <div class="feedback-form__rules">
-                Нажимая на кнопку, я даю своё <a href="">согласие на взаимодействие и обработку персональных данных</a>
-              </div>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="519px" height="449px" class="feedback-form__figure-gray">
-              <path fill-rule="evenodd" fill="rgb(225, 229, 238)" d="M-0.000,77.227 L122.118,-0.001 L501.041,102.371 L518.1000,448.999 L26.938,425.651 L-0.000,77.227 Z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="912px" height="497px" class="feedback-form__figure-red">
-              <path fill-rule="evenodd" fill="rgb(201, 65, 60)" d="M-0.000,142.999 L349.1000,-0.001 L891.1000,110.999 L911.1000,496.999 L47.1000,466.999 L-0.000,142.999 Z" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <?php get_template_part('partials/feedback'); ?>
     <?php get_template_part('partials/footer'); ?>
   </div>
 </body>

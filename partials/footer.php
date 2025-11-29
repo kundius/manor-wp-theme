@@ -60,7 +60,7 @@
       </div>
       <div class="footer-primary__links">
         <div class="footer__links">
-          <a href="#">Политика конфиденциальности</a>
+          <a href="<?php the_permalink(3) ?>">Политика конфиденциальности</a>
           <a href="#">Пользовательское соглашение</a>
         </div>
         <div class="footer__notice">
