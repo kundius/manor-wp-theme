@@ -17,10 +17,16 @@ Template Name: Главная
     <?php get_template_part('partials/header'); ?>
 
     <section class="intro-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+      <div class="intro-section__bg">
+        <div class="intro-section__bg-shd"></div>
+      </div>
       <div class="container">
         <div class="intro-content">
           <div class="intro-content__vertical-text" data-scroll data-scroll-speed="-0.2"></div>
-          <div class="intro-content__title">Каркасные дома</div>
+          <div class="intro-content__title">
+            <span>Каркасные</span>
+            <span>дома</span>
+          </div>
           <div class="intro-content__content">
             <div class="intro-content__content-title">
               Качество<br>
@@ -1089,69 +1095,63 @@ Template Name: Главная
       </div>
     </section>
 
-    <section class="features" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+    <section class="home-content">
       <div class="container">
-        <div class="features__title" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
-          <h2 class="features__title-inner">
+        <div class="content" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+          <h2 class="wp-block-heading has-text-align-center">
             Каркасные дома<br>
             СК Поместье
           </h2>
-        </div>
-
-        <div class="features__core">
-          <div class="features__core-intro">
-            Строительная компания «Поместье» - производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России.
-          </div>
-
-          <div class="features__item features__item--1">
-            <h3 class="features__item-title">
-              Почему стоит заказать проект загородного дома в СК «Поместье»
-            </h3>
-            <div class="features__item-desc">
-              <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, </p>
-              <ul>
-                <li>
-                  Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский YНабор слов,
-                </li>
-                <li>
-                  но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э.,
-                </li>
-                <li>
-                  то есть более двух тысячелетий назад. Ричард МакКлинток,
-                </li>
-                <li>
-                  профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"
-                </li>
-              </ul>
+          <div class="content-orbit">
+            <div class="content-orbit__intro">
+              Строительная компания «Поместье» - производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России.
             </div>
-          </div>
 
-          <div class="features__item features__item--2">
-            <h3 class="features__item-title">
-              Готовые загородные дома:<br>
-              проекты и цены
-            </h3>
-            <div class="features__item-desc">
-              <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов</p>
+            <div class="content-orbit__item content-orbit__item--1">
+              <h3 class="content-orbit__item-title">
+                Почему стоит заказать проект загородного дома в СК «Поместье»
+              </h3>
+              <div class="content-orbit__item-desc">
+                <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, </p>
+                <ul>
+                  <li>
+                    Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский YНабор слов,
+                  </li>
+                  <li>
+                    но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э.,
+                  </li>
+                  <li>
+                    то есть более двух тысячелетий назад. Ричард МакКлинток,
+                  </li>
+                  <li>
+                    профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
 
-          <div class="features__item features__item--3">
-            <h3 class="features__item-title">
-              Энергоэффективность<br>
-              экономия на отоплении до 50%
-            </h3>
-          </div>
+            <div class="content-orbit__item content-orbit__item--2">
+              <h3 class="content-orbit__item-title">
+                Готовые загородные дома:<br>
+                проекты и цены
+              </h3>
+              <div class="content-orbit__item-desc">
+                <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов</p>
+              </div>
+            </div>
 
-          <div
-            class="features__core-figure">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="631px"
-              height="540px">
-              <path fill-rule="evenodd" fill="rgb(225, 229, 238)"
-                d="M630.1000,156.1000 L432.1000,-0.000 L55.958,180.371 L-0.000,414.999 L577.1000,539.1000 L630.1000,156.1000 Z" />
-            </svg>
+            <div class="content-orbit__item content-orbit__item--3">
+              <h3 class="content-orbit__item-title">
+                Энергоэффективность<br>
+                экономия на отоплении до 50%
+              </h3>
+            </div>
+
+            <div class="content-orbit__figure">
+              <svg xmlns="http://www.w3.org/2000/svg" width="631px" height="540px">
+                <path fill-rule="evenodd" fill="rgb(225, 229, 238)" d="M630.1000,156.1000 L432.1000,-0.000 L55.958,180.371 L-0.000,414.999 L577.1000,539.1000 L630.1000,156.1000 Z"></path>
+              </svg>
+            </div>
           </div>
         </div>
       </div>

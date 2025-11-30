@@ -25,7 +25,7 @@ $projects = new WP_Query($query_params);
   <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
-    <div class="page-section">
+    <section class="page-section">
       <div class="page-section__bg"></div>
 
       <div class="container">
@@ -64,11 +64,13 @@ $projects = new WP_Query($query_params);
           ?>
         </div>
 
-        <div class="page-section__content content">
-          <?php the_content(); ?>
+        <div class="page-section__content">
+          <div class="content" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+            <?php the_content(); ?>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <?php get_template_part('partials/feedback'); ?>
     <?php get_template_part('partials/footer'); ?>

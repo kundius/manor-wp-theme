@@ -170,7 +170,10 @@ function register_carbon_fields_blocks()
   Container::make('post_meta', 'Проект')
     ->where('post_type', '=', 'project')
     ->add_fields([
-      Field::make('textarea', 'extended_title', 'Расширенный заголовок')->set_rows(3),
+      Field::make('select', 'type', 'Тип дома')->set_options([
+        'frame' => 'Каркасный дом',
+      ]),
+      Field::make('checkbox', 'at_home', 'На главную'),
       Field::make('text', 'material', 'Материал'),
       Field::make('text', 'dimensions', 'Размер'),
       Field::make('text', 'total_area', 'Общая площадь'),
@@ -178,6 +181,12 @@ function register_carbon_fields_blocks()
       Field::make('text', 'room_count', 'Количество комнат'),
       Field::make('text', 'duration', 'Сроки'),
       Field::make('text', 'price', 'Цена'),
+      Field::make('text', 'sticker_text', 'Текст стикера'),
+      Field::make('select', 'sticker_color', 'Цвет стикера')->set_options([
+        'orange' => 'Оранжевый',
+        'green' => 'Зеленый',
+        'yellow' => 'Желтый'
+      ]),
       Field::make('media_gallery', 'gallery', 'Галерея'),
     ]);
 

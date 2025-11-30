@@ -1,6 +1,8 @@
 .float-contacts {
   position: absolute;
-  top: calc((48px + var(--header-before) + var(--header-height)));
+  top: calc(
+    16px + var(--header-before) + var(--header-height) + var(--wp-admin--admin-bar--height, 0px)
+  );
   right: calc(((100vw - var(--container-width)) / 2) + var(--container-padding));
   display: flex;
   flex-direction: column;
@@ -18,6 +20,12 @@
   @media (--max-md) {
     right: calc(var(--container-padding) / 2);
   }
+}
+
+.page-template-template-home .float-contacts {
+  top: calc(
+    108px + var(--header-before) + var(--header-height) + var(--wp-admin--admin-bar--height, 0px)
+  );
 }
 
 .header {

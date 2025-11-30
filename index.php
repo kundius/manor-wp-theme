@@ -11,7 +11,7 @@
   <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
-    <div class="page-section">
+    <section class="page-section">
       <div class="page-section__bg"></div>
 
       <div class="container">
@@ -40,7 +40,7 @@
           <?php the_content(); ?>
         </div>
       </div>
-    </div>
+    </section>
 
     <?php get_template_part('partials/footer'); ?>
   </div>

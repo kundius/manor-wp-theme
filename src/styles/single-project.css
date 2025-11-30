@@ -243,6 +243,17 @@
   padding-left: var(--carousel-gap);
   min-width: 0;
   position: relative;
+  display: flex;
+}
+
+.gallery-main__slide a {
+  display: flex;
+  width: 100%;
+}
+
+.gallery-main__slide a img {
+  width: 100%;
+  height: auto;
 }
 
 .gallery-main__loupe {

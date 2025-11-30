@@ -1,7 +1,7 @@
 <?php
 $gallery = carbon_get_the_post_meta('gallery');
-$extended_title = carbon_get_the_post_meta('extended_title');
-$display_title = $extended_title ?: get_the_title();
+$type = carbon_get_the_post_meta('type');
+$dimensions = carbon_get_the_post_meta('dimensions');
 $packages = new WP_Query([
   'post_type' => 'package',
   'post_status' => 'publish',
@@ -10,6 +10,9 @@ $packages = new WP_Query([
   'order' => 'ASC'
 ]);
 $current_post_id = get_the_ID();
+$type_label = [
+  'frame' => 'Каркасный дом',
+];
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
@@ -24,7 +27,7 @@ $current_post_id = get_the_ID();
   <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
-    <div class="page-section">
+    <section class="page-section">
       <div class="page-section__bg"></div>
 
       <div class="container">
@@ -44,15 +47,18 @@ $current_post_id = get_the_ID();
             </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
               <span class="breadcrumbs__item" itemprop="item" aria-current="page">
-                <span itemprop="name"><?php the_title(); ?></span>
+                <span itemprop="name">
+                  <?php echo implode(' ', [$type_label[$type], $dimensions, '«' . get_the_title() . '»']); ?>
+                </span>
               </span>
               <meta itemprop="position" content="3" />
             </li>
           </ol>
         </div>
 
-        <h1 class="page-section__title<?php if (mb_strlen($display_title) > 20): ?> page-section__title--small<?php endif; ?>">
-          <?php echo nl2br($display_title); ?>
+        <h1 class="page-section__title page-section__title--small">
+          <?php echo $type_label[$type]; ?><br>
+          <span class="page-section__title-dimensions"><?php echo $dimensions; ?></span> «<?php the_title(); ?>»
         </h1>
 
         <div class="project-layout">
@@ -65,7 +71,7 @@ $current_post_id = get_the_ID();
                     <?php if (has_post_thumbnail()): ?>
                       <div class="gallery-main__slide">
                         <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" data-fslightbox="gallery" target="_blank">
-                          <?php the_post_thumbnail('large') ?>
+                          <?php the_post_thumbnail('large'); ?>
                           <span class="gallery-main__loupe">
                             <span class="icon icon-search"></span>
                           </span>
@@ -216,11 +222,7 @@ $current_post_id = get_the_ID();
                     Размер
                   </div>
                   <div class="project-params__value">
-                    <?php if ($dimensions = carbon_get_the_post_meta('dimensions')): ?>
-                      <?php echo $dimensions; ?>
-                    <?php else: ?>
-                      -
-                    <?php endif; ?>
+                    <?php echo $dimensions ?: '-'; ?>
                   </div>
                 </div>
                 <div class="project-params__row">
@@ -398,7 +400,7 @@ $current_post_id = get_the_ID();
           <?php endif; ?>
         </div>
       </div>
-    </div>
+    </section>
 
     <?php get_template_part('partials/project-inquiry'); ?>
     <?php get_template_part('partials/work-scheme'); ?>

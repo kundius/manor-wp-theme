@@ -1,43 +1,53 @@
 <div class="project-card">
   <div class="project-card__media">
-    <div class="project-card__flag project-card__flag--yellow">
-      Лучшая цена
-    </div>
-    <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
+    <?php if ($sticker_text = carbon_get_the_post_meta('sticker_text')): ?>
+      <div class="project-card__flag project-card__flag--<?php echo carbon_get_the_post_meta('sticker_color'); ?>">
+        <?php echo $sticker_text; ?>
+      </div>
+    <?php endif; ?>
+    <?php the_post_thumbnail('medium', [
+      'class' => 'project-card__image'
+    ]) ?>
   </div>
   <div class="project-card__title">
     <?php the_title(); ?>
   </div>
   <div class="project-card__data">
     <div class="project-card__params">
-      <div class="project-card__param">
-        <div class="project-card__param-ico">
-          <span class="icon icon-area"></span>
+      <?php if ($total_area = carbon_get_the_post_meta('total_area')): ?>
+        <div class="project-card__param">
+          <div class="project-card__param-ico">
+            <span class="icon icon-area"></span>
+          </div>
+          <div class="project-card__param-val">
+            <?php echo $total_area; ?> м<sup>2</sup>
+          </div>
         </div>
-        <div class="project-card__param-val">
-          16 м<sup>2</sup>
+      <?php endif; ?>
+      <?php if ($duration = carbon_get_the_post_meta('duration')): ?>
+        <div class="project-card__param">
+          <div class="project-card__param-ico">
+            <span class="icon icon-calendar"></span>
+          </div>
+          <div class="project-card__param-val">
+            <?php echo $duration; ?>
+          </div>
         </div>
-      </div>
-      <div class="project-card__param">
-        <div class="project-card__param-ico">
-          <span class="icon icon-calendar"></span>
-        </div>
-        <div class="project-card__param-val">
-          10 дней
-        </div>
-      </div>
+      <?php endif; ?>
     </div>
-    <div class="project-card__price">
-      <div class="project-card__price-lbl">
-        от
+    <?php if ($price = carbon_get_the_post_meta('price')): ?>
+      <div class="project-card__price">
+        <div class="project-card__price-lbl">
+          от
+        </div>
+        <div class="project-card__price-val">
+          <?php echo number_format($price, 0, ',', ' '); ?>
+        </div>
+        <div class="project-card__price-cur">
+          ₽
+        </div>
       </div>
-      <div class="project-card__price-val">
-        590 000
-      </div>
-      <div class="project-card__price-cur">
-        Р
-      </div>
-    </div>
+    <?php endif; ?>
   </div>
   <div class="project-card__actions">
     <button type="button" class="project-card__action project-card__action--order">
