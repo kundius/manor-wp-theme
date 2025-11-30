@@ -73,6 +73,10 @@
   min-width: 0px;
   margin: 0;
 
+  @media (--max-lg) {
+    font-size: 48px;
+  }
+
   @media (--max-md) {
     font-size: 36px;
   }
@@ -93,26 +97,34 @@
 
 .content * + .content-orbit {
   margin-top: 80px;
+
+  @media (--max-lg) {
+    margin-top: 64px;
+  }
+
+  @media (--max-md) {
+    margin-top: 48px;
+  }
 }
 
 .content .content-orbit {
   width: 100%;
-  height: 840px;
   position: relative;
-
-  @media (--max-lg) {
-    height: auto;
-  }
+  display: grid;
 }
 
 .content .content-orbit__item {
-  position: absolute;
-  width: 664px;
   z-index: 30;
+  position: relative;
+}
 
+.content * + .content-orbit__item {
   @media (--max-lg) {
-    position: relative;
-    width: 100%;
+    margin-top: 58px;
+  }
+
+  @media (--max-md) {
+    margin-top: 36px;
   }
 }
 
@@ -123,13 +135,11 @@
   line-height: 1.2;
   padding-left: 68px;
   border-bottom: 1px solid #dfdfdf;
-  margin-bottom: 42px;
   padding-bottom: 12px;
 
   @media (--max-md) {
     padding-left: 48px;
     font-size: 24px;
-    margin-bottom: 24px;
   }
 }
 
@@ -156,49 +166,12 @@
   content: '03';
 }
 
-.content .content-orbit__item--1 {
-  right: 0;
-  top: 114px;
-
-  @media (--max-lg) {
-    top: initial;
-    right: initial;
-    margin-top: 64px;
-  }
-
-  @media (--max-md) {
-    margin-top: 48px;
-  }
+.content .content-orbit__item--4 .content-orbit__item-title::after {
+  content: '04';
 }
 
-.content .content-orbit__item--2 {
-  left: 0;
-  top: 310px;
-
-  @media (--max-lg) {
-    top: initial;
-    left: initial;
-    margin-top: 64px;
-  }
-
-  @media (--max-md) {
-    margin-top: 48px;
-  }
-}
-
-.content .content-orbit__item--3 {
-  left: 0;
-  top: 700px;
-
-  @media (--max-lg) {
-    top: initial;
-    left: initial;
-    margin-top: 64px;
-  }
-
-  @media (--max-md) {
-    margin-top: 48px;
-  }
+.content .content-orbit__item--5 .content-orbit__item-title::after {
+  content: '05';
 }
 
 .content .content-orbit__item-desc {
@@ -249,8 +222,23 @@
   }
 }
 
-.content .content-orbit::before {
-  content: '';
+.content * + .content-orbit__item-desc {
+  margin-top: 42px;
+
+  @media (--max-md) {
+    margin-top: 24px;
+  }
+}
+
+.content .content-orbit__desc {
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #131313;
+  z-index: 30;
+}
+
+.content .content-orbit__image {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -264,24 +252,6 @@
 
   @media (--max-lg) {
     display: none;
-  }
-}
-
-.content .content-orbit__intro {
-  width: 400px;
-  position: absolute;
-  top: 0;
-  right: 50%;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #131313;
-  z-index: 30;
-
-  @media (--max-lg) {
-    position: relative;
-    width: 100%;
-    right: initial;
-    top: initial;
   }
 }
 
