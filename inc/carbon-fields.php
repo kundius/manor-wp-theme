@@ -174,6 +174,7 @@ function register_carbon_fields_blocks()
         'frame' => 'Каркасный дом',
       ]),
       Field::make('checkbox', 'at_home', 'На главную'),
+      Field::make('checkbox', 'favorite', 'Популярное'),
       Field::make('text', 'material', 'Материал'),
       Field::make('text', 'dimensions', 'Размер'),
       Field::make('text', 'total_area', 'Общая площадь'),

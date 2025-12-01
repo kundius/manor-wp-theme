@@ -2,6 +2,34 @@
 /*
 Template Name: Главная
 */
+$showcase_projects = new WP_Query([
+  'post_type' => 'project',
+  'orderby' => [
+    'menu_order' => 'ASC'
+  ],
+  'posts_per_page' => -1,
+  'meta_query' => [
+    [
+      'key' => 'at_home',
+      'compare_key' => '=',
+      'value' => 'yes'
+    ]
+  ]
+]);
+$favorite_projects = new WP_Query([
+  'post_type' => 'project',
+  'orderby' => [
+    'menu_order' => 'ASC'
+  ],
+  'posts_per_page' => -1,
+  'meta_query' => [
+    [
+      'key' => 'favorite',
+      'compare_key' => '=',
+      'value' => 'yes'
+    ]
+  ]
+]);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
@@ -37,7 +65,7 @@ Template Name: Главная
             </div>
           </div>
           <div class="intro-content__actions">
-            <a href="#" class="intro-content__action">
+            <a href="<?php the_permalink(11); ?>" class="intro-content__action">
               <div class="intro-content__action-text">
                 Каталог проектов
               </div>
@@ -85,7 +113,7 @@ Template Name: Главная
                 <div class="catalog-preview__title">
                   Каталог
                 </div>
-                <a href="#" class="catalog-preview__more">
+                <a href="<?php the_permalink(11); ?>" class="catalog-preview__more">
                   <span class="catalog-preview__more-text">
                     Смотреть все
                   </span>
@@ -110,61 +138,22 @@ Template Name: Главная
               <div class="showcase-embla" data-showcase-embla>
                 <div class="showcase-embla__viewport" data-showcase-embla-viewport>
                   <div class="showcase-embla__container">
-                    <div class="showcase-embla__slide">
-                      <div class="showcase-card">
-                        <div class="showcase-card__media">
-                          <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="showcase-card__image">
-                          <a href="#" class="showcase-card__more">смотреть проект подробнее</a>
-                        </div>
-                        <div class="showcase-card__footer">
-                          <div class="showcase-card__controls" data-showcase-embla-controls>
-                            <button class="showcase-card__control" type="button" data-showcase-embla-controls-prev>
-                              <span class="icon icon-chevron-left"></span>
-                            </button>
-                            <button class="showcase-card__control" type="button" data-showcase-embla-controls-next>
-                              <span class="icon icon-chevron-right"></span>
-                            </button>
-                          </div>
-                          <div class="showcase-card__title">КД 9 х 9.5 «Марк»</div>
-                          <div class="showcase-card__price">
-                            <div class="showcase-card__price-num">
-                              2 115 000
-                            </div>
-                            <div class="showcase-card__price-cur">
-                              Р
-                            </div>
-                          </div>
-                        </div>
+                    <?php while ($showcase_projects->have_posts()): ?>
+                      <?php $showcase_projects->the_post(); ?>
+                      <div class="showcase-embla__slide">
+                        <?php get_template_part('partials/showcase-card'); ?>
                       </div>
-                    </div>
-                    <div class="showcase-embla__slide">
-                      <div class="showcase-card">
-                        <div class="showcase-card__media">
-                          <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="showcase-card__image" style="filter: hue-rotate(180deg);">
-                          <a href="#" class="showcase-card__more">смотреть проект подробнее</a>
-                        </div>
-                        <div class="showcase-card__footer">
-                          <div class="showcase-card__controls" data-showcase-embla-controls>
-                            <button class="showcase-card__control" type="button" data-showcase-embla-controls-prev>
-                              <span class="icon icon-chevron-left"></span>
-                            </button>
-                            <button class="showcase-card__control" type="button" data-showcase-embla-controls-next>
-                              <span class="icon icon-chevron-right"></span>
-                            </button>
-                          </div>
-                          <div class="showcase-card__title">КД 19 х 19.5 «Марк 2»</div>
-                          <div class="showcase-card__price">
-                            <div class="showcase-card__price-num">
-                              2 115 000
-                            </div>
-                            <div class="showcase-card__price-cur">
-                              Р
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
                   </div>
+                </div>
+                <div class="showcase-embla__controls" data-showcase-embla-controls>
+                  <button class="showcase-embla__control" type="button" data-showcase-embla-controls-prev>
+                    <span class="icon icon-chevron-left"></span>
+                  </button>
+                  <button class="showcase-embla__control" type="button" data-showcase-embla-controls-next>
+                    <span class="icon icon-chevron-right"></span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -273,618 +262,14 @@ Template Name: Главная
             <div class="popular-embla" data-popular-embla>
               <div class="popular-embla__viewport" data-popular-embla-viewport>
                 <div class="popular-embla__container">
-                  <div class="popular-embla__slide">
-                    <div class="project-teaser">
-                      <div class="project-teaser__media">
-                        <div class="project-teaser__flag project-teaser__flag--orange">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-teaser__image">
-                        <div class="project-teaser__bar">
-                          <div class="project-teaser__title">
-                            КД 4 х 4 «Леонид»
-                          </div>
-                          <div class="project-teaser__params">
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-area"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                16 м<sup>2</sup>
-                              </div>
-                            </div>
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-calendar"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                10 дней
-                              </div>
-                            </div>
-                          </div>
-                          <div class="project-teaser__price">
-                            <div class="project-teaser__price-lbl">
-                              от
-                            </div>
-                            <div class="project-teaser__price-val">
-                              590 000
-                            </div>
-                            <div class="project-teaser__price-cur">
-                              Р
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-teaser__actions">
-                        <button class="project-teaser__action project-teaser__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-teaser__action project-teaser__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
+                  <?php while ($favorite_projects->have_posts()): ?>
+                    <?php $favorite_projects->the_post(); ?>
+                    <div class="popular-embla__slide">
+                      <?php get_template_part('partials/project-card'); ?>
+                      <?php get_template_part('partials/project-teaser'); ?>
                     </div>
-                    <div class="project-card">
-                      <div class="project-card__media">
-                        <div class="project-card__flag project-card__flag--yellow">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
-                      </div>
-                      <div class="project-card__title">
-                        КД 4 х 4 «Леонид»
-                      </div>
-                      <div class="project-card__data">
-                        <div class="project-card__params">
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-area"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              16 м<sup>2</sup>
-                            </div>
-                          </div>
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-calendar"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              10 дней
-                            </div>
-                          </div>
-                        </div>
-                        <div class="project-card__price">
-                          <div class="project-card__price-lbl">
-                            от
-                          </div>
-                          <div class="project-card__price-val">
-                            590 000
-                          </div>
-                          <div class="project-card__price-cur">
-                            Р
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-card__actions">
-                        <button class="project-card__action project-card__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-card__action project-card__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="popular-embla__slide">
-                    <div class="project-teaser">
-                      <div class="project-teaser__media">
-                        <div class="project-teaser__flag project-teaser__flag--orange">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-teaser__image">
-                        <div class="project-teaser__bar">
-                          <div class="project-teaser__title">
-                            КД 4 х 4 «Леонид 2»
-                          </div>
-                          <div class="project-teaser__params">
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-area"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                16 м<sup>2</sup>
-                              </div>
-                            </div>
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-calendar"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                10 дней
-                              </div>
-                            </div>
-                          </div>
-                          <div class="project-teaser__price">
-                            <div class="project-teaser__price-lbl">
-                              от
-                            </div>
-                            <div class="project-teaser__price-val">
-                              590 000
-                            </div>
-                            <div class="project-teaser__price-cur">
-                              Р
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-teaser__actions">
-                        <button class="project-teaser__action project-teaser__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-teaser__action project-teaser__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                    <div class="project-card">
-                      <div class="project-card__media">
-                        <div class="project-card__flag project-card__flag--yellow">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
-                      </div>
-                      <div class="project-card__title">
-                        КД 4 х 4 «Леонид 2»
-                      </div>
-                      <div class="project-card__data">
-                        <div class="project-card__params">
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-area"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              16 м<sup>2</sup>
-                            </div>
-                          </div>
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-calendar"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              10 дней
-                            </div>
-                          </div>
-                        </div>
-                        <div class="project-card__price">
-                          <div class="project-card__price-lbl">
-                            от
-                          </div>
-                          <div class="project-card__price-val">
-                            590 000
-                          </div>
-                          <div class="project-card__price-cur">
-                            Р
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-card__actions">
-                        <button class="project-card__action project-card__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-card__action project-card__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="popular-embla__slide">
-                    <div class="project-teaser">
-                      <div class="project-teaser__media">
-                        <div class="project-teaser__flag project-teaser__flag--orange">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-teaser__image">
-                        <div class="project-teaser__bar">
-                          <div class="project-teaser__title">
-                            КД 4 х 4 «Леонид 3»
-                          </div>
-                          <div class="project-teaser__params">
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-area"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                16 м<sup>2</sup>
-                              </div>
-                            </div>
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-calendar"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                10 дней
-                              </div>
-                            </div>
-                          </div>
-                          <div class="project-teaser__price">
-                            <div class="project-teaser__price-lbl">
-                              от
-                            </div>
-                            <div class="project-teaser__price-val">
-                              590 000
-                            </div>
-                            <div class="project-teaser__price-cur">
-                              Р
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-teaser__actions">
-                        <button class="project-teaser__action project-teaser__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-teaser__action project-teaser__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                    <div class="project-card">
-                      <div class="project-card__media">
-                        <div class="project-card__flag project-card__flag--yellow">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
-                      </div>
-                      <div class="project-card__title">
-                        КД 4 х 4 «Леонид 3»
-                      </div>
-                      <div class="project-card__data">
-                        <div class="project-card__params">
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-area"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              16 м<sup>2</sup>
-                            </div>
-                          </div>
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-calendar"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              10 дней
-                            </div>
-                          </div>
-                        </div>
-                        <div class="project-card__price">
-                          <div class="project-card__price-lbl">
-                            от
-                          </div>
-                          <div class="project-card__price-val">
-                            590 000
-                          </div>
-                          <div class="project-card__price-cur">
-                            Р
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-card__actions">
-                        <button class="project-card__action project-card__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-card__action project-card__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="popular-embla__slide">
-                    <div class="project-teaser">
-                      <div class="project-teaser__media">
-                        <div class="project-teaser__flag project-teaser__flag--orange">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-teaser__image">
-                        <div class="project-teaser__bar">
-                          <div class="project-teaser__title">
-                            КД 4 х 4 «Леонид 4»
-                          </div>
-                          <div class="project-teaser__params">
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-area"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                16 м<sup>2</sup>
-                              </div>
-                            </div>
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-calendar"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                10 дней
-                              </div>
-                            </div>
-                          </div>
-                          <div class="project-teaser__price">
-                            <div class="project-teaser__price-lbl">
-                              от
-                            </div>
-                            <div class="project-teaser__price-val">
-                              590 000
-                            </div>
-                            <div class="project-teaser__price-cur">
-                              Р
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-teaser__actions">
-                        <button class="project-teaser__action project-teaser__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-teaser__action project-teaser__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                    <div class="project-card">
-                      <div class="project-card__media">
-                        <div class="project-card__flag project-card__flag--yellow">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
-                      </div>
-                      <div class="project-card__title">
-                        КД 4 х 4 «Леонид 4»
-                      </div>
-                      <div class="project-card__data">
-                        <div class="project-card__params">
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-area"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              16 м<sup>2</sup>
-                            </div>
-                          </div>
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-calendar"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              10 дней
-                            </div>
-                          </div>
-                        </div>
-                        <div class="project-card__price">
-                          <div class="project-card__price-lbl">
-                            от
-                          </div>
-                          <div class="project-card__price-val">
-                            590 000
-                          </div>
-                          <div class="project-card__price-cur">
-                            Р
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-card__actions">
-                        <button class="project-card__action project-card__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-card__action project-card__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="popular-embla__slide">
-                    <div class="project-teaser">
-                      <div class="project-teaser__media">
-                        <div class="project-teaser__flag project-teaser__flag--orange">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-teaser__image">
-                        <div class="project-teaser__bar">
-                          <div class="project-teaser__title">
-                            КД 4 х 4 «Леонид 5»
-                          </div>
-                          <div class="project-teaser__params">
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-area"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                16 м<sup>2</sup>
-                              </div>
-                            </div>
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-calendar"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                10 дней
-                              </div>
-                            </div>
-                          </div>
-                          <div class="project-teaser__price">
-                            <div class="project-teaser__price-lbl">
-                              от
-                            </div>
-                            <div class="project-teaser__price-val">
-                              590 000
-                            </div>
-                            <div class="project-teaser__price-cur">
-                              Р
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-teaser__actions">
-                        <button class="project-teaser__action project-teaser__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-teaser__action project-teaser__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                    <div class="project-card">
-                      <div class="project-card__media">
-                        <div class="project-card__flag project-card__flag--yellow">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
-                      </div>
-                      <div class="project-card__title">
-                        КД 4 х 4 «Леонид 5»
-                      </div>
-                      <div class="project-card__data">
-                        <div class="project-card__params">
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-area"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              16 м<sup>2</sup>
-                            </div>
-                          </div>
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-calendar"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              10 дней
-                            </div>
-                          </div>
-                        </div>
-                        <div class="project-card__price">
-                          <div class="project-card__price-lbl">
-                            от
-                          </div>
-                          <div class="project-card__price-val">
-                            590 000
-                          </div>
-                          <div class="project-card__price-cur">
-                            Р
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-card__actions">
-                        <button class="project-card__action project-card__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-card__action project-card__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="popular-embla__slide">
-                    <div class="project-teaser">
-                      <div class="project-teaser__media">
-                        <div class="project-teaser__flag project-teaser__flag--orange">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-teaser__image">
-                        <div class="project-teaser__bar">
-                          <div class="project-teaser__title">
-                            КД 4 х 4 «Леонид 6»
-                          </div>
-                          <div class="project-teaser__params">
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-area"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                16 м<sup>2</sup>
-                              </div>
-                            </div>
-                            <div class="project-teaser__param">
-                              <div class="project-teaser__param-ico">
-                                <span class="icon icon-calendar"></span>
-                              </div>
-                              <div class="project-teaser__param-val">
-                                10 дней
-                              </div>
-                            </div>
-                          </div>
-                          <div class="project-teaser__price">
-                            <div class="project-teaser__price-lbl">
-                              от
-                            </div>
-                            <div class="project-teaser__price-val">
-                              590 000
-                            </div>
-                            <div class="project-teaser__price-cur">
-                              Р
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-teaser__actions">
-                        <button class="project-teaser__action project-teaser__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-teaser__action project-teaser__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                    <div class="project-card">
-                      <div class="project-card__media">
-                        <div class="project-card__flag project-card__flag--yellow">
-                          Лучшая цена
-                        </div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="project-card__image">
-                      </div>
-                      <div class="project-card__title">
-                        КД 4 х 4 «Леонид 6»
-                      </div>
-                      <div class="project-card__data">
-                        <div class="project-card__params">
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-area"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              16 м<sup>2</sup>
-                            </div>
-                          </div>
-                          <div class="project-card__param">
-                            <div class="project-card__param-ico">
-                              <span class="icon icon-calendar"></span>
-                            </div>
-                            <div class="project-card__param-val">
-                              10 дней
-                            </div>
-                          </div>
-                        </div>
-                        <div class="project-card__price">
-                          <div class="project-card__price-lbl">
-                            от
-                          </div>
-                          <div class="project-card__price-val">
-                            590 000
-                          </div>
-                          <div class="project-card__price-cur">
-                            Р
-                          </div>
-                        </div>
-                      </div>
-                      <div class="project-card__actions">
-                        <button class="project-card__action project-card__action--order">
-                          Заказать
-                        </button>
-                        <a href="#" class="project-card__action project-card__action--show">
-                          Смотреть проект
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                  <?php endwhile; ?>
+                  <?php wp_reset_postdata(); ?>
                 </div>
               </div>
               <div class="popular-embla__footer">
@@ -896,7 +281,7 @@ Template Name: Главная
                     <span class="icon icon-chevron-right"></span>
                   </button>
                 </div>
-                <a href="#" class="popular-embla__all">
+                <a href="<?php the_permalink(11); ?>" class="popular-embla__all">
                   Смотреть все
                   <span class="icon icon-arrow-right"></span>
                 </a>

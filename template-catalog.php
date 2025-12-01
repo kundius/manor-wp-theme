@@ -112,7 +112,13 @@ $filters = [
   // ]
 ];
 
-$meta_query = [];
+$query_args = [
+  'post_type' => 'project',
+  'paged' => get_query_var('paged') ?: 1,
+  'meta_query' => [],
+];
+
+// задать фильтры запроса из адресной строки
 foreach ($filters as $filter_name => $filter) {
   $group_meta_query = [];
   if (!empty($_GET[$filter_name])) {
@@ -128,15 +134,16 @@ foreach ($filters as $filter_name => $filter) {
     }
   }
   if (count($group_meta_query) > 0) {
-    $meta_query[$filter_name] = array_merge(['relation' => 'OR'], $group_meta_query);
+    $query_args['meta_query'][$filter_name] = array_merge(['relation' => 'OR'], $group_meta_query);
   }
 }
 
+// посчитать количество проектов для каждого параметра фильтра
 foreach ($filters as $filter_name => $filter) {
   foreach ($filter['options'] as $option_name => $option) {
     $query = new WP_Query([
       'post_type' => 'project',
-      'meta_query' => array_merge($meta_query, [
+      'meta_query' => array_merge($query_args['meta_query'], [
         $filter_name => $option['params']
       ])
     ]);
@@ -144,14 +151,29 @@ foreach ($filters as $filter_name => $filter) {
   }
 }
 
-$projects = new WP_Query([
-  'post_type' => 'project',
-  'orderby' => [
-    'menu_order' => 'ASC'
-  ],
-  'paged' => get_query_var('paged') ?: 1,
-  'meta_query' => $meta_query
-]);
+// добавить сортировку из адресной строки
+if (!empty($_GET['sort'])) {
+  switch ($_GET['sort']) {
+    // case 'cheaper':
+    //   $query_args['meta_key'] = 'price';
+    //   $query_args['orderby'] = 'meta_value_num';
+    //   $query_args['order'] = 'ASC';
+    //   $query_args['meta_type'] = 'NUMBER';
+    //   break;
+    // case 'expensive':
+    //   $query_args['meta_key'] = 'price';
+    //   $query_args['orderby'] = 'meta_value_num';
+    //   $query_args['order'] = 'DESC';
+    //   $query_args['meta_type'] = 'NUMBER';
+    //   break;
+    default:
+      $query_args['orderby'] = [
+        'menu_order' => 'ASC'
+      ];
+  }
+}
+
+$projects = new WP_Query($query_args);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
