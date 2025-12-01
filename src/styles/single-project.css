@@ -1467,14 +1467,10 @@
 }
 
 .similar-embla {
-  --slide-spacing: calc(50px * var(--global-scale));
+  --slide-spacing: calc(40px * var(--global-scale));
 
   position: relative;
   z-index: 20;
-
-  @media (--max-lg) {
-    --slide-spacing: calc(40px * var(--global-scale));
-  }
 
   @media (--max-md) {
     --slide-spacing: 24px;
@@ -1499,13 +1495,13 @@
 
   @media (--max-lg) {
     flex: 0 0 50%;
+    .project-card {
+      zoom: 0.8;
+    }
   }
 
   @media (--max-md) {
     flex: 0 0 100%;
-    .project-card {
-      zoom: 0.8;
-    }
   }
 }
 

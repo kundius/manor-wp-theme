@@ -1357,7 +1357,7 @@
   }
 
   @media (--max-md) {
-    --slide-spacing: 32px;
+    --slide-spacing: 24px;
   }
 }
 
@@ -1388,21 +1388,15 @@
   @media (--max-lg) {
     flex: 0 0 50%;
     .project-teaser {
-      zoom: 0.9;
+      zoom: 0.8;
     }
     .project-card {
-      zoom: 0.9;
+      zoom: 0.8;
     }
   }
 
   @media (--max-md) {
     flex: 0 0 100%;
-    .project-teaser {
-      zoom: 0.8;
-    }
-    .project-card {
-      zoom: 0.8;
-    }
   }
 }
 

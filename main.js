@@ -25,6 +25,7 @@ import { initProjectMedia } from './src/scripts/project-media'
 import { initGallery } from './src/scripts/gallery'
 import { initProjectPackages } from './src/scripts/project-packages'
 import { initSimilarEmbla } from './src/scripts/similar-embla'
+import { initCatalogFilter } from './src/scripts/catalog-filter'
 
 new MaskInput('[data-maska]')
 
@@ -40,3 +41,4 @@ initProjectMedia()
 initGallery()
 initProjectPackages()
 initSimilarEmbla()
+initCatalogFilter()

@@ -1,3 +1,10 @@
+<?php
+$type = carbon_get_the_post_meta('type');
+$dimensions = carbon_get_the_post_meta('dimensions');
+$type_label = [
+  'frame' => 'КД',
+];
+?>
 <div class="project-card">
   <div class="project-card__media">
     <?php if ($sticker_text = carbon_get_the_post_meta('sticker_text')): ?>
@@ -10,7 +17,7 @@
     ]) ?>
   </div>
   <div class="project-card__title">
-    <?php the_title(); ?>
+    <?php echo $type_label[$type]; ?> <span class="font-for-number"><?php echo $dimensions; ?></span> «<?php the_title(); ?>»
   </div>
   <div class="project-card__data">
     <div class="project-card__params">

@@ -1,9 +1,169 @@
-.catalog-filter {
-}
-
 .catalog-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 50px;
-  row-gap: 40px;
+  gap: calc(40px * var(--global-scale));
+  margin: calc(24px * var(--global-scale)) 0;
+
+  @media (--max-lg) {
+    grid-template-columns: 1fr 1fr;
+    .project-card {
+      zoom: 0.8;
+    }
+  }
+  @media (--max-md) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.catalog-filter {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(204, 204, 204);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 32px;
+  display: flex;
+  gap: 64px;
+  zoom: var(--global-scale);
+
+  @media (--max-lg) {
+    gap: 32px;
+    flex-direction: column;
+  }
+  @media (--max-md) {
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+.catalog-filter__group {
+}
+
+.catalog-filter__title {
+  font-size: 14px;
+  font-family: 'Raleway';
+  color: rgb(156, 156, 156);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.catalog-filter__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media (--max-lg) {
+    gap: 8px;
+  }
+  @media (--max-md) {
+  }
+}
+
+.catalog-filter__toggle {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(227, 227, 227);
+  border-radius: 4px;
+  background-color: rgb(248, 248, 248);
+  height: 40px;
+  padding: 0 8px;
+  font-size: 14px;
+  font-family: 'Gilroy';
+  color: rgb(63, 63, 63);
+  line-height: 1.2;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.catalog-filter__toggle:not(:disabled):hover {
+  background: rgb(227, 227, 227);
+}
+
+.catalog-filter__toggle.active {
+  background: #c93f3b;
+  color: #fff;
+  border-color: #c93f3b;
+}
+
+.catalog-filter__toggle.active:hover {
+  background: #9e302c;
+  color: #fff;
+  border-color: #9e302c;
+}
+
+.catalog-filter__toggle:disabled {
+  background: #f9f9f9;
+  color: #a1a1a1;
+  border-color: #e3e3e3;
+  cursor: default;
+}
+
+.catalog-filter__toggle:disabled .catalog-filter__count {
+  background: #d9d9d9;
+}
+
+.catalog-filter__count {
+  position: absolute;
+  padding: 0 4px;
+  line-height: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 8px;
+  top: -6px;
+  left: 100%;
+  transform: translateX(-50%);
+  background: #82909e;
+  min-width: 16px;
+  text-align: center;
+}
+
+.catalog-filter__select {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(227, 227, 227);
+  border-radius: 4px;
+  background-color: rgb(248, 248, 248);
+  height: 40px;
+  padding: 0 8px;
+  font-size: 14px;
+  font-family: 'Gilroy';
+  color: rgb(63, 63, 63);
+  line-height: 1.2;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.catalog-filter__reset {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(130, 144, 158);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  height: 40px;
+  padding: 0 32px;
+  font-size: 14px;
+  color: rgb(130, 144, 158);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: 0.05em;
+}
+
+.catalog-filter__reset:hover {
+  color: #fff;
+  background: rgb(130, 144, 158);
 }

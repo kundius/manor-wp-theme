@@ -1098,61 +1098,7 @@ Template Name: Главная
     <section class="home-content">
       <div class="container">
         <div class="content" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
-          <h2 class="wp-block-heading has-text-align-center">
-            Каркасные дома<br>
-            СК Поместье
-          </h2>
-          <div class="content-orbit">
-            <div class="content-orbit__intro">
-              Строительная компания «Поместье» - производитель и застройщик быстровозводимого жилья для сезонного (дачного) и круглогодичного проживания во многих регионах России.
-            </div>
-
-            <div class="content-orbit__item content-orbit__item--1">
-              <h3 class="content-orbit__item-title">
-                Почему стоит заказать проект загородного дома в СК «Поместье»
-              </h3>
-              <div class="content-orbit__item-desc">
-                <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, </p>
-                <ul>
-                  <li>
-                    Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский YНабор слов,
-                  </li>
-                  <li>
-                    но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э.,
-                  </li>
-                  <li>
-                    то есть более двух тысячелетий назад. Ричард МакКлинток,
-                  </li>
-                  <li>
-                    профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="content-orbit__item content-orbit__item--2">
-              <h3 class="content-orbit__item-title">
-                Готовые загородные дома:<br>
-                проекты и цены
-              </h3>
-              <div class="content-orbit__item-desc">
-                <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов</p>
-              </div>
-            </div>
-
-            <div class="content-orbit__item content-orbit__item--3">
-              <h3 class="content-orbit__item-title">
-                Энергоэффективность<br>
-                экономия на отоплении до 50%
-              </h3>
-            </div>
-
-            <div class="content-orbit__figure">
-              <svg xmlns="http://www.w3.org/2000/svg" width="631px" height="540px">
-                <path fill-rule="evenodd" fill="rgb(225, 229, 238)" d="M630.1000,156.1000 L432.1000,-0.000 L55.958,180.371 L-0.000,414.999 L577.1000,539.1000 L630.1000,156.1000 Z"></path>
-              </svg>
-            </div>
-          </div>
+          <?php the_content(); ?>
         </div>
       </div>
     </section>

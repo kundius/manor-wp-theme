@@ -179,6 +179,8 @@ function register_carbon_fields_blocks()
       Field::make('text', 'total_area', 'Общая площадь'),
       Field::make('text', 'footprint_area', 'Площадь застройки'),
       Field::make('text', 'room_count', 'Количество комнат'),
+      Field::make('text', 'floor_count', 'Количество этажей'),
+      Field::make('checkbox', 'with_attic', 'С мансардой'),
       Field::make('text', 'duration', 'Сроки'),
       Field::make('text', 'price', 'Цена'),
       Field::make('text', 'sticker_text', 'Текст стикера'),

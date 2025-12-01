@@ -58,7 +58,7 @@ $type_label = [
 
         <h1 class="page-section__title page-section__title--small">
           <?php echo $type_label[$type]; ?><br>
-          <span class="page-section__title-dimensions"><?php echo $dimensions; ?></span> «<?php the_title(); ?>»
+          <span class="font-for-number"><?php echo $dimensions; ?></span> «<?php the_title(); ?>»
         </h1>
 
         <div class="project-layout">
