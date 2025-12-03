@@ -211,21 +211,22 @@ function register_carbon_fields_blocks()
     ]);
   }
 
-  // Пример встраиваемого в контент блока
-  // Block::make('contacts_info', 'Контактная информация')
-  //   ->add_fields([
-  //     Field::make('rich_text', 'phone', 'Телефон'),
-  //     Field::make('rich_text', 'address', 'Адрес')
-  //   ])
-  //   ->set_category('layout')
-  //   ->set_mode('edit')
-  //   ->set_icon('shortcode')
-  //   ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
-  //     get_template_part('partials/contacts-info', null, [
-  //       'fields' => $fields
-  //     ]);
-  //   });
+  // Встраиваемые в контент блоки
+  Block::make('feedback_form', 'Обратная связь')
+    ->add_fields([
+      Field::make('html', 'crb_information_text')
+        ->set_html('<div style="font-size: 32px;text-align: center;padding: 24px;background: aliceblue;border: 4px solid cadetblue;">Форма обратной связи</div>')
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('blocks/feedback-form', null, [
+        'fields' => $fields
+      ]);
+    });
 
+  // Страницы параметров
   $theme_options_container = Container::make('theme_options', 'Параметры')
     ->add_tab('Общее', [
       Field::make('text', 'crb_theme_phone_number', 'Телефон')->set_help_text('Шорткод: {crb_theme_phone_number}'),
@@ -233,6 +234,30 @@ function register_carbon_fields_blocks()
     ])
     ->add_tab('Подвал', [
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
+    ]);
+
+  // Поля шаблона контакты
+  Container::make('post_meta', 'Контакты')
+    ->where('post_type', '=', 'page')
+    ->where('post_template', '=', 'templates/contacts.php')
+    ->add_fields([
+      Field::make('text', 'email', 'E-mail'),
+      Field::make('text', 'phone_number', 'Телефон / Номер'),
+      Field::make('text', 'phone_caption', 'Телефон / Подпись'),
+      Field::make('text', 'phone_desc', 'Телефон / Описание'),
+      Field::make('text', 'whatsapp_number', 'WhatsApp / Номер'),
+      Field::make('text', 'whatsapp_caption', 'WhatsApp / Подпись'),
+      Field::make('text', 'whatsapp_desc', 'WhatsApp / Описание'),
+      Field::make('rich_text', 'legal_details', 'Реквизиты'),
+      Field::make('complex', 'groups', 'Соцсети')->add_fields([
+        Field::make('text', 'link', 'Ссылка'),
+        Field::make('textarea', 'icon', 'Код иконки')->set_rows(2),
+      ]),
+      Field::make('complex', 'addresses', 'Адреса')->add_fields([
+        Field::make('text', 'title', 'Название'),
+        Field::make('rich_text', 'content', 'Описание'),
+        Field::make('textarea', 'map', 'Код карты')->set_rows(2),
+      ])
     ]);
 
   // Пример встраиваемой в контент секции

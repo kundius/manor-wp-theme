@@ -33,7 +33,7 @@ $similar = new WP_Query([
     <?php get_template_part('partials/header'); ?>
 
     <section class="page-section">
-      <div class="page-section__bg"></div>
+      <div class="page-bg-sharp" class="intro-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0"></div>
 
       <div class="container">
         <div class="page-section__breadcrumbs breadcrumbs">

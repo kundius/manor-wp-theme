@@ -247,14 +247,14 @@
 }
 
 .footer-contacts__item-icon {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
   color: #afadad;
-  font-size: 36px;
+  font-size: 40px;
 }
 
 .footer-contacts__item-body {

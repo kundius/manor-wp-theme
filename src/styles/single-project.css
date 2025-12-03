@@ -20,7 +20,7 @@
   gap: 0;
 
   @media (--max-lg) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: auto 24px auto 24px auto 24px auto 24px auto 24px auto 48px auto;
     grid-template-areas:
       'media'

@@ -44,9 +44,9 @@ $favorite_projects = new WP_Query([
   <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
-    <section class="intro-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
-      <div class="intro-section__bg">
-        <div class="intro-section__bg-shd"></div>
+    <section class="intro-section">
+      <div class="page-bg-sharp page-bg-sharp--intro" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+        <div class="page-bg-sharp__fade"></div>
       </div>
       <div class="container">
         <div class="intro-content">

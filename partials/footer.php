@@ -104,6 +104,22 @@
   </div>
 </section>
 
+<svg width="0" height="0" aria-hidden="true">
+  <filter id="fade" color-interpolation-filters="sRGB" primitiveUnits="objectBoundingBox" x="0" y="0" width="1" height="1">
+    <feComponentTransfer result="mid">
+      <feFuncA type="table" tableValues="0 0 1"></feFuncA>
+    </feComponentTransfer>
+    <feGaussianBlur stdDeviation=".02 0" edgeMode="duplicate"></feGaussianBlur>
+    <feComponentTransfer>
+      <feFuncA type="table" tableValues="-1 1"></feFuncA>
+    </feComponentTransfer>
+    <feComponentTransfer>
+      <feFuncA type="gamma" exponent="2"></feFuncA>
+    </feComponentTransfer>
+    <feComposite in="mid" operator="in"></feComposite>
+  </filter>
+</svg>
+
 <?php get_template_part('partials/modals'); ?>
 
 <?php wp_footer(); ?>

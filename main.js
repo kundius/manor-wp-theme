@@ -10,6 +10,7 @@ import './src/styles/footer.css'
 import './src/styles/template-home.css'
 import './src/styles/single-project.css'
 import './src/styles/template-catalog.css'
+import './src/styles/template-contacts.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'
