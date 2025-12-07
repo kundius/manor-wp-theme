@@ -17,7 +17,7 @@ Template Name: Контакты
     <?php get_template_part('partials/header'); ?>
 
     <section class="page-section">
-      <div class="page-bg-sharp page-bg-sharp--contacts" class="intro-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0"></div>
+      <div class="page-bg-sharp page-bg-sharp--contacts" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0"></div>
 
       <div class="container">
         <div class="page-section__breadcrumbs breadcrumbs">
@@ -30,16 +30,20 @@ Template Name: Контакты
             </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
               <span class="breadcrumbs__item" itemprop="item" aria-current="page">
-                <span itemprop="name"><?php the_title() ?></span>
+                <span itemprop="name"><?php the_title(); ?></span>
               </span>
               <meta itemprop="position" content="3" />
             </li>
           </ol>
         </div>
 
-        <h1 class="page-section__title<?php if (mb_strlen(get_the_title()) > 20): ?> page-section__title--small<?php endif; ?>">
-          <?php the_title(); ?>
+        <?php if ($title = get_the_title()): ?>
+        <h1 class="page-section__title<?php if (
+          mb_strlen($title) > 20
+        ): ?> page-section__title--small<?php endif; ?>">
+            <?php echo $title; ?>
         </h1>
+        <?php endif; ?>
 
         <div class="contacts-layout">
           <div class="contacts-layout__info">
@@ -79,7 +83,9 @@ Template Name: Контакты
                       <div class="contacts-info__phone-value">
                         <?php echo $whatsapp_number; ?>
                       </div>
-                      <?php if ($whatsapp_caption = carbon_get_the_post_meta('whatsapp_caption')): ?>
+                      <?php if (
+                        $whatsapp_caption = carbon_get_the_post_meta('whatsapp_caption')
+                      ): ?>
                         <div class="contacts-info__phone-caption">
                           <?php echo $whatsapp_caption; ?>
                         </div>
@@ -146,7 +152,7 @@ Template Name: Контакты
                     <div class="contacts-addresses__item">
                       <div class="contacts-addresses__item-header">
                         <div class="contacts-addresses__item-key">
-                          <?php echo str_pad($key + 1, 2, "0", STR_PAD_LEFT); ?>
+                          <?php echo str_pad($key + 1, 2, '0', STR_PAD_LEFT); ?>
                         </div>
                         <div class="contacts-addresses__item-title">
                           <?php echo $address['title']; ?>

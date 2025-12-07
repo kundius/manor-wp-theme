@@ -14,9 +14,9 @@ $filters = [
             'key' => 'total_area',
             'compare' => '<=',
             'type' => 'NUMERIC',
-            'value' => 50
-          ]
-        ]
+            'value' => 50,
+          ],
+        ],
       ],
       'from50to100' => [
         'title' => 'от 50 м<sup>2</sup> до 100 м<sup>2</sup>',
@@ -27,15 +27,15 @@ $filters = [
             'key' => 'total_area',
             'compare' => '>',
             'type' => 'NUMERIC',
-            'value' => 50
+            'value' => 50,
           ],
           [
             'key' => 'total_area',
             'compare' => '<=',
             'type' => 'NUMERIC',
-            'value' => 100
-          ]
-        ]
+            'value' => 100,
+          ],
+        ],
       ],
       'from100' => [
         'title' => 'от 100 м<sup>2</sup>',
@@ -45,11 +45,11 @@ $filters = [
             'key' => 'total_area',
             'compare' => '>',
             'type' => 'NUMERIC',
-            'value' => 100
-          ]
-        ]
-      ]
-    ]
+            'value' => 100,
+          ],
+        ],
+      ],
+    ],
   ],
   'floor' => [
     'title' => 'Этажность:',
@@ -61,9 +61,9 @@ $filters = [
           [
             'key' => 'floor_count',
             'compare_key' => '=',
-            'value' => '1'
-          ]
-        ]
+            'value' => '1',
+          ],
+        ],
       ],
       'one_and_half' => [
         'title' => '1.5-этажные',
@@ -72,9 +72,9 @@ $filters = [
           [
             'key' => 'floor_count',
             'compare_key' => '=',
-            'value' => '1.5'
-          ]
-        ]
+            'value' => '1.5',
+          ],
+        ],
       ],
       'two' => [
         'title' => '2х-этажные',
@@ -83,9 +83,9 @@ $filters = [
           [
             'key' => 'floor_count',
             'compare_key' => '=',
-            'value' => '2'
-          ]
-        ]
+            'value' => '2',
+          ],
+        ],
       ],
       'with_attic' => [
         'title' => 'С мансардой',
@@ -94,11 +94,11 @@ $filters = [
           [
             'key' => 'with_attic',
             'compare_key' => '=',
-            'value' => 'yes'
-          ]
-        ]
-      ]
-    ]
+            'value' => 'yes',
+          ],
+        ],
+      ],
+    ],
   ],
   // 'packages' => [
   //   'title' => 'Этажность:',
@@ -144,8 +144,8 @@ foreach ($filters as $filter_name => $filter) {
     $query = new WP_Query([
       'post_type' => 'project',
       'meta_query' => array_merge($query_args['meta_query'], [
-        $filter_name => $option['params']
-      ])
+        $filter_name => $option['params'],
+      ]),
     ]);
     $filters[$filter_name]['options'][$option_name]['count'] = $query->found_posts;
   }
@@ -168,7 +168,7 @@ if (!empty($_GET['sort'])) {
     //   break;
     default:
       $query_args['orderby'] = [
-        'menu_order' => 'ASC'
+        'menu_order' => 'ASC',
       ];
   }
 }
@@ -189,7 +189,7 @@ $projects = new WP_Query($query_args);
     <?php get_template_part('partials/header'); ?>
 
     <section class="page-section">
-      <div class="page-bg-sharp" class="intro-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0"></div>
+      <div class="page-bg-sharp" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0"></div>
 
       <div class="container">
         <div class="page-section__breadcrumbs breadcrumbs">
@@ -202,16 +202,20 @@ $projects = new WP_Query($query_args);
             </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
               <span class="breadcrumbs__item" itemprop="item" aria-current="page">
-                <span itemprop="name"><?php the_title() ?></span>
+                <span itemprop="name"><?php the_title(); ?></span>
               </span>
               <meta itemprop="position" content="3" />
             </li>
           </ol>
         </div>
 
-        <h1 class="page-section__title<?php if (mb_strlen(get_the_title()) > 20): ?> page-section__title--small<?php endif; ?>">
-          <?php the_title(); ?>
+        <?php if ($title = get_the_title()): ?>
+        <h1 class="page-section__title<?php if (
+          mb_strlen($title) > 20
+        ): ?> page-section__title--small<?php endif; ?>">
+            <?php echo $title; ?>
         </h1>
+        <?php endif; ?>
 
         <div class="catalog-filter" data-catalog-filter>
           <?php foreach ($filters as $filter_name => $filter): ?>
@@ -221,7 +225,10 @@ $projects = new WP_Query($query_args);
                 <?php foreach ($filter['options'] as $option_name => $option): ?>
                   <button
                     type="button"
-                    class="catalog-filter__toggle <?php if (!empty($_GET[$filter_name]) && in_array($option_name, explode(',', $_GET[$filter_name]))): ?>active<?php endif; ?>"
+                    class="catalog-filter__toggle <?php if (
+                      !empty($_GET[$filter_name]) &&
+                      in_array($option_name, explode(',', $_GET[$filter_name]))
+                    ): ?>active<?php endif; ?>"
                     data-catalog-filter-toggle="<?php echo $filter_name; ?>:<?php echo $option_name; ?>"
                     <?php if ($option['count'] === 0): ?> disabled<?php endif; ?>>
                     <?php echo $option['title']; ?>
@@ -237,9 +244,17 @@ $projects = new WP_Query($query_args);
             <div class="catalog-filter__title">Сортировать:</div>
             <div class="catalog-filter__list">
               <select class="catalog-filter__select" data-catalog-filter-sort>
-                <option value="" <?php if (empty($_GET['sort'])): ?>selected<?php endif; ?>>По популярности</option>
-                <option value="cheaper" <?php if (!empty($_GET['sort']) && $_GET['sort'] == 'cheaper'): ?>selected<?php endif; ?>>Сначала дешевле</option>
-                <option value="expensive" <?php if (!empty($_GET['sort']) && $_GET['sort'] == 'expensive'): ?>selected<?php endif; ?>>Сначала дороже</option>
+                <option value="" <?php if (
+                  empty($_GET['sort'])
+                ): ?>selected<?php endif; ?>>По популярности</option>
+                <option value="cheaper" <?php if (
+                  !empty($_GET['sort']) &&
+                  $_GET['sort'] == 'cheaper'
+                ): ?>selected<?php endif; ?>>Сначала дешевле</option>
+                <option value="expensive" <?php if (
+                  !empty($_GET['sort']) &&
+                  $_GET['sort'] == 'expensive'
+                ): ?>selected<?php endif; ?>>Сначала дороже</option>
               </select>
               <button type="button" class="catalog-filter__reset" data-catalog-filter-reset>
                 Сбросить

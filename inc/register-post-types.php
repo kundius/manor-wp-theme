@@ -3,6 +3,34 @@ add_action('init', 'register_post_types');
 
 function register_post_types()
 {
+  register_post_type('case', [
+    'label' => null,
+    'labels' => [
+      'name' => 'Работы',
+      'singular_name' => 'Работа',
+      'add_new' => 'Добавить работу',
+      'add_new_item' => 'Добавить работу',
+      'edit_item' => 'Редактировать работу',
+      'new_item' => 'Новая работа',
+      'view_item' => 'Смотреть работу',
+      'search_items' => 'Искать работы',
+      'not_found' => 'Не найдено',
+      'not_found_in_trash' => 'Не найдено в корзине',
+      'parent_item_colon' => '',
+      'menu_name' => 'Портфолио',
+    ],
+    'description' => '',
+    'public' => true,
+    'menu_icon' => 'dashicons-media-document',
+    'supports' => ['title', 'thumbnail'],
+    'taxonomies' => ['post_tag'],
+    'hierarchical' => false,
+    'has_archive' => false,
+    'rewrite' => true,
+    'query_var' => true,
+    'show_ui' => true,
+  ]);
+
   register_post_type('project', [
     'label' => null,
     'labels' => [

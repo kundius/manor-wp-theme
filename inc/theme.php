@@ -17,7 +17,15 @@ add_theme_support('responsive-embeds');
 add_theme_support('editor-styles');
 add_theme_support('wp-block-styles');
 add_theme_support('post-thumbnails');
-add_theme_support('html5', ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'script', 'style']);
+add_theme_support('html5', [
+  'comment-list',
+  'comment-form',
+  'search-form',
+  'gallery',
+  'caption',
+  'script',
+  'style',
+]);
 
 add_shortcode('partial', function ($atts, $content = null) {
   ob_start();
@@ -29,8 +37,18 @@ add_shortcode('partial', function ($atts, $content = null) {
 
 function get_icon($name, $size = 24)
 {
-  $output = '<svg viewBox="0 0 24px 24px" width="' . $size . '" height="' . $size . '" class="sprite-icon">';
-  $output .= '<use href="' . get_bloginfo('template_url') . '/dist/assets/sprite.svg?123#' . $name . '"></use>';
+  $output =
+    '<svg viewBox="0 0 24px 24px" width="' .
+    $size .
+    '" height="' .
+    $size .
+    '" class="sprite-icon">';
+  $output .=
+    '<use href="' .
+    get_bloginfo('template_url') .
+    '/dist/assets/sprite.svg?123#' .
+    $name .
+    '"></use>';
   $output .= '</svg>';
   return $output;
 }
@@ -105,9 +123,9 @@ add_action('wp_footer', 'apply_full_html_replacements');
 // )
 function create_attachment_from_upload($upload, $post_id = 0)
 {
-  require_once(ABSPATH . 'wp-admin/includes/media.php');
-  require_once(ABSPATH . 'wp-admin/includes/file.php');
-  require_once(ABSPATH . 'wp-admin/includes/image.php');
+  require_once ABSPATH . 'wp-admin/includes/media.php';
+  require_once ABSPATH . 'wp-admin/includes/file.php';
+  require_once ABSPATH . 'wp-admin/includes/image.php';
 
   $attachment_id = media_handle_sideload($upload, $post_id);
 
@@ -117,4 +135,21 @@ function create_attachment_from_upload($upload, $post_id = 0)
   }
 
   return $attachment_id;
+}
+
+function plural($n, $forms)
+{
+  $n = abs($n) % 100; // Берем остаток от 100
+  $arr = $forms; // Массив форм: ['яблоко', 'яблока', 'яблок']
+  if ($n % 100 >= 11 && $n % 100 <= 19) {
+    return $arr[2]; // 11-19 яблок
+  }
+  $n = $n % 10;
+  if ($n == 1) {
+    return $arr[0]; // 1 яблоко
+  } elseif ($n >= 2 && $n <= 4) {
+    return $arr[1]; // 2-4 яблока
+  } else {
+    return $arr[2]; // 0, 5-9 яблок
+  }
 }

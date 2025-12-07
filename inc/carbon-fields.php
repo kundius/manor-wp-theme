@@ -105,11 +105,13 @@ function create_block($key, $name, $fields)
     // добавить к простым названиям название блока, чтобы в опциях они были уникальны
     $field->set_base_name($key . '_' . $field->get_base_name());
     // добавить условную логику
-    $field->set_conditional_logic([[
-      'field' => $key . '_block_fields',
-      'value' => $field->get_base_name(),
-      'compare' => 'INCLUDES'
-    ]]);
+    $field->set_conditional_logic([
+      [
+        'field' => $key . '_block_fields',
+        'value' => $field->get_base_name(),
+        'compare' => 'INCLUDES',
+      ],
+    ]);
   }
 
   // список полей для переключателя
@@ -118,17 +120,25 @@ function create_block($key, $name, $fields)
     $edit_fields[$field->get_base_name()] = $field->get_label();
   }
 
-  $block_fields = array_merge([
-    Field::make('html', $key . '_block_name')->set_html('<div class="cf-block__fields__title">' . $name . '</div>'),
-    Field::make('set', $key . '_block_fields', 'Редактировать')->set_options($edit_fields)
-  ], $fields);
-  $theme_options_fields = array_merge([
-    // условная логика в опциях применяется тоже, поэтому необходимо список полей добавить и туда
-    Field::make('set', $key . '_block_fields', 'Редактировать')
-      ->set_options($edit_fields)
-      ->set_default_value(array_keys($edit_fields))
-    // ->set_conditional_logic([[ 'field' => $key . '_block_fields' ]])
-  ], $fields);
+  $block_fields = array_merge(
+    [
+      Field::make('html', $key . '_block_name')->set_html(
+        '<div class="cf-block__fields__title">' . $name . '</div>',
+      ),
+      Field::make('set', $key . '_block_fields', 'Редактировать')->set_options($edit_fields),
+    ],
+    $fields,
+  );
+  $theme_options_fields = array_merge(
+    [
+      // условная логика в опциях применяется тоже, поэтому необходимо список полей добавить и туда
+      Field::make('set', $key . '_block_fields', 'Редактировать')
+        ->set_options($edit_fields)
+        ->set_default_value(array_keys($edit_fields)),
+      // ->set_conditional_logic([[ 'field' => $key . '_block_fields' ]])
+    ],
+    $fields,
+  );
 
   Container::make('theme_options', $name)
     ->set_page_parent($theme_options_container)
@@ -157,7 +167,7 @@ function create_block($key, $name, $fields)
       }
 
       get_template_part('blocks/' . $key, null, [
-        'fields' => $args_fields
+        'fields' => $args_fields,
       ]);
     });
 }
@@ -166,6 +176,27 @@ add_action('carbon_fields_register_fields', 'register_carbon_fields_blocks');
 function register_carbon_fields_blocks()
 {
   global $theme_options_container;
+
+  // Поля шаблона контакты
+  Container::make('post_meta', 'Портфолио')
+    ->where('post_type', '=', 'page')
+    ->where('post_template', '=', 'templates/portfolio.php')
+    ->add_fields([Field::make('rich_text', 'description', 'Описание')]);
+
+  Container::make('post_meta', 'Портфолио')
+    ->where('post_type', '=', 'case')
+    ->add_fields([
+      Field::make('date', 'date', 'Дата'),
+      Field::make('text', 'dimensions', 'Размер'),
+      Field::make('text', 'duration', 'Сроки'),
+      Field::make('textarea', 'address', 'Адрес')->set_rows(2),
+      Field::make('complex', 'specifications', 'Технические характеристики')->add_fields([
+        Field::make('text', 'name', 'Название')->set_width(50),
+        Field::make('text', 'content', 'Значение')->set_width(50),
+      ]),
+      Field::make('textarea', 'description', 'Описание')->set_rows(4),
+      Field::make('media_gallery', 'gallery', 'Галерея'),
+    ]);
 
   Container::make('post_meta', 'Проект')
     ->where('post_type', '=', 'project')
@@ -188,12 +219,12 @@ function register_carbon_fields_blocks()
       Field::make('select', 'sticker_color', 'Цвет стикера')->set_options([
         'orange' => 'Оранжевый',
         'green' => 'Зеленый',
-        'yellow' => 'Желтый'
+        'yellow' => 'Желтый',
       ]),
       Field::make('media_gallery', 'gallery', 'Галерея'),
     ]);
 
-  $packages_query = new WP_Query;
+  $packages_query = new WP_Query();
 
   // Комплектации проекта
   $packages = $packages_query->query([
@@ -201,40 +232,51 @@ function register_carbon_fields_blocks()
     'post_status' => 'publish',
     'posts_per_page' => -1,
     'orderby' => 'menu_order',
-    'order' => 'ASC'
+    'order' => 'ASC',
   ]);
-  $packages_container = Container::make('post_meta', 'Комплектации')->where('post_type', '=', 'project');
+  $packages_container = Container::make('post_meta', 'Комплектации')->where(
+    'post_type',
+    '=',
+    'project',
+  );
   foreach ($packages as $package) {
     $packages_container->add_tab($package->post_title, [
-      Field::make('checkbox', 'package_' . $package->ID . '_is_active', 'Использовать комплектацию'),
-      Field::make('text', 'package_' . $package->ID . '_price', 'Цена')
+      Field::make(
+        'checkbox',
+        'package_' . $package->ID . '_is_active',
+        'Использовать комплектацию',
+      ),
+      Field::make('text', 'package_' . $package->ID . '_price', 'Цена'),
     ]);
   }
 
   // Встраиваемые в контент блоки
   Block::make('feedback_form', 'Обратная связь')
     ->add_fields([
-      Field::make('html', 'crb_information_text')
-        ->set_html('<div style="font-size: 32px;text-align: center;padding: 24px;background: aliceblue;border: 4px solid cadetblue;">Форма обратной связи</div>')
+      Field::make('html', 'crb_information_text')->set_html(
+        '<div style="font-size: 32px;text-align: center;padding: 24px;background: aliceblue;border: 4px solid cadetblue;">Форма обратной связи</div>',
+      ),
     ])
     ->set_category('layout')
     ->set_mode('edit')
     ->set_icon('shortcode')
     ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
       get_template_part('blocks/feedback-form', null, [
-        'fields' => $fields
+        'fields' => $fields,
       ]);
     });
 
   // Страницы параметров
   $theme_options_container = Container::make('theme_options', 'Параметры')
     ->add_tab('Общее', [
-      Field::make('text', 'crb_theme_phone_number', 'Телефон')->set_help_text('Шорткод: {crb_theme_phone_number}'),
-      Field::make('text', 'crb_theme_phone_schedule', 'Телефон')->set_help_text('Шорткод: {crb_theme_phone_schedule}'),
+      Field::make('text', 'crb_theme_phone_number', 'Телефон')->set_help_text(
+        'Шорткод: {crb_theme_phone_number}',
+      ),
+      Field::make('text', 'crb_theme_phone_schedule', 'Телефон')->set_help_text(
+        'Шорткод: {crb_theme_phone_schedule}',
+      ),
     ])
-    ->add_tab('Подвал', [
-      Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
-    ]);
+    ->add_tab('Подвал', [Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2)]);
 
   // Поля шаблона контакты
   Container::make('post_meta', 'Контакты')
@@ -257,7 +299,7 @@ function register_carbon_fields_blocks()
         Field::make('text', 'title', 'Название'),
         Field::make('rich_text', 'content', 'Описание'),
         Field::make('textarea', 'map', 'Код карты')->set_rows(2),
-      ])
+      ]),
     ]);
 
   // Пример встраиваемой в контент секции

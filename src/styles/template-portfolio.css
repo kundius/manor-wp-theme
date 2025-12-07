@@ -1,0 +1,138 @@
+.portfolio-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: calc(40px * var(--global-scale));
+  row-gap: calc(96px * var(--global-scale));
+
+  @media (--max-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (--max-md) {
+    grid-template-columns: 1fr;
+    column-gap: 24px;
+    row-gap: 48px;
+  }
+}
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 16px;
+  zoom: var(--global-scale);
+}
+
+.case-card:nth-child(2n) .case-card__body {
+  order: -1;
+}
+
+.case-card__media {
+  display: flex;
+  margin: 0;
+}
+
+.case-card__media-image {
+  width: 100%;
+  height: auto;
+}
+
+.case-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.case-card__date {
+  font-size: 14px;
+  line-height: 1;
+  color: #959595;
+  font-weight: 500;
+  font-family: 'Gilroy';
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.case-card__date::before {
+  content: '[';
+}
+
+.case-card__date::after {
+  content: ']';
+}
+
+.case-card__title {
+  font-size: 26px;
+  line-height: 28px;
+  color: #010101;
+  font-weight: 500;
+  flex-grow: 1;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #e1e5ee;
+  margin-top: 18px;
+}
+
+.case-card__params {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.case-card__param {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.case-card__param-ico {
+  font-size: 24px;
+  color: #959595;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-card__param-val {
+  font-size: 18px;
+  font-weight: 500;
+  color: #666;
+  line-height: 1;
+  font-family: 'Gilroy', sans-serif;
+  white-space: nowrap;
+}
+
+.case-card__footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.case-card__more {
+  padding: 0 32px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #edeff5;
+  font-size: 16px;
+  color: #a7a7a7;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.case-card__more:hover {
+  background-color: #e1e5ee;
+  color: #767676;
+}
+
+.case-card__more::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
