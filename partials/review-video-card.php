@@ -7,7 +7,7 @@
       'class' => 'review-video-card__media-image',
     ]); ?>
   </figure>
-  <a href="<?php echo $video; ?>" target="_blank" data-fslightbox="videos">
+  <a href="<?php echo $video; ?>" target="_blank" data-fancybox>
     <?php echo $video; ?>
   </a>
 </article>
