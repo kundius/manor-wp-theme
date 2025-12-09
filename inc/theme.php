@@ -174,3 +174,13 @@ function add_query_param_to_current_url($param_name, $param_value)
 
   return $new_path;
 }
+
+function extract_rutube_id($url)
+{
+  $parsed = parse_url($url);
+  if (isset($parsed['host']) && strpos($parsed['host'], 'rutube.ru') !== false) {
+    preg_match('/\/video\/([a-f0-9]+)\//', $parsed['path'], $matches);
+    return isset($matches[1]) ? $matches[1] : null;
+  }
+  return null;
+}
