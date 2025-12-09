@@ -17,6 +17,9 @@ import './src/styles/template-reviews.css'
 
 import { Fancybox } from '@fancyapps/ui/dist/fancybox/'
 import '@fancyapps/ui/dist/fancybox/fancybox.css'
+Fancybox.bind('[data-fancybox]', {
+  // Your custom options
+})
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'
