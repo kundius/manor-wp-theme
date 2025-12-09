@@ -75,6 +75,7 @@ $reviews = new WP_Query([
           href="<?php echo add_query_param_to_current_url('alt', '1'); ?>"
           >Письменные отзывы</a>
         </div>
+
         <a
           href="https://lipsum.app/id/1/1600x1200"
           data-fancybox="gallery"
