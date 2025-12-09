@@ -888,6 +888,8 @@
 }
 
 .project-packages__contents {
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 .project-packages__content {
@@ -897,6 +899,30 @@
   font-size: 16px;
   color: #000;
   line-height: 1.25;
+
+  p {
+    margin: 0;
+  }
+
+  * + p {
+    margin-top: 20px;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  * + h2 {
+    margin-top: 32px;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  * + h3 {
+    margin-top: 24px;
+  }
 
   @media (--max-lg) {
     padding: 32px;
