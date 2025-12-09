@@ -312,6 +312,10 @@ function register_carbon_fields_blocks()
       ]),
     ]);
 
+  Container::make('post_meta', 'Комплектация')
+    ->where('post_type', '=', 'package')
+    ->add_fields([Field::make('text', 'display_name', 'Название')]);
+
   // Пример встраиваемой в контент секции
   // create_block('intro', 'Интро', [
   //   Field::make('textarea', 'big_title', 'Большой заголовок')->set_rows(2),

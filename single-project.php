@@ -7,7 +7,7 @@ $packages = new WP_Query([
   'post_status' => 'publish',
   'posts_per_page' => -1,
   'orderby' => 'menu_order',
-  'order' => 'ASC'
+  'order' => 'ASC',
 ]);
 $current_post_id = get_the_ID();
 $type_label = [
@@ -16,7 +16,7 @@ $type_label = [
 $similar = new WP_Query([
   'post_type' => 'project',
   'posts_per_page' => 12,
-  'orderby' => 'rand'
+  'orderby' => 'rand',
 ]);
 ?>
 <!DOCTYPE html>
@@ -53,7 +53,11 @@ $similar = new WP_Query([
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
               <span class="breadcrumbs__item" itemprop="item" aria-current="page">
                 <span itemprop="name">
-                  <?php echo implode(' ', [$type_label[$type], $dimensions, '«' . get_the_title() . '»']); ?>
+                  <?php echo implode(' ', [
+                    $type_label[$type],
+                    $dimensions,
+                    '«' . get_the_title() . '»',
+                  ]); ?>
                 </span>
               </span>
               <meta itemprop="position" content="3" />
@@ -75,19 +79,22 @@ $similar = new WP_Query([
                   <div class="gallery-main__container">
                     <?php if (has_post_thumbnail()): ?>
                       <div class="gallery-main__slide">
-                        <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" data-fslightbox="gallery" target="_blank">
+                        <a href="<?php echo get_the_post_thumbnail_url(
+                          get_the_ID(),
+                          'full',
+                        ); ?>" data-fslightbox="gallery" target="_blank">
                           <?php the_post_thumbnail('large'); ?>
                           <span class="gallery-main__loupe">
                             <span class="icon icon-search"></span>
                           </span>
                         </a>
                       </div>
-                    <?php endif ?>
+                    <?php endif; ?>
 
                     <?php foreach ($gallery as $key => $id): ?>
                       <div class="gallery-main__slide">
                         <a
-                          href="<?php echo wp_get_attachment_image_url($id, 'full') ?>"
+                          href="<?php echo wp_get_attachment_image_url($id, 'full'); ?>"
                           target="_blank"
                           data-fslightbox="gallery">
                           <?php echo wp_get_attachment_image($id, 'large'); ?>
@@ -141,9 +148,9 @@ $similar = new WP_Query([
                   <div class="gallery-thumbs__container">
                     <?php if (has_post_thumbnail()): ?>
                       <div class="gallery-thumbs__slide">
-                        <?php the_post_thumbnail('small') ?>
+                        <?php the_post_thumbnail('small'); ?>
                       </div>
-                    <?php endif ?>
+                    <?php endif; ?>
 
                     <?php foreach ($gallery as $key => $id): ?>
                       <div class="gallery-thumbs__slide">
@@ -170,12 +177,19 @@ $similar = new WP_Query([
                   <div class="project-prices__grid">
                     <?php while ($packages->have_posts()): ?>
                       <?php $packages->the_post(); ?>
-                      <?php $is_active = carbon_get_post_meta($current_post_id, 'package_' . get_the_ID() . '_is_active'); ?>
+                      <?php $display_name = carbon_get_the_post_meta('display_name'); ?>
+                      <?php $is_active = carbon_get_post_meta(
+                        $current_post_id,
+                        'package_' . get_the_ID() . '_is_active',
+                      ); ?>
                       <?php if ($is_active): ?>
-                        <?php $price = carbon_get_post_meta($current_post_id, 'package_' . get_the_ID() . '_price'); ?>
-                        <button type="button" class="project-price" data-project-packages-anchor="<?php echo get_the_ID() ?>">
+                        <?php $price = carbon_get_post_meta(
+                          $current_post_id,
+                          'package_' . get_the_ID() . '_price',
+                        ); ?>
+                        <button type="button" class="project-price" data-project-packages-anchor="<?php echo get_the_ID(); ?>">
                           <span class="project-price__body">
-                            <span class="project-price__name"><?php the_title() ?></span>
+                            <span class="project-price__name"><?php echo $display_name; ?></span>
                             <span class="project-price__price">
                               <span class="project-price__price-lbl">
                                 Цена от:
@@ -198,12 +212,12 @@ $similar = new WP_Query([
                             </span>
                           </span>
                         </button>
-                      <?php endif ?>
-                    <?php endwhile ?>
+                      <?php endif; ?>
+                    <?php endwhile; ?>
                   </div>
                 </div>
-                <?php wp_reset_postdata() ?>
-              <?php endif ?>
+                <?php wp_reset_postdata(); ?>
+              <?php endif; ?>
             </div>
           </div>
           <div class="project-layout__params">
@@ -377,11 +391,18 @@ $similar = new WP_Query([
                   <?php $index = 0; ?>
                   <?php while ($packages->have_posts()): ?>
                     <?php $packages->the_post(); ?>
-                    <?php $is_active = carbon_get_post_meta($current_post_id, 'package_' . get_the_ID() . '_is_active'); ?>
+                    <?php $display_name = carbon_get_the_post_meta('display_name'); ?>
+                    <?php $is_active = carbon_get_post_meta(
+                      $current_post_id,
+                      'package_' . get_the_ID() . '_is_active',
+                    ); ?>
                     <?php if ($is_active): ?>
                       <?php $index++; ?>
-                      <button data-project-packages-tab="<?php echo get_the_ID() ?>" type="button" class="project-packages__tab<?php echo ($index === 1 ? ' active' : ''); ?>">
-                        <?php the_title(); ?>
+                      <button data-project-packages-tab="<?php echo get_the_ID(); ?>" type="button" class="project-packages__tab<?php echo $index ===
+1
+  ? ' active'
+  : ''; ?>">
+                        <?php echo $display_name; ?>
                       </button>
                     <?php endif; ?>
                   <?php endwhile; ?>
@@ -390,11 +411,17 @@ $similar = new WP_Query([
                   <?php $index = 0; ?>
                   <?php while ($packages->have_posts()): ?>
                     <?php $packages->the_post(); ?>
-                    <?php $is_active = carbon_get_post_meta($current_post_id, 'package_' . get_the_ID() . '_is_active'); ?>
+                    <?php $is_active = carbon_get_post_meta(
+                      $current_post_id,
+                      'package_' . get_the_ID() . '_is_active',
+                    ); ?>
                     <?php if ($is_active): ?>
                       <?php $index++; ?>
-                      <div data-project-packages-content="<?php echo get_the_ID() ?>" class="project-packages__content<?php echo ($index === 1 ? ' active' : ''); ?>">
-                        <?php the_title(); ?>
+                      <div data-project-packages-content="<?php echo get_the_ID(); ?>" class="project-packages__content<?php echo $index ===
+1
+  ? ' active'
+  : ''; ?>">
+                        <?php the_content(); ?>
                       </div>
                     <?php endif; ?>
                   <?php endwhile; ?>
