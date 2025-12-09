@@ -153,3 +153,24 @@ function plural($n, $forms)
     return $arr[2]; // 0, 5-9 яблок
   }
 }
+
+function add_query_param_to_current_url($param_name, $param_value)
+{
+  $url_parts = parse_url($_SERVER['REQUEST_URI']);
+  parse_str($url_parts['query'] ?? '', $params);
+
+  if ($param_value === null) {
+    unset($params[$param_name]); // Удаляем параметр, если значение null
+  } else {
+    $params[$param_name] = $param_value; // Добавляем или изменяем
+  }
+
+  $new_query = http_build_query($params);
+  $new_path = $url_parts['path'];
+
+  if ($new_query) {
+    $new_path .= '?' . $new_query;
+  }
+
+  return $new_path;
+}

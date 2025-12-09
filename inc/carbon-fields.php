@@ -177,7 +177,17 @@ function register_carbon_fields_blocks()
 {
   global $theme_options_container;
 
-  // Поля шаблона контакты
+  // Поля шаблона Отзывы
+  Container::make('post_meta', 'Отзывы')
+    ->where('post_type', '=', 'page')
+    ->where('post_template', '=', 'templates/reviews.php')
+    ->add_fields([Field::make('rich_text', 'description', 'Описание')]);
+
+  Container::make('post_meta', 'Отзывы')
+    ->where('post_type', '=', 'review')
+    ->add_fields([Field::make('textarea', 'video', 'Ссылка на видео')->set_rows(2)]);
+
+  // Поля шаблона Портфолио
   Container::make('post_meta', 'Портфолио')
     ->where('post_type', '=', 'page')
     ->where('post_template', '=', 'templates/portfolio.php')

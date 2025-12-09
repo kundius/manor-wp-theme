@@ -5,30 +5,30 @@ Template Name: Главная
 $showcase_projects = new WP_Query([
   'post_type' => 'project',
   'orderby' => [
-    'menu_order' => 'ASC'
+    'menu_order' => 'ASC',
   ],
   'posts_per_page' => -1,
   'meta_query' => [
     [
       'key' => 'at_home',
       'compare_key' => '=',
-      'value' => 'yes'
-    ]
-  ]
+      'value' => 'yes',
+    ],
+  ],
 ]);
 $favorite_projects = new WP_Query([
   'post_type' => 'project',
   'orderby' => [
-    'menu_order' => 'ASC'
+    'menu_order' => 'ASC',
   ],
   'posts_per_page' => -1,
   'meta_query' => [
     [
       'key' => 'favorite',
       'compare_key' => '=',
-      'value' => 'yes'
-    ]
-  ]
+      'value' => 'yes',
+    ],
+  ],
 ]);
 ?>
 <!DOCTYPE html>
@@ -387,19 +387,22 @@ $favorite_projects = new WP_Query([
                 <div class="portfolio-embla__slide">
                   <div class="portfolio-card">
                     <div class="portfolio-card__media">
-                      <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="portfolio-card__image">
-                      <?php
-                      $json1 = wp_json_encode([
+                      <img src="<?php bloginfo(
+                        'template_url',
+                      ); ?>/assets/showcase.jpg" alt="" class="portfolio-card__image">
+                      <?php $json1 = wp_json_encode([
                         'images' => [
                           get_bloginfo('template_url') . '/assets/showcase.jpg',
-                          get_bloginfo('template_url') . '/assets/showcase.jpg'
+                          get_bloginfo('template_url') . '/assets/showcase.jpg',
                         ],
                         'year' => '2025',
                         'title' => 'Название объекта',
-                        'desc' => 'Краткое описание выполненного проекта, перечень работ, задачи, решения и реализация'
-                      ]);
-                      ?>
-                      <button type="button" class="portfolio-card__zoom" data-portfolio-modal="<?php echo esc_attr($json1) ?>">
+                        'desc' =>
+                          'Краткое описание выполненного проекта, перечень работ, задачи, решения и реализация',
+                      ]); ?>
+                      <button type="button" class="portfolio-card__zoom" data-portfolio-modal="<?php echo esc_attr(
+                        $json1,
+                      ); ?>">
                         <span class="portfolio-card__zoom-icon">
                           <div class="icon icon-fullscreen"></div>
                         </span>
@@ -424,19 +427,22 @@ $favorite_projects = new WP_Query([
                 <div class="portfolio-embla__slide">
                   <div class="portfolio-card">
                     <div class="portfolio-card__media">
-                      <img src="<?php bloginfo('template_url'); ?>/assets/showcase.jpg" alt="" class="portfolio-card__image" style="filter: hue-rotate(180deg);">
-                      <?php
-                      $json2 = wp_json_encode([
+                      <img src="<?php bloginfo(
+                        'template_url',
+                      ); ?>/assets/showcase.jpg" alt="" class="portfolio-card__image" style="filter: hue-rotate(180deg);">
+                      <?php $json2 = wp_json_encode([
                         'images' => [
                           get_bloginfo('template_url') . '/assets/showcase.jpg',
-                          get_bloginfo('template_url') . '/assets/showcase.jpg'
+                          get_bloginfo('template_url') . '/assets/showcase.jpg',
                         ],
                         'year' => '2025',
                         'title' => 'Название объекта 2',
-                        'desc' => 'Краткое описание выполненного проекта, перечень работ, задачи, решения и реализация'
-                      ]);
-                      ?>
-                      <button type="button" class="portfolio-card__zoom" data-portfolio-modal="<?php echo esc_attr($json2) ?>">
+                        'desc' =>
+                          'Краткое описание выполненного проекта, перечень работ, задачи, решения и реализация',
+                      ]); ?>
+                      <button type="button" class="portfolio-card__zoom" data-portfolio-modal="<?php echo esc_attr(
+                        $json2,
+                      ); ?>">
                         <span class="portfolio-card__zoom-icon">
                           <div class="icon icon-fullscreen"></div>
                         </span>
@@ -482,7 +488,7 @@ $favorite_projects = new WP_Query([
 
     <section class="home-content">
       <div class="container">
-        <div class="content" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+        <div class="content">
           <?php the_content(); ?>
         </div>
       </div>

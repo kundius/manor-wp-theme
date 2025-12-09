@@ -31,6 +31,34 @@ function register_post_types()
     'show_ui' => true,
   ]);
 
+  register_post_type('review', [
+    'label' => null,
+    'labels' => [
+      'name' => 'Отзывы',
+      'singular_name' => 'Отзыв',
+      'add_new' => 'Добавить отзыв',
+      'add_new_item' => 'Добавить отзыв',
+      'edit_item' => 'Редактировать отзыв',
+      'new_item' => 'Новый отзыв',
+      'view_item' => 'Просмотреть отзыв',
+      'search_items' => 'Искать отзывы',
+      'not_found' => 'Не найдено',
+      'not_found_in_trash' => 'Не найдено в корзине',
+      'parent_item_colon' => '',
+      'menu_name' => 'Отзывы',
+    ],
+    'description' => '',
+    'public' => true,
+    'menu_icon' => 'dashicons-media-document',
+    'supports' => ['title', 'editor', 'thumbnail'],
+    'taxonomies' => ['post_tag'],
+    'hierarchical' => false,
+    'has_archive' => false,
+    'rewrite' => true,
+    'query_var' => true,
+    'show_ui' => true,
+  ]);
+
   register_post_type('project', [
     'label' => null,
     'labels' => [

@@ -13,6 +13,7 @@ import './src/styles/single-case.css'
 import './src/styles/template-catalog.css'
 import './src/styles/template-contacts.css'
 import './src/styles/template-portfolio.css'
+import './src/styles/template-reviews.css'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
 import fslightbox from 'fslightbox'

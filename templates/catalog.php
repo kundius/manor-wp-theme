@@ -274,7 +274,7 @@ $projects = new WP_Query($query_args);
         </div>
 
         <div class="page-section__content">
-          <div class="content" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+          <div class="content">
             <?php the_content(); ?>
           </div>
         </div>

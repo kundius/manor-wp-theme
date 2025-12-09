@@ -32,13 +32,21 @@
           </ol>
         </div>
 
-        <h1 class="page-section__title<?php if (mb_strlen(get_the_title()) > 20): ?> page-section__title--small<?php endif; ?>">
-          <?php the_title(); ?>
+        <?php if ($title = get_the_title()): ?>
+        <h1 class="page-section__title<?php if (
+          mb_strlen($title) > 20
+        ): ?> page-section__title--small<?php endif; ?>">
+          <?php echo $title; ?>
         </h1>
+        <?php endif; ?>
 
-        <div class="page-section__content content">
-          <?php the_content(); ?>
-        </div>
+        <?php if ($content = get_the_content()): ?>
+          <div class="page-section__content">
+            <div class="content">
+              <?php echo $content; ?>
+            </div>
+          </div>
+        <?php endif; ?>
       </div>
     </section>
 

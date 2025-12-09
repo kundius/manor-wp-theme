@@ -178,7 +178,7 @@ Template Name: Контакты
 
         <?php if ($content = get_the_content()): ?>
           <div class="page-section__content">
-            <div class="content" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
+            <div class="content">
               <?php echo $content; ?>
             </div>
           </div>

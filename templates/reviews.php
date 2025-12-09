@@ -1,11 +1,17 @@
 <?php
 /*
-Template Name: Наши работы
+Template Name: Отзывы
 */
-$cases = new WP_Query([
-  'post_type' => 'case',
+$reviews = new WP_Query([
+  'post_type' => 'review',
   'paged' => get_query_var('paged') ?: 1,
-  'meta_query' => [],
+  'meta_query' => [
+    [
+      'key' => 'video',
+      'value' => '',
+      'compare' => isset($_GET['alt']) ? '==' : '!=',
+    ],
+  ],
 ]); ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
@@ -55,15 +61,42 @@ $cases = new WP_Query([
         </div>
         <?php endif; ?>
 
-        <div class="portfolio-list">
+        <div class="reviews-tabs">
+          <a
+            class="reviews-tabs__item <?php if (
+              !isset($_GET['alt'])
+            ): ?> reviews-tabs__item--active<?php endif; ?>"
+          href="<?php echo add_query_param_to_current_url('alt', null); ?>"
+          >Видео-отзывы</a>
+          <a
+            class="reviews-tabs__item <?php if (
+              isset($_GET['alt'])
+            ): ?> reviews-tabs__item--active<?php endif; ?>"
+          href="<?php echo add_query_param_to_current_url('alt', '1'); ?>"
+          >Письменные отзывы</a>
+        </div>
+
+        <?php if (isset($_GET['alt'])): ?>
+        <div class="reviews-text-list">
           <?php
-          while ($cases->have_posts()) {
-            $cases->the_post();
-            get_template_part('partials/case-card');
+          while ($reviews->have_posts()) {
+            $reviews->the_post();
+            get_template_part('partials/review-text-card');
           }
           wp_reset_postdata();
           ?>
         </div>
+        <?php else: ?>
+        <div class="reviews-video-list">
+          <?php
+          while ($reviews->have_posts()) {
+            $reviews->the_post();
+            get_template_part('partials/review-video-card');
+          }
+          wp_reset_postdata();
+          ?>
+        </div>
+        <?php endif; ?>
 
         <?php if ($content = get_the_content()): ?>
           <div class="page-section__content">
