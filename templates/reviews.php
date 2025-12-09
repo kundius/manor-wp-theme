@@ -76,34 +76,6 @@ $reviews = new WP_Query([
           >Письменные отзывы</a>
         </div>
 
-        <a
-          href="https://lipsum.app/id/1/1600x1200"
-          data-fancybox="gallery"
-          data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code"
-        >
-          <img
-            src="https://lipsum.app/id/1/200x150"
-            width="200"
-            height="150"
-            alt="Sample image #1"
-          />
-        </a>
-        <a href="https://lipsum.app/id/2/1600x1200" data-fancybox="gallery">
-          <img
-            src="https://lipsum.app/id/2/200x150"
-            width="200"
-            height="150"
-            alt="Sample image #2"
-          />
-        </a>
-        <a href="https://lipsum.app/id/3/1600x1200" data-fancybox="gallery">
-          <img
-            src="https://lipsum.app/id/3/200x150"
-            width="200"
-            height="150"
-            alt="Sample image #3"
-          />
-        </a>
         <?php if (isset($_GET['alt'])): ?>
         <div class="reviews-text-list">
           <?php
