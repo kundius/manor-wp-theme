@@ -67,11 +67,10 @@ $similar = new WP_Query([
 
         <div class="case-layout">
           <div class="case-layout__date">
-            <?php if ($date = carbon_get_the_post_meta('date')): ?>
-            <?php $date = new DateTime($date); ?>
+            <?php if ($date = get_the_date('d.m.Y')): ?>
             <div class="case-details-date">
               <span class="icon icon-calendar"></span>
-              <?php echo $date->format('d.m.Y'); ?>
+              <?php echo $date; ?>
             </div>
             <?php endif; ?>
           </div>

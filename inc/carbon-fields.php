@@ -196,7 +196,6 @@ function register_carbon_fields_blocks()
   Container::make('post_meta', 'Портфолио')
     ->where('post_type', '=', 'case')
     ->add_fields([
-      Field::make('date', 'date', 'Дата'),
       Field::make('text', 'dimensions', 'Размер'),
       Field::make('text', 'duration', 'Сроки'),
       Field::make('textarea', 'address', 'Адрес')->set_rows(2),
@@ -206,6 +205,7 @@ function register_carbon_fields_blocks()
       ]),
       Field::make('textarea', 'description', 'Описание')->set_rows(4),
       Field::make('media_gallery', 'gallery', 'Галерея'),
+      Field::make('checkbox', 'at_home', 'На главную'),
     ]);
 
   Container::make('post_meta', 'Проект')

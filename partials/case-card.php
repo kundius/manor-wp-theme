@@ -5,11 +5,10 @@
     ]); ?>
   </figure>
   <div class="case-card__body">
-    <?php if ($date = carbon_get_the_post_meta('date')): ?>
-    <?php $date = new DateTime($date); ?>
+    <?php if ($date = get_the_date('d.m.Y')): ?>
     <div class="case-card__date">
       <span class="icon icon-calendar"></span>
-      <?php echo $date->format('d.m.Y'); ?>
+      <?php echo $date; ?>
     </div>
     <?php endif; ?>
     <div class="case-card__title">

@@ -25,7 +25,6 @@ import { initScrollBehavior } from './src/scripts/scroll-behavior'
 import { initShowcaseEmbla } from './src/scripts/showcase-embla'
 import { initPopularEmbla } from './src/scripts/popular-embla'
 import { initPortfolioEmbla } from './src/scripts/portfolio-embla'
-import { initPortfolioModal } from './src/scripts/portfolio-modal'
 import { initMobileMenu } from './src/scripts/mobile-menu'
 import { initProjectMedia } from './src/scripts/project-media'
 import { initGallery } from './src/scripts/gallery'
@@ -41,7 +40,6 @@ initScrollBehavior()
 initShowcaseEmbla()
 initPopularEmbla()
 initPortfolioEmbla()
-initPortfolioModal()
 initMobileMenu()
 initProjectMedia()
 initGallery()

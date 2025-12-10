@@ -30,6 +30,20 @@ $favorite_projects = new WP_Query([
     ],
   ],
 ]);
+$cases = new WP_Query([
+  'post_type' => 'case',
+  'orderby' => [
+    'menu_order' => 'ASC',
+  ],
+  'posts_per_page' => -1,
+  'meta_query' => [
+    [
+      'key' => 'at_home',
+      'compare_key' => '=',
+      'value' => 'yes',
+    ],
+  ],
+]);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
@@ -179,7 +193,7 @@ $favorite_projects = new WP_Query([
                       <div class="equipment-card__title">
                         Тёплый контур
                       </div>
-                      <a href="#" class="equipment-card__more">
+                      <a href="<?php the_permalink(11); ?>" class="equipment-card__more">
                         смотреть проекты
                       </a>
                     </div>
@@ -208,7 +222,7 @@ $favorite_projects = new WP_Query([
                       <div class="equipment-card__title">
                         Холодный контур
                       </div>
-                      <a href="#" class="equipment-card__more">
+                      <a href="<?php the_permalink(11); ?>" class="equipment-card__more">
                         смотреть проекты
                       </a>
                     </div>
@@ -384,86 +398,13 @@ $favorite_projects = new WP_Query([
           <div class="portfolio-embla" data-portfolio-embla>
             <div class="portfolio-embla__viewport" data-portfolio-embla-viewport>
               <div class="portfolio-embla__container">
-                <div class="portfolio-embla__slide">
-                  <div class="portfolio-card">
-                    <div class="portfolio-card__media">
-                      <img src="<?php bloginfo(
-                        'template_url',
-                      ); ?>/assets/showcase.jpg" alt="" class="portfolio-card__image">
-                      <?php $json1 = wp_json_encode([
-                        'images' => [
-                          get_bloginfo('template_url') . '/assets/showcase.jpg',
-                          get_bloginfo('template_url') . '/assets/showcase.jpg',
-                        ],
-                        'year' => '2025',
-                        'title' => 'Название объекта',
-                        'desc' =>
-                          'Краткое описание выполненного проекта, перечень работ, задачи, решения и реализация',
-                      ]); ?>
-                      <button type="button" class="portfolio-card__zoom" data-portfolio-modal="<?php echo esc_attr(
-                        $json1,
-                      ); ?>">
-                        <span class="portfolio-card__zoom-icon">
-                          <div class="icon icon-fullscreen"></div>
-                        </span>
-                      </button>
-                    </div>
-
-                    <div class="portfolio-card__content">
-                      <div class="portfolio-card__header">
-                        <div class="portfolio-card__year">
-                          2025
-                        </div>
-                        <div class="portfolio-card__title">
-                          Название объекта
-                        </div>
-                      </div>
-                      <div class="portfolio-card__desc">
-                        Краткое описание выполненного проекта, перечень работ, задачи, решения и реализация
-                      </div>
-                    </div>
+                <?php while ($cases->have_posts()): ?>
+                  <?php $cases->the_post(); ?>
+                  <div class="portfolio-embla__slide">
+                    <?php get_template_part('partials/portfolio-card'); ?>
                   </div>
-                </div>
-                <div class="portfolio-embla__slide">
-                  <div class="portfolio-card">
-                    <div class="portfolio-card__media">
-                      <img src="<?php bloginfo(
-                        'template_url',
-                      ); ?>/assets/showcase.jpg" alt="" class="portfolio-card__image" style="filter: hue-rotate(180deg);">
-                      <?php $json2 = wp_json_encode([
-                        'images' => [
-                          get_bloginfo('template_url') . '/assets/showcase.jpg',
-                          get_bloginfo('template_url') . '/assets/showcase.jpg',
-                        ],
-                        'year' => '2025',
-                        'title' => 'Название объекта 2',
-                        'desc' =>
-                          'Краткое описание выполненного проекта, перечень работ, задачи, решения и реализация',
-                      ]); ?>
-                      <button type="button" class="portfolio-card__zoom" data-portfolio-modal="<?php echo esc_attr(
-                        $json2,
-                      ); ?>">
-                        <span class="portfolio-card__zoom-icon">
-                          <div class="icon icon-fullscreen"></div>
-                        </span>
-                      </button>
-                    </div>
-
-                    <div class="portfolio-card__content">
-                      <div class="portfolio-card__header">
-                        <div class="portfolio-card__year">
-                          2025
-                        </div>
-                        <div class="portfolio-card__title">
-                          Название объекта
-                        </div>
-                      </div>
-                      <div class="portfolio-card__desc">
-                        Краткое описание выполненного проекта, перечень работ, задачи, решения и реализация
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
               </div>
             </div>
             <div class="portfolio-embla__footer">
@@ -475,7 +416,7 @@ $favorite_projects = new WP_Query([
                   <span class="icon icon-chevron-right"></span>
                 </button>
               </div>
-              <a href="#" class="portfolio-embla__all">
+              <a href="<?php the_permalink(9); ?>" class="portfolio-embla__all">
                 <span>Смотреть все <span class="max-md:hidden">построенные объекты</span></span>
                 <span class="icon icon-arrow-right"></span>
               </a>
