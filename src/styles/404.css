@@ -1,0 +1,158 @@
+.page-404-section {
+  position: relative;
+  height: 440px;
+  margin-bottom: 120px;
+
+  @media (--max-lg) {
+    height: initial;
+    margin-bottom: 96px;
+  }
+}
+
+.page-404-headline {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 40;
+  width: min-content;
+  margin-top: -24px;
+  margin-left: -12px;
+}
+
+.page-404-headline__title {
+  font-size: 225px;
+  font-family: 'Gilroy';
+  color: #c73f3b;
+  line-height: 180px;
+}
+
+.page-404-headline__desc {
+  font-size: 52px;
+  color: rgb(199, 63, 59);
+  font-weight: bold;
+  line-height: 1;
+}
+
+.page-404-media {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  z-index: 10;
+
+  @media (--max-lg) {
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 64px auto 96px;
+    position: relative;
+  }
+
+  @media (--max-md) {
+    zoom: 0.6;
+  }
+}
+
+.page-404-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: url('../images/orbit-bg-760.jpg') no-repeat 50% 50%;
+  background-size: 160% 160%;
+  overflow: hidden;
+  z-index: 30;
+
+  @media (--max-lg) {
+  }
+  @media (--max-lg) {
+  }
+}
+
+.page-404-image::before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.page-404-figure {
+  position: absolute;
+  display: flex;
+  z-index: 20;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+
+  @media (--max-lg) {
+  }
+}
+
+.page-404-figure svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 48px 0 0 -16px;
+  transform: translate(-50%, -50%);
+}
+
+.page-404-content {
+  width: 280px;
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 206px 0 0 240px;
+
+  @media (--max-lg) {
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+.page-404-content__desc {
+  font-size: 18px;
+  color: rgba(19, 19, 19, 0.82);
+  line-height: 1.333;
+
+  @media (--max-lg) {
+    text-align: center;
+  }
+}
+
+.page-404-content__action {
+  margin-top: 12px;
+  background-color: rgb(201, 63, 59);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.025em;
+  color: #fff;
+  transition: 150ms ease;
+}
+
+.page-404-content__action:hover {
+  background: #b53935;
+  transition-duration: 300ms;
+}

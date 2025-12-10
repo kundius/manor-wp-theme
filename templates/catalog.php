@@ -204,7 +204,7 @@ $projects = new WP_Query($query_args);
               <span class="breadcrumbs__item" itemprop="item" aria-current="page">
                 <span itemprop="name"><?php the_title(); ?></span>
               </span>
-              <meta itemprop="position" content="3" />
+              <meta itemprop="position" content="2" />
             </li>
           </ol>
         </div>
@@ -272,6 +272,8 @@ $projects = new WP_Query($query_args);
           wp_reset_postdata();
           ?>
         </div>
+
+        <?php echo get_pagination($projects); ?>
 
         <div class="page-section__content">
           <div class="content">

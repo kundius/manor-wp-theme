@@ -9,7 +9,7 @@ $reviews = new WP_Query([
     [
       'key' => 'video',
       'value' => '',
-      'compare' => isset($_GET['alt']) ? '==' : '!=',
+      'compare' => isset($_GET['graphic']) ? '==' : '!=',
     ],
   ],
 ]); ?>
@@ -42,7 +42,7 @@ $reviews = new WP_Query([
               <span class="breadcrumbs__item" itemprop="item" aria-current="page">
                 <span itemprop="name"><?php the_title(); ?></span>
               </span>
-              <meta itemprop="position" content="3" />
+              <meta itemprop="position" content="2" />
             </li>
           </ol>
         </div>
@@ -64,24 +64,24 @@ $reviews = new WP_Query([
         <div class="reviews-tabs">
           <a
             class="reviews-tabs__item <?php if (
-              !isset($_GET['alt'])
+              !isset($_GET['graphic'])
             ): ?> reviews-tabs__item--active<?php endif; ?>"
-          href="<?php echo add_query_param_to_current_url('alt', null); ?>"
+          href="<?php echo add_query_param_to_current_url('graphic', null); ?>"
           >Видео-отзывы</a>
           <a
             class="reviews-tabs__item <?php if (
-              isset($_GET['alt'])
+              isset($_GET['graphic'])
             ): ?> reviews-tabs__item--active<?php endif; ?>"
-          href="<?php echo add_query_param_to_current_url('alt', '1'); ?>"
+          href="<?php echo add_query_param_to_current_url('graphic', '1'); ?>"
           >Письменные отзывы</a>
         </div>
 
-        <?php if (isset($_GET['alt'])): ?>
-        <div class="reviews-text-list">
+        <?php if (isset($_GET['graphic'])): ?>
+        <div class="reviews-graphic-list">
           <?php
           while ($reviews->have_posts()) {
             $reviews->the_post();
-            get_template_part('partials/review-text-card');
+            get_template_part('partials/review-graphic-card');
           }
           wp_reset_postdata();
           ?>
@@ -97,6 +97,8 @@ $reviews = new WP_Query([
           ?>
         </div>
         <?php endif; ?>
+
+        <?php echo get_pagination($reviews); ?>
 
         <?php if ($content = get_the_content()): ?>
           <div class="page-section__content">

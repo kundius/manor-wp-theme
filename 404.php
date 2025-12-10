@@ -11,34 +11,37 @@
   <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
-    <div class="flex-grow page-404-section">
-      <div class="container">
-        <div class="page-404-headline">
-          <div class="page-404-headline__title">404</div>
-          <div class="page-404-headline__desc">Страница не найдена</div>
+    <div class="grow">
+      <div class="page-404-section">
+        <div class="page-404-media">
+          <div class="page-404-headline">
+            <div class="page-404-headline__title">404</div>
+            <div class="page-404-headline__desc">Страница не&nbsp;найдена</div>
+          </div>
+          <div class="page-404-image"></div>
+          <div class="page-404-figure">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="362px" height="310px">
+            <path fill-rule="evenodd"  fill="rgb(225, 229, 238)"
+            d="M361.894,90.501 L248.522,0.518 L32.633,103.896 L0.592,238.371 L331.547,310.014 L361.894,90.501 Z"/>
+            </svg>
+          </div>
         </div>
-        <div class="page-404-body">
-          <div class="page-404-body__desc">
-            <div class="page-404-body__desc-cell">
-              <strong>Наш телефон:</strong> {crb_theme_phone}
-            </div>
-            <div class="page-404-body__desc-cell">
-              {crb_theme_working_hours_short},  {crb_theme_working_hours_pause}
-            </div>
+        <div class="page-404-content">
+          <div class="page-404-content__desc">
+            Возможно, она была перемещена или удалена.<br>
+            Вы можете вернуться назад или&nbsp;перейти в каталог
           </div>
-          <div class="page-404-body__call">
-            <button type="button" class="control-button" data-modal-open="modal-call">
-              <span>Заказать звонок</span>
-              <span class="icon icon-phone"></span>
-            </button>
-          </div>
+          <a href="<?php the_permalink(11); ?>" class="page-404-content__action">
+            <span>Каталог проектов</span>
+            <span class="icon icon-arrow-right"></span>
+          </a>
         </div>
       </div>
     </div>
 
-    <?php get_template_part('partials/modals'); ?>
-
-    <?php wp_footer(); ?>
+    <?php get_template_part('partials/footer'); ?>
   </div>
 </body>
 

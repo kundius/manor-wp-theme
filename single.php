@@ -1,12 +1,5 @@
 <?php
-/*
-Template Name: Наши работы
-*/
-$cases = new WP_Query([
-  'post_type' => 'case',
-  'paged' => get_query_var('paged') ?: 1,
-  'meta_query' => [],
-]); ?>
+$categories = get_the_category(); ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
 
@@ -18,10 +11,10 @@ $cases = new WP_Query([
   <?php wp_body_open(); ?>
 
   <div class="flex flex-col min-h-screen">
-      <?php get_template_part('partials/header'); ?>
+    <?php get_template_part('partials/header'); ?>
 
     <section class="page-section">
-      <div class="page-bg-sharp" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0"></div>
+      <div class="page-bg-sharp" class="intro-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0"></div>
 
       <div class="container">
         <div class="page-section__breadcrumbs breadcrumbs">
@@ -32,12 +25,29 @@ $cases = new WP_Query([
               </a>
               <meta itemprop="position" content="1" />
             </li>
+            <?php if (!empty($categories)): ?>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a class="breadcrumbs__item" itemprop="item" href="<?php echo get_category_link(
+                $categories[0]->term_id,
+              ); ?>">
+                <span itemprop="name"><?php echo $categories[0]->name; ?></span>
+              </a>
+              <meta itemprop="position" content="2" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span class="breadcrumbs__item" itemprop="item" aria-current="page">
+                <span itemprop="name"><?php the_title(); ?></span>
+              </span>
+              <meta itemprop="position" content="3" />
+            </li>
+            <?php else: ?>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
               <span class="breadcrumbs__item" itemprop="item" aria-current="page">
                 <span itemprop="name"><?php the_title(); ?></span>
               </span>
               <meta itemprop="position" content="2" />
             </li>
+            <?php endif; ?>
           </ol>
         </div>
 
@@ -48,24 +58,6 @@ $cases = new WP_Query([
           <?php echo $title; ?>
         </h1>
         <?php endif; ?>
-
-        <?php if ($description = carbon_get_the_post_meta('description')): ?>
-        <div class="page-section__description">
-          <?php echo nl2br($description); ?>
-        </div>
-        <?php endif; ?>
-
-        <div class="portfolio-list">
-          <?php
-          while ($cases->have_posts()) {
-            $cases->the_post();
-            get_template_part('partials/case-card');
-          }
-          wp_reset_postdata();
-          ?>
-        </div>
-
-        <?php echo get_pagination($cases); ?>
 
         <?php if ($content = get_the_content()): ?>
           <div class="page-section__content">

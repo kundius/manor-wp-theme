@@ -184,3 +184,17 @@ function extract_rutube_id($url)
   }
   return null;
 }
+
+function get_pagination($query)
+{
+  $links = paginate_links([
+    'prev_text' => '<span class="icon icon-arrow-left"></span>',
+    'next_text' => '<span class="icon icon-arrow-right"></span>',
+    'total' => $query->max_num_pages,
+    'current' => max(1, get_query_var('paged')),
+  ]);
+
+  if ($links) {
+    return '<div class="pagination">' . $links . '</div>';
+  }
+}

@@ -1,21 +1,20 @@
 .content {
-  zoom: var(--global-scale);
-  font-size: 18px;
+  font-size: calc(18px * var(--global-scale));
   line-height: 1.25;
   color: #000000;
   p {
     margin: 0;
   }
   * + p {
-    margin-top: 32px;
+    margin-top: calc(32px * var(--global-scale));
   }
   h3 {
-    font-size: 32px;
+    font-size: calc(32px * var(--global-scale));
     font-weight: 500;
     margin: 0;
   }
   * + h3 {
-    margin-top: 36px;
+    margin-top: calc(48px * var(--global-scale));
   }
   table {
     overflow: hidden;
@@ -25,30 +24,30 @@
       background: #fbfbfb;
     }
     th {
-      font-size: 18px;
+      font-size: calc(18px * var(--global-scale));
       line-height: 1;
       color: #000000;
       font-weight: 400;
-      padding: 16px 24px;
+      padding: calc(16px * var(--global-scale)) calc(24px * var(--global-scale));
       text-align: left;
       border-bottom: 1px solid #eeeeee;
       border-right: 1px solid #eee;
       background-image: linear-gradient(45deg, #edf1fd, #f9edfb);
     }
     td {
-      padding: 16px 24px;
+      padding: calc(16px * var(--global-scale)) calc(24px * var(--global-scale));
       border-bottom: 1px solid #eeeeee;
       border-right: 1px solid #eee;
     }
   }
   * + table {
-    margin-top: 32px;
+    margin-top: calc(32px * var(--global-scale));
   }
   h2 + table {
-    margin-top: 48px;
+    margin-top: calc(48px * var(--global-scale));
   }
   h3 + table {
-    margin-top: 36px;
+    margin-top: calc(36px * var(--global-scale));
   }
   a {
     text-decoration: underline;
@@ -59,15 +58,34 @@
     list-style: disc;
   }
   ul li + li {
-    margin-top: 12px;
+    margin-top: calc(12px * var(--global-scale));
   }
   * + ul {
-    margin-top: 32px;
+    margin-top: calc(32px * var(--global-scale));
+  }
+
+  @media (--max-md) {
+    font-size: 16px;
+    * + p {
+      margin-top: 24px;
+    }
+    * + ul {
+      margin-top: 24px;
+    }
+    ul li + li {
+      margin-top: 8px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    * + h3 {
+      margin-top: 36px;
+    }
   }
 }
 
 .content h2 {
-  font-size: 60px;
+  font-size: calc(60px * var(--global-scale));
   font-weight: 500;
   line-height: 1.25;
   min-width: 0px;
@@ -83,7 +101,7 @@
 }
 
 .content h2::first-line {
-  font-size: 36px;
+  font-size: calc(36px * var(--global-scale));
   font-weight: bold;
 
   @media (--max-md) {
@@ -92,11 +110,19 @@
 }
 
 .content * + h2 {
-  margin-top: 48px;
+  margin-top: calc(80px * var(--global-scale));
+
+  @media (--max-lg) {
+    margin-top: 64px;
+  }
+
+  @media (--max-md) {
+    margin-top: 48px;
+  }
 }
 
 .content * + .content-orbit {
-  margin-top: 80px;
+  margin-top: calc(80px * var(--global-scale));
 
   @media (--max-lg) {
     margin-top: 64px;
@@ -130,12 +156,12 @@
 
 .content .content-orbit__item-title {
   position: relative;
-  font-size: 32px;
+  font-size: calc(32px * var(--global-scale));
   color: rgb(19, 19, 19);
   line-height: 1.2;
   padding-left: 68px;
   border-bottom: 1px solid #dfdfdf;
-  padding-bottom: 12px;
+  padding-bottom: calc(12px * var(--global-scale));
 
   @media (--max-md) {
     padding-left: 48px;
@@ -145,13 +171,13 @@
 
 .content .content-orbit__item-title::after {
   display: block;
-  font-size: 16px;
+  font-size: calc(16px * var(--global-scale));
   font-family: 'Gilroy';
   color: rgb(19, 19, 19);
   line-height: 1;
   position: absolute;
   left: 0;
-  top: 6px;
+  top: calc(6px * var(--global-scale));
 }
 
 .content .content-orbit__item--1 .content-orbit__item-title::after {
@@ -175,18 +201,18 @@
 }
 
 .content .content-orbit__item-desc {
-  font-size: 16px;
+  font-size: calc(16px * var(--global-scale));
   line-height: 1.5;
   color: #131313;
-  padding-left: 116px;
-  padding-right: 116px;
+  padding-left: calc(116px * var(--global-scale));
+  padding-right: calc(116px * var(--global-scale));
 
   p {
     margin: 0;
   }
 
   * + p {
-    margin-top: 24px;
+    margin-top: calc(24px * var(--global-scale));
   }
 
   ul {
@@ -194,12 +220,12 @@
   }
 
   * + ul {
-    margin-top: 24px;
+    margin-top: calc(24px * var(--global-scale));
   }
 
   ul li {
     list-style: none;
-    padding-left: 32px;
+    padding-left: calc(32px * var(--global-scale));
     position: relative;
   }
 
@@ -207,12 +233,12 @@
     content: '';
     position: absolute;
     background: #858582;
-    width: 5px;
-    height: 5px;
+    width: calc(5px * var(--global-scale));
+    height: calc(5px * var(--global-scale));
     border-radius: 50%;
     position: absolute;
-    left: 12px;
-    top: 12px;
+    left: calc(12px * var(--global-scale));
+    top: calc(12px * var(--global-scale));
     transform: translateY(-50%);
   }
 
@@ -223,7 +249,7 @@
 }
 
 .content * + .content-orbit__item-desc {
-  margin-top: 42px;
+  margin-top: calc(42px * var(--global-scale));
 
   @media (--max-md) {
     margin-top: 24px;
@@ -232,7 +258,7 @@
 
 .content .content-orbit__desc {
   position: relative;
-  font-size: 16px;
+  font-size: calc(16px * var(--global-scale));
   line-height: 1.5;
   color: #131313;
   z-index: 30;
@@ -243,11 +269,14 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 480px;
-  height: 480px;
+  width: calc(480px * var(--global-scale));
+  height: calc(480px * var(--global-scale));
   border-radius: 50%;
   background: url('../images/orbit-bg-760.jpg') no-repeat 50% 50%;
-  background-position-y: calc(50% - (240px - (240px * var(--progress))));
+  background-position-y: calc(
+    50% -
+      (calc(240px * var(--global-scale)) - (calc(240px * var(--global-scale)) * var(--progress)))
+  );
   z-index: 20;
 
   @media (--max-lg) {
@@ -262,8 +291,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 480px;
-  height: 480px;
+  width: calc(480px * var(--global-scale));
+  height: calc(480px * var(--global-scale));
 
   @media (--max-lg) {
     display: none;
@@ -274,7 +303,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: 88px 0 0 -22px;
-  transform: translate(-50%, -50%) skew(calc(10deg - (10deg * var(--progress))))
+  margin: calc(88px * var(--global-scale)) 0 0 calc(-22px * var(--global-scale));
+  transform: translate(-50%, -50%) scale(var(--global-scale))
+    skew(calc(10deg - (10deg * var(--progress))))
     rotate(calc((10deg - (10deg * var(--progress))) * -1));
 }

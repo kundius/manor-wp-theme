@@ -7,7 +7,7 @@ $query_params = [
     'date' => 'DESC',
   ],
   'paged' => get_query_var('paged') ?: 1,
-  'cat' => $category->term_id
+  'cat' => $category->term_id,
 ];
 $articles = new WP_Query($query_params);
 ?>
@@ -24,46 +24,79 @@ $articles = new WP_Query($query_params);
   <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
-    <div class="flex-grow">
+    <section class="page-section">
+      <div class="page-bg-sharp" class="intro-section" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0"></div>
+
       <div class="container">
-        <div class="breadcrumbs">
-          <a href="/">Главная</a>
-          <i></i>
-          <span><?php single_term_title(); ?></span>
+        <div class="page-section__breadcrumbs breadcrumbs">
+          <ol class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList" aria-label="Хлебные крошки">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a class="breadcrumbs__item" itemprop="item" href="/">
+                <span itemprop="name">Главная</span>
+              </a>
+              <meta itemprop="position" content="1" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span class="breadcrumbs__item" itemprop="item" aria-current="page">
+                <span itemprop="name"><?php single_term_title(); ?></span>
+              </span>
+              <meta itemprop="position" content="2" />
+            </li>
+          </ol>
         </div>
 
-        <h1 class="page-title">
-          <?php single_term_title(); ?>
+        <?php if ($title = single_term_title('', 0)): ?>
+        <h1 class="page-section__title<?php if (
+          mb_strlen($title) > 20
+        ): ?> page-section__title--small<?php endif; ?>">
+          <?php echo $title; ?>
         </h1>
+        <?php endif; ?>
 
-        <div
-          class="pb-32 max-md:pb-20"
-          data-category-list
-          data-category-list-max-page="<?php echo $articles->max_num_pages; ?>"
-          data-category-list-current-page="<?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>"
-          data-category-list-id="<?php echo $category->term_id; ?>"
-        >
-          <div class="grid grid-cols-3 gap-5 max-lg:gap-4 max-lg:grid-cols-2 max-md:grid-cols-1" data-category-list-wrap>
+        <?php if ($description = get_term_field('description', $category)): ?>
+        <div class="page-section__description">
+          <?php echo nl2br($description); ?>
+        </div>
+        <?php endif; ?>
+
+        <?php if ($articles->have_posts()): ?>
+          <div class="articles-list">
             <?php
-            while ($articles->have_posts()) { 
+            $index = 0;
+            while ($articles->have_posts()) {
+              $position = $index % 3;
               $articles->the_post();
-              get_template_part('partials/actions-item');
+
+              if ($position === 0) {
+                echo '<div class="articles-list__item articles-list__item-wide">';
+                get_template_part('partials/article-card', 'big');
+                echo '</div>';
+              } elseif ($position === 1) {
+                echo '<div class="articles-list__item">';
+                get_template_part('partials/article-card', null, [
+                  'reverse' => true,
+                ]);
+                echo '</div>';
+              } elseif ($position === 2) {
+                echo '<div class="articles-list__item">';
+                get_template_part('partials/article-card');
+                echo '</div>';
+              }
+
+              $index++;
             }
             wp_reset_postdata();
             ?>
           </div>
 
-          <?php if ($articles->max_num_pages > 1) : ?>
-          <button type="button" class="flex mx-auto mt-24 max-md:mt-16 primary-button font-bold text-lg w-56" data-category-list-load>Показать ещё</button>
-          <?php endif; ?>
-        </div>
-
-        <div class="page-content">
-          <?php echo term_description() ?>
-        </div>
+          <?php echo get_pagination($articles); ?>
+        <?php else: ?>
+          <p>Извините, ничего не найдено.</p>
+        <?php endif; ?>
       </div>
-    </div>
+    </section>
 
+    <?php get_template_part('partials/feedback'); ?>
     <?php get_template_part('partials/footer'); ?>
   </div>
 </body>

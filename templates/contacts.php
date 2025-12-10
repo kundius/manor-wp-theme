@@ -32,7 +32,7 @@ Template Name: Контакты
               <span class="breadcrumbs__item" itemprop="item" aria-current="page">
                 <span itemprop="name"><?php the_title(); ?></span>
               </span>
-              <meta itemprop="position" content="3" />
+              <meta itemprop="position" content="2" />
             </li>
           </ol>
         </div>
