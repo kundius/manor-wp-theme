@@ -292,10 +292,7 @@ function register_carbon_fields_blocks()
 
   // Страницы параметров
   $theme_options_container = Container::make('theme_options', 'Параметры')
-    // ->add_tab('Общее', [
-    //   Field::make('text', 'crb_theme_phone_number', 'Телефон'),
-    //   Field::make('text', 'crb_theme_phone_schedule', 'Телефон'),
-    // ])
+    ->add_tab('Общее', [Field::make('text', 'crb_form_rules', 'Согласие в форме')])
     ->add_tab('Подвал', [
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
       Field::make('textarea', 'crb_footer_no_oferta', 'Не оферта')->set_rows(2),
