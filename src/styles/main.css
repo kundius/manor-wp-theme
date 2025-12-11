@@ -1733,7 +1733,7 @@ a.breadcrumbs__item {
 }
 
 .modal-form__submit-button:not(:disabled):hover {
-  filter: drop-shadow(0px 0px 0.5px #fff);
+  background: #b53935;
   transition-duration: 0.3s;
 }
 
