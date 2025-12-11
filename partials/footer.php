@@ -65,10 +65,11 @@
         ]); ?>
       </div>
       <div class="footer-primary__links">
-        <div class="footer__links">
-          <a href="<?php the_permalink(PRIVACY_PAGE_ID); ?>">Политика конфиденциальности</a>
-          <a href="<?php the_permalink(AGREEMENT_PAGE_ID); ?>">Пользовательское соглашение</a>
-        </div>
+        <?php wp_nav_menu([
+          'theme_location' => 'menu-rules',
+          'container' => null,
+          'menu_class' => 'footer__links',
+        ]); ?>
         <div class="footer__notice">
           <?php echo nl2br(carbon_get_theme_option('crb_footer_no_oferta')); ?>
         </div>

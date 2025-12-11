@@ -275,6 +275,20 @@ function register_carbon_fields_blocks()
         'fields' => $fields,
       ]);
     });
+  Block::make('sitemap', 'Карта сайта')
+    ->add_fields([
+      Field::make('html', 'crb_information_text')->set_html(
+        '<div style="font-size: 32px;text-align: center;padding: 24px;background: aliceblue;border: 4px solid cadetblue;">Карта сайта</div>',
+      ),
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('blocks/sitemap', null, [
+        'fields' => $fields,
+      ]);
+    });
 
   // Страницы параметров
   $theme_options_container = Container::make('theme_options', 'Параметры')

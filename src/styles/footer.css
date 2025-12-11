@@ -324,10 +324,16 @@
   flex-direction: column;
   gap: 15px;
   align-items: flex-end;
+  margin: 0;
+  padding: 0;
 
   @media (--max-md) {
     align-items: center;
   }
+}
+
+.footer__links li {
+  display: flex;
 }
 
 .footer__links a {
