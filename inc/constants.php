@@ -2,7 +2,7 @@
 define('PORTFOLIO_PAGE_ID', 9);
 define('CATALOG_PAGE_ID', 11);
 define('CONTACTS_PAGE_ID', 15);
-define('SITEMAP_PAGE_ID', 15);
+define('SITEMAP_PAGE_ID', 241);
 define('PRIVACY_POLICY_PAGE_ID', 3);
 define('REGULATION_PAGE_ID', 228);
 define('AGREEMENT_PAGE_ID', 225);

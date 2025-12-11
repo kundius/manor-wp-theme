@@ -263,7 +263,7 @@ function register_carbon_fields_blocks()
   // Встраиваемые в контент блоки
   Block::make('feedback_form', 'Обратная связь')
     ->add_fields([
-      Field::make('html', 'crb_information_text')->set_html(
+      Field::make('html', 'crb_feedback_form_info')->set_html(
         '<div style="font-size: 32px;text-align: center;padding: 24px;background: aliceblue;border: 4px solid cadetblue;">Форма обратной связи</div>',
       ),
     ])
@@ -277,7 +277,7 @@ function register_carbon_fields_blocks()
     });
   Block::make('sitemap', 'Карта сайта')
     ->add_fields([
-      Field::make('html', 'crb_information_text')->set_html(
+      Field::make('html', 'crb_sitemap_info')->set_html(
         '<div style="font-size: 32px;text-align: center;padding: 24px;background: aliceblue;border: 4px solid cadetblue;">Карта сайта</div>',
       ),
     ])
