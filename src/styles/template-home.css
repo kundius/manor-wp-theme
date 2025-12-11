@@ -803,7 +803,7 @@
 }
 
 .equipment-help {
-  padding: 60px;
+  padding: 32px 60px;
   background: #afadad;
   display: flex;
   flex-direction: column;
@@ -837,10 +837,14 @@
 .equipment-help__rules {
   font-size: 16px;
   color: #fff;
-  line-height: 1.5;
-  margin-top: 16px;
+  line-height: 1.25;
+  margin-top: 12px;
   text-wrap: balance;
   text-align: center;
+}
+
+.equipment-help__rules a {
+  text-decoration: underline;
 }
 
 .equipment-help-success {

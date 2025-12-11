@@ -1654,7 +1654,7 @@ a.breadcrumbs__item {
 }
 
 .text-field__label {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
   margin-bottom: 6px;
   display: block;
@@ -1696,13 +1696,14 @@ a.breadcrumbs__item {
   display: none;
 }
 
-.modal-form__field {
+.modal-form__field + .modal-form__field {
+  margin-top: 24px;
 }
 
 .modal-form__rules {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
-  margin-top: 20px;
+  margin-top: 24px;
   text-align: center;
 }
 
@@ -1711,18 +1712,18 @@ a.breadcrumbs__item {
 }
 
 .modal-form__submit {
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .modal-form__submit-button {
   background-color: #c93f3b;
-  height: 48px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  gap: 12px;
-  font-size: 16px;
+  gap: 16px;
+  font-size: 18px;
   line-height: 1;
   letter-spacing: 0.025em;
   color: #fff;
