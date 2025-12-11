@@ -49,7 +49,6 @@
     <button type="submit" class="feedback-form__submit">Отправить заявку</button>
     <div class="feedback-form__rules">
       <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
-      Нажимая на кнопку, я даю своё <a href="">согласие</a> на <a href="">взаимодействие</a> и <a href="">обработку персональных данных</a>
     </div>
     <div class="feedback-form-success">
       <div class="feedback-form-success__title">
