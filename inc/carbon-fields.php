@@ -284,7 +284,7 @@ function register_carbon_fields_blocks()
     // ])
     ->add_tab('Подвал', [
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
-      Field::make('textarea', 'crb_footer_no_oferta', 'Копирайт')->set_rows(2),
+      Field::make('textarea', 'crb_footer_no_oferta', 'Не оферта')->set_rows(2),
     ]);
 
   // Поля шаблона контакты
