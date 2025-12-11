@@ -338,6 +338,13 @@
 }
 
 .contacts-addresses__item {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+
+  @media (--max-md) {
+    gap: 24px;
+  }
 }
 
 .contacts-addresses__item-header {
@@ -382,19 +389,14 @@
   line-height: 1.25;
   padding-left: 80px;
   padding-right: 44px;
-  margin-top: 44px;
+  flex-grow: 1;
 
   @media (--max-md) {
     padding-left: 0;
     padding-right: 0;
-    margin-top: 24px;
   }
 }
 
 .contacts-addresses__item-map {
-  margin-top: 44px;
-
-  @media (--max-md) {
-    margin-top: 24px;
-  }
+  display: flex;
 }
