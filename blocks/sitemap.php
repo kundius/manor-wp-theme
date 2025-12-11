@@ -21,7 +21,7 @@ $portfolio_query = new WP_Query([
   <?php while ($pages_query->have_posts()): ?>
     <?php $pages_query->the_post(); ?>
     <li>
-      <a href="<?php the_permalink(); ?>"><?php the_permalink(); ?></a>
+      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     </li>
   <?php endwhile; ?>
   <?php wp_reset_postdata(); ?>
@@ -32,7 +32,7 @@ $portfolio_query = new WP_Query([
   <?php while ($project_query->have_posts()): ?>
     <?php $project_query->the_post(); ?>
     <li>
-      <a href="<?php the_permalink(); ?>"><?php the_permalink(); ?></a>
+      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     </li>
   <?php endwhile; ?>
   <?php wp_reset_postdata(); ?>
@@ -43,7 +43,7 @@ $portfolio_query = new WP_Query([
   <?php while ($portfolio_query->have_posts()): ?>
     <?php $portfolio_query->the_post(); ?>
     <li>
-      <a href="<?php the_permalink(); ?>"><?php the_permalink(); ?></a>
+      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     </li>
   <?php endwhile; ?>
   <?php wp_reset_postdata(); ?>
@@ -54,7 +54,7 @@ $portfolio_query = new WP_Query([
   <?php while ($posts_query->have_posts()): ?>
     <?php $posts_query->the_post(); ?>
     <li>
-      <a href="<?php the_permalink(); ?>"><?php the_permalink(); ?></a>
+      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     </li>
   <?php endwhile; ?>
   <?php wp_reset_postdata(); ?>
