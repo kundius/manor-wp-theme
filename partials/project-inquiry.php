@@ -23,7 +23,20 @@ $inquiry_options = [
         </div>
       </div>
       <div class="project-inquiry__layout-right">
-        <form action="" class="project-inquiry__form">
+        <form
+          action="<?php echo admin_url('admin-ajax.php'); ?>"
+          class="project-inquiry__form"
+          data-feedback-form
+          data-feedback-form-goal=""
+          data-feedback-form-action="feedback_form"
+        >
+          <input type="hidden" name="submitted" value="">
+          <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(
+            'feedback-nonce',
+          ); ?>">
+          <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
+          <input type="hidden" name="subject" value="Рассчитаем стоимость за 1 день">
+
           <div class="project-inquiry__options">
             <?php foreach ($inquiry_options as $inquiry_option): ?>
               <label class="project-inquiry__option">
@@ -35,6 +48,7 @@ $inquiry_options = [
               </label>
             <?php endforeach; ?>
           </div>
+          <div class="project-inquiry__errors" data-feedback-form-errors></div>
           <div class="project-inquiry__control">
             <span class="project-inquiry__control-label">Телефон</span>
             <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="project-inquiry__control-input">
@@ -42,6 +56,15 @@ $inquiry_options = [
           </div>
           <div class="project-inquiry__rules">
             <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
+          </div>
+          <div class="project-inquiry-success">
+            <div class="project-inquiry-success__title">
+              Сообщение успешно отправлено
+            </div>
+            <div class="project-inquiry-success__desc">
+              Мы свяжемся с вами в ближайшее время
+            </div>
+            <button type="button" class="project-inquiry-success__close" data-feedback-form-reset>Закрыть</button>
           </div>
         </form>
       </div>

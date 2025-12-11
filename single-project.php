@@ -301,7 +301,13 @@ $similar = new WP_Query([
                 Не знаете с чего начать? Наши менеджеры дадут подробную бесплатную консультацию
               </div>
               <div class="project-contact__desc">Деловое общение, без спама, без sms</div>
-              <button type="button" class="project-contact__feedback">Проконсультироваться</button>
+              <button type="button" class="project-contact__feedback"
+                data-order-button="<?php echo $type_label[$type] .
+                  ' ' .
+                  $dimensions .
+                  ' «' .
+                  get_the_title() .
+                  '»'; ?>">Проконсультироваться</button>
               <div class="project-contact__socials">
                 <a href="#" class="project-contact__social project-contact__social--whatsapp">
                   <span class="project-contact__social-ico">
@@ -376,7 +382,7 @@ $similar = new WP_Query([
                 </div>
                 <div class="project-benefits__item-txt">
                   Вы можете воспользоваться выгодным кредитом от банков-партнеров: Т-Банк, Альфа Банк, Сбербанк, МТС Банк, Локо Банк, Совком Банк, ОТП Банк, Кредит Европа Банк, Ренесанс банк.<br>
-                  <a href="#">Консультация по кредиту</a>
+                  <button type="button" data-order-button="Консультация по кредиту">Консультация по кредиту</button>
                 </div>
               </div>
             </div>
