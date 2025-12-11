@@ -19,14 +19,20 @@
       ]); ?>
     </div>
 
-    <div class="header-phone">
-      <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone_number'); ?>" class="header-phone__number" data-call-button>
-        <?php echo carbon_get_theme_option('crb_theme_phone_number'); ?>
-      </a>
-      <div class="header-phone__time"><?php echo carbon_get_theme_option('crb_theme_phone_schedule'); ?></div>
-    </div>
+    <?php if ($phone_number = carbon_get_post_meta(CONTACTS_PAGE_ID, 'phone_number')): ?>
+    <a href="tel:<?php echo $phone_number; ?>" class="header-phone" data-call-button>
+      <span class="header-phone__number">
+        <?php echo $phone_number; ?>
+      </span>
+      <?php if ($phone_desc = carbon_get_post_meta(CONTACTS_PAGE_ID, 'phone_desc')): ?>
+      <span class="header-phone__time">
+        <?php echo $phone_desc; ?>
+      </span>
+      <?php endif; ?>
+    </a>
+    <?php endif; ?>
 
-    <button type="button" class="header-callback">
+    <button type="button" class="header-callback" data-callback-button>
       <span class="header-callback__text">
         Заказать звонок
       </span>
@@ -44,22 +50,19 @@
 </div>
 
 <div class="float-contacts">
+  <?php if ($groups = carbon_get_post_meta(CONTACTS_PAGE_ID, 'groups')): ?>
   <div class="v-social">
-    <a href="#" class="v-social__item">
-      <span class="icon icon-vk"></span>
+    <?php foreach ($groups as $group): ?>
+    <a href="<?php echo $group['link']; ?>" class="v-social__item">
+      <?php echo $group['icon']; ?>
     </a>
-    <a href="#" class="v-social__item">
-      <span class="icon icon-max"></span>
-    </a>
-    <a href="#" class="v-social__item">
-      <span class="icon icon-rutube"></span>
-    </a>
-    <a href="#" class="v-social__item">
-      <span class="icon icon-ok"></span>
-    </a>
+    <?php endforeach; ?>
   </div>
-  <a href="mailto:info@skpomestie.ru" class="v-email">
+  <?php endif; ?>
+  <?php if ($email = carbon_get_post_meta(CONTACTS_PAGE_ID, 'email')): ?>
+  <a href="mailto:<?php echo $email; ?>" class="v-email">
     <span class="icon icon-mail"></span>
-    info@skpomestie.ru
+    <?php echo $email; ?>
   </a>
+  <?php endif; ?>
 </div>

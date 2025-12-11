@@ -31,6 +31,9 @@ import { initGallery } from './src/scripts/gallery'
 import { initProjectPackages } from './src/scripts/project-packages'
 import { initSimilarEmbla } from './src/scripts/similar-embla'
 import { initCatalogFilter } from './src/scripts/catalog-filter'
+import { initOrderButton } from './src/scripts/order-button'
+import { initCallbackButton } from './src/scripts/callback-button'
+import { initFeedbackForm } from './src/scripts/feedback-form'
 
 new MaskInput('[data-maska]')
 
@@ -46,3 +49,6 @@ initGallery()
 initProjectPackages()
 initSimilarEmbla()
 initCatalogFilter()
+initOrderButton()
+initCallbackButton()
+initFeedbackForm()

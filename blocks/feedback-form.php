@@ -18,7 +18,20 @@
       </div>
     </div>
   </div>
-  <div class="feedback-form__main">
+  <form
+    class="feedback-form__main"
+    action="<?php echo admin_url('admin-ajax.php'); ?>"
+    data-feedback-form
+    data-feedback-form-goal=""
+    data-feedback-form-action="feedback_form"
+  >
+    <input type="hidden" name="submitted" value="">
+    <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce'); ?>">
+    <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
+    <input type="hidden" name="subject" value="Заказать звонок">
+
+    <div class="feedback-form__errors" data-feedback-form-errors></div>
+
     <div class="feedback-form__header">
       <div class="feedback-form__header-icon"></div>
       <div class="feedback-form__header-title">
@@ -31,13 +44,22 @@
     </div>
     <div class="feedback-form__input phone-control">
       <span class="phone-control__label">Ваш телефон</span>
-      <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="phone-control__input">
+      <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="phone-control__input" required>
     </div>
     <button type="submit" class="feedback-form__submit">Отправить заявку</button>
     <div class="feedback-form__rules">
       Нажимая на кнопку, я даю своё <a href="">согласие на взаимодействие и обработку персональных данных</a>
     </div>
-  </div>
+    <div class="feedback-form-success">
+      <div class="feedback-form-success__title">
+        Сообщение успешно отправлено
+      </div>
+      <div class="feedback-form-success__desc">
+        Мы свяжемся с вами в ближайшее время
+      </div>
+      <button type="button" class="feedback-form-success__close" data-feedback-form-reset>Закрыть</button>
+    </div>
+  </form>
   <svg xmlns="http://www.w3.org/2000/svg" width="519px" height="449px" class="feedback-form__figure-gray">
     <path fill-rule="evenodd" fill="rgb(225, 229, 238)" d="M-0.000,77.227 L122.118,-0.001 L501.041,102.371 L518.1000,448.999 L26.938,425.651 L-0.000,77.227 Z" />
   </svg>

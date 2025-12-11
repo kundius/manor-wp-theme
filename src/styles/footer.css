@@ -293,6 +293,7 @@
 .footer__nav {
   column-count: 2;
   column-width: auto;
+  width: min-content;
 
   @media (--max-md) {
     text-align: center;

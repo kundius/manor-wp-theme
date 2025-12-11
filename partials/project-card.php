@@ -8,16 +8,20 @@ $type_label = [
 <div class="project-card">
   <div class="project-card__media">
     <?php if ($sticker_text = carbon_get_the_post_meta('sticker_text')): ?>
-      <div class="project-card__flag project-card__flag--<?php echo carbon_get_the_post_meta('sticker_color'); ?>">
+      <div class="project-card__flag project-card__flag--<?php echo carbon_get_the_post_meta(
+        'sticker_color',
+      ); ?>">
         <?php echo $sticker_text; ?>
       </div>
     <?php endif; ?>
     <?php the_post_thumbnail('medium', [
-      'class' => 'project-card__image'
-    ]) ?>
+      'class' => 'project-card__image',
+    ]); ?>
   </div>
   <div class="project-card__title">
-    <?php echo $type_label[$type]; ?> <span class="font-for-number"><?php echo $dimensions; ?></span> «<?php the_title(); ?>»
+    <?php echo $type_label[
+      $type
+    ]; ?> <span class="font-for-number"><?php echo $dimensions; ?></span> «<?php the_title(); ?>»
   </div>
   <div class="project-card__data">
     <div class="project-card__params">
@@ -57,7 +61,15 @@ $type_label = [
     <?php endif; ?>
   </div>
   <div class="project-card__actions">
-    <button type="button" class="project-card__action project-card__action--order">
+    <button
+      type="button"
+      class="project-card__action project-card__action--order"
+      data-order-button="<?php echo $type_label[$type] .
+        ' ' .
+        $dimensions .
+        ' «' .
+        get_the_title() .
+        '»'; ?>">
       Заказать
     </button>
     <a href="<?php the_permalink(); ?>" class="project-card__action project-card__action--show">

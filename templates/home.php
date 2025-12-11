@@ -79,7 +79,7 @@ $cases = new WP_Query([
             </div>
           </div>
           <div class="intro-content__actions">
-            <a href="<?php the_permalink(11); ?>" class="intro-content__action">
+            <a href="<?php the_permalink(CATALOG_PAGE_ID); ?>" class="intro-content__action">
               <div class="intro-content__action-text">
                 Каталог проектов
               </div>
@@ -127,7 +127,7 @@ $cases = new WP_Query([
                 <div class="catalog-preview__title">
                   Каталог
                 </div>
-                <a href="<?php the_permalink(11); ?>" class="catalog-preview__more">
+                <a href="<?php the_permalink(CATALOG_PAGE_ID); ?>" class="catalog-preview__more">
                   <span class="catalog-preview__more-text">
                     Смотреть все
                   </span>
@@ -193,7 +193,9 @@ $cases = new WP_Query([
                       <div class="equipment-card__title">
                         Тёплый контур
                       </div>
-                      <a href="<?php the_permalink(11); ?>" class="equipment-card__more">
+                      <a href="<?php the_permalink(
+                        CATALOG_PAGE_ID,
+                      ); ?>" class="equipment-card__more">
                         смотреть проекты
                       </a>
                     </div>
@@ -222,7 +224,9 @@ $cases = new WP_Query([
                       <div class="equipment-card__title">
                         Холодный контур
                       </div>
-                      <a href="<?php the_permalink(11); ?>" class="equipment-card__more">
+                      <a href="<?php the_permalink(
+                        CATALOG_PAGE_ID,
+                      ); ?>" class="equipment-card__more">
                         смотреть проекты
                       </a>
                     </div>
@@ -248,16 +252,41 @@ $cases = new WP_Query([
           <div class="home-primary__equipment-help">
             <div class="home-primary__equipment-help-inner">
 
-              <form class="equipment-help">
+              <form
+                class="equipment-help"
+                action="<?php echo admin_url('admin-ajax.php'); ?>"
+                data-feedback-form
+                data-feedback-form-goal=""
+                data-feedback-form-action="feedback_form"
+              >
+                <input type="hidden" name="submitted" value="">
+                <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(
+                  'feedback-nonce',
+                ); ?>">
+                <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
+                <input type="hidden" name="subject" value="Заказать звонок">
+
+                <div class="equipment-help__errors" data-feedback-form-errors></div>
+
                 <div class="equipment-help__title">
                   Не знаете с чего начать?<br>
                   Наши менеджеры дадут подробную бесплатную консультацию
                 </div>
                 <div class="equipment-help__input phone-control">
                   <span class="phone-control__label">Ваш телефон</span>
-                  <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="phone-control__input">
+                  <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="phone-control__input" required>
                 </div>
                 <button type="submit" class="equipment-help__submit">Проконсультироваться</button>
+
+                <div class="equipment-help-success">
+                  <div class="equipment-help-success__title">
+                    Сообщение успешно отправлено
+                  </div>
+                  <div class="equipment-help-success__desc">
+                    Мы свяжемся с вами в ближайшее время
+                  </div>
+                  <button type="button" class="equipment-help-success__close" data-feedback-form-reset>Закрыть</button>
+                </div>
               </form>
 
             </div>
@@ -295,7 +324,7 @@ $cases = new WP_Query([
                     <span class="icon icon-chevron-right"></span>
                   </button>
                 </div>
-                <a href="<?php the_permalink(11); ?>" class="popular-embla__all">
+                <a href="<?php the_permalink(CATALOG_PAGE_ID); ?>" class="popular-embla__all">
                   Смотреть все
                   <span class="icon icon-arrow-right"></span>
                 </a>
@@ -313,19 +342,47 @@ $cases = new WP_Query([
       <div class="container">
         <div class="advantages-layout">
           <div class="advantages-layout__calc">
-            <div class="advantage-calc" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
+            <form
+              class="advantage-calc"
+              data-scroll
+              data-scroll-css-progress
+              data-scroll-position="start, middle"
+              data-scroll-offset="0, 40%"
+              action="<?php echo admin_url('admin-ajax.php'); ?>"
+              data-feedback-form
+              data-feedback-form-goal=""
+              data-feedback-form-action="feedback_form"
+            >
+              <input type="hidden" name="submitted" value="">
+              <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(
+                'feedback-nonce',
+              ); ?>">
+              <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
+              <input type="hidden" name="subject" value="Заказать звонок">
+
+              <div class="advantage-calc__errors" data-feedback-form-errors></div>
+
               <div class="advantage-calc__title">
                 Рассчитаем бесплатно индивидуальный проект
               </div>
-              <form action="" class="advantage-calc__form">
+              <div class="advantage-calc__form">
                 <span class="advantage-calc__form-label">Телефон</span>
-                <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="advantage-calc__form-input">
+                <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="advantage-calc__form-input" required>
                 <button type="submit" class="advantage-calc__form-submit">Отправить заявку</button>
-              </form>
+              </div>
               <div class="advantage-calc__rules">
                 Нажимая на кнопку, я даю своё <a href="">согласие на взаимодействие и обработку персональных данных</a>
               </div>
-            </div>
+              <div class="advantage-calc-success">
+                <div class="advantage-calc-success__title">
+                  Сообщение успешно отправлено
+                </div>
+                <div class="advantage-calc-success__desc">
+                  Мы свяжемся с вами в ближайшее время
+                </div>
+                <button type="button" class="advantage-calc-success__close" data-feedback-form-reset>Закрыть</button>
+              </div>
+            </form>
           </div>
           <div class="advantages-layout__warranty">
             <div class="advantage-warranty" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
@@ -416,7 +473,7 @@ $cases = new WP_Query([
                   <span class="icon icon-chevron-right"></span>
                 </button>
               </div>
-              <a href="<?php the_permalink(9); ?>" class="portfolio-embla__all">
+              <a href="<?php the_permalink(PORTFOLIO_PAGE_ID); ?>" class="portfolio-embla__all">
                 <span>Смотреть все <span class="max-md:hidden">построенные объекты</span></span>
                 <span class="icon icon-arrow-right"></span>
               </a>
@@ -427,13 +484,16 @@ $cases = new WP_Query([
       </div>
     </section>
 
+
+    <?php if ($content = get_the_content()): ?>
     <section class="home-content">
       <div class="container">
         <div class="content">
-          <?php the_content(); ?>
+          <?php echo $content; ?>
         </div>
       </div>
     </section>
+    <?php endif; ?>
 
     <?php get_template_part('partials/feedback'); ?>
     <?php get_template_part('partials/footer'); ?>

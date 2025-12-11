@@ -1,9 +1,10 @@
 <?php
 
 add_action('after_setup_theme', function () {
-  require_once('vendor/autoload.php');
+  require_once 'vendor/autoload.php';
 });
 
+include 'inc/constants.php';
 include 'inc/ajax.php';
 include 'inc/question-form.php';
 include 'inc/register-post-types.php';

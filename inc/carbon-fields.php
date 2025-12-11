@@ -278,15 +278,14 @@ function register_carbon_fields_blocks()
 
   // Страницы параметров
   $theme_options_container = Container::make('theme_options', 'Параметры')
-    ->add_tab('Общее', [
-      Field::make('text', 'crb_theme_phone_number', 'Телефон')->set_help_text(
-        'Шорткод: {crb_theme_phone_number}',
-      ),
-      Field::make('text', 'crb_theme_phone_schedule', 'Телефон')->set_help_text(
-        'Шорткод: {crb_theme_phone_schedule}',
-      ),
-    ])
-    ->add_tab('Подвал', [Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2)]);
+    // ->add_tab('Общее', [
+    //   Field::make('text', 'crb_theme_phone_number', 'Телефон'),
+    //   Field::make('text', 'crb_theme_phone_schedule', 'Телефон'),
+    // ])
+    ->add_tab('Подвал', [
+      Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
+      Field::make('textarea', 'crb_footer_no_oferta', 'Копирайт')->set_rows(2),
+    ]);
 
   // Поля шаблона контакты
   Container::make('post_meta', 'Контакты')
