@@ -51,7 +51,7 @@ $inquiry_options = [
           <div class="project-inquiry__errors" data-feedback-form-errors></div>
           <div class="project-inquiry__control">
             <span class="project-inquiry__control-label">Телефон</span>
-            <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="project-inquiry__control-input">
+            <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="project-inquiry__control-input" required>
             <button type="submit" class="project-inquiry__control-submit">Получить расчёт</button>
           </div>
           <div class="project-inquiry__rules">
