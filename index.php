@@ -40,13 +40,11 @@
         </h1>
         <?php endif; ?>
 
-        <?php if ($content = get_the_content()): ?>
-          <div class="page-section__content">
-            <div class="content">
-              <?php echo $content; ?>
-            </div>
+        <div class="page-section__content">
+          <div class="content">
+            <?php the_content(); ?>
           </div>
-        <?php endif; ?>
+        </div>
       </div>
     </section>
 

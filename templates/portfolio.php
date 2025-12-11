@@ -67,13 +67,11 @@ $cases = new WP_Query([
 
         <?php echo get_pagination($cases); ?>
 
-        <?php if ($content = get_the_content()): ?>
-          <div class="page-section__content">
-            <div class="content">
-              <?php echo $content; ?>
-            </div>
+        <div class="page-section__content">
+          <div class="content">
+            <?php the_content(); ?>
           </div>
-        <?php endif; ?>
+        </div>
       </div>
     </section>
 

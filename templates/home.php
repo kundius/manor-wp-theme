@@ -488,15 +488,13 @@ $cases = new WP_Query([
     </section>
 
 
-    <?php if ($content = get_the_content()): ?>
     <section class="home-content">
       <div class="container">
         <div class="content">
-          <?php echo $content; ?>
+          <?php the_content(); ?>
         </div>
       </div>
     </section>
-    <?php endif; ?>
 
     <?php get_template_part('partials/feedback'); ?>
     <?php get_template_part('partials/footer'); ?>

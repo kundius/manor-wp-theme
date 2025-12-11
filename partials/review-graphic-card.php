@@ -25,8 +25,10 @@ $rutube_id = extract_rutube_id($video);
     <div class="review-graphic-card__date">
       <?php echo get_the_date('Y'); ?>
     </div>
+    <?php if ($content = get_the_content()): ?>
     <div class="review-graphic-card__content">
-      <?php echo get_the_content(); ?>
+      <?php echo $content; ?>
     </div>
+    <?php endif; ?>
   </div>
 </article>
