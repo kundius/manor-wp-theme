@@ -83,7 +83,7 @@ $similar = new WP_Query([
                           get_the_ID(),
                           'full',
                         ); ?>" data-fslightbox="gallery" target="_blank">
-                          <?php the_post_thumbnail('large'); ?>
+                          <?php the_post_thumbnail('custom-large'); ?>
                           <span class="gallery-main__loupe">
                             <span class="icon icon-search"></span>
                           </span>
@@ -97,7 +97,7 @@ $similar = new WP_Query([
                           href="<?php echo wp_get_attachment_image_url($id, 'full'); ?>"
                           target="_blank"
                           data-fslightbox="gallery">
-                          <?php echo wp_get_attachment_image($id, 'large'); ?>
+                          <?php echo wp_get_attachment_image($id, 'custom-large'); ?>
                           <span class="gallery-main__loupe">
                             <span class="icon icon-search"></span>
                           </span>
@@ -148,13 +148,13 @@ $similar = new WP_Query([
                   <div class="gallery-thumbs__container">
                     <?php if (has_post_thumbnail()): ?>
                       <div class="gallery-thumbs__slide">
-                        <?php the_post_thumbnail('small'); ?>
+                        <?php the_post_thumbnail('custom-small'); ?>
                       </div>
                     <?php endif; ?>
 
                     <?php foreach ($gallery as $key => $id): ?>
                       <div class="gallery-thumbs__slide">
-                        <?php echo wp_get_attachment_image($id, 'small'); ?>
+                        <?php echo wp_get_attachment_image($id, 'custom-small'); ?>
                       </div>
                     <?php endforeach; ?>
                   </div>

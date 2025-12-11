@@ -7,7 +7,7 @@ $rutube_id = extract_rutube_id($video);
 <article class="review-video-card">
   <figure class="review-video-card__media">
     <?php if (has_post_thumbnail()): ?>
-      <?php the_post_thumbnail('medium', [
+      <?php the_post_thumbnail('custom-medium', [
         'class' => 'review-video-card__image',
       ]); ?>
     <?php elseif ($rutube_id): ?>

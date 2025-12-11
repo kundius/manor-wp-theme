@@ -6,9 +6,9 @@ add_filter('excerpt_length', function () {
   return 15;
 });
 
-add_image_size('small', 320, 180, true);
-add_image_size('medium', 480, 270, true);
-add_image_size('large', 960, 540, true);
+add_image_size('custom-small', 200, 150, true);
+add_image_size('custom-medium', 400, 300, true);
+add_image_size('custom-large', 800, 600, true);
 
 // Add the theme support basic elements
 add_theme_support('align-wide');

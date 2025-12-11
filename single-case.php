@@ -81,7 +81,7 @@ $similar = new WP_Query([
                   get_the_ID(),
                   'full',
                 ); ?>" data-fslightbox="gallery" target="_blank" class="case-details-thumbnail__link">
-                  <?php the_post_thumbnail('large', [
+                  <?php the_post_thumbnail('custom-large', [
                     'class' => 'case-details-thumbnail__image',
                   ]); ?>
                   <span class="case-details-thumbnail__loupe">
@@ -157,7 +157,7 @@ $similar = new WP_Query([
                   target="_blank"
                   data-fslightbox="gallery"
                   class="case-gallery__item">
-                  <?php echo wp_get_attachment_image($id, 'medium'); ?>
+                  <?php echo wp_get_attachment_image($id, 'custom-medium'); ?>
                 </a>
               <?php endforeach; ?>
             </div>

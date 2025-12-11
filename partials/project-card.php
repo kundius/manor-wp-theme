@@ -14,7 +14,7 @@ $type_label = [
         <?php echo $sticker_text; ?>
       </div>
     <?php endif; ?>
-    <?php the_post_thumbnail('medium', [
+    <?php the_post_thumbnail('custom-medium', [
       'class' => 'project-card__image',
     ]); ?>
   </div>

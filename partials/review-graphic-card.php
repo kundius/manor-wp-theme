@@ -11,7 +11,7 @@ $rutube_id = extract_rutube_id($video);
       get_the_ID(),
       'full',
     ); ?>" data-fslightbox="graphic" target="_blank">
-      <?php the_post_thumbnail('medium', [
+      <?php the_post_thumbnail('custom-medium', [
         'class' => 'review-graphic-card__image',
       ]); ?>
     </a>

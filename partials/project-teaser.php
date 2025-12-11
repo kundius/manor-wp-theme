@@ -14,7 +14,7 @@ $type_label = [
         <?php echo $sticker_text; ?>
       </div>
     <?php endif; ?>
-    <?php the_post_thumbnail('medium', [
+    <?php the_post_thumbnail('custom-large', [
       'class' => 'project-teaser__image',
     ]); ?>
     <div class="project-teaser__bar">

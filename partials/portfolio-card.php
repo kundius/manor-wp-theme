@@ -5,7 +5,7 @@
       get_the_ID(),
       'full',
     ); ?>" data-fslightbox="gallery" target="_blank" class="portfolio-card-thumb">
-      <?php the_post_thumbnail('large', [
+      <?php the_post_thumbnail('custom-large', [
         'class' => 'portfolio-card-thumb__image',
       ]); ?>
       <span class="portfolio-card-thumb__loupe">

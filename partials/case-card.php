@@ -1,6 +1,6 @@
 <article class="case-card">
   <figure class="case-card__media">
-    <?php the_post_thumbnail('medium', [
+    <?php the_post_thumbnail('custom-medium', [
       'class' => 'case-card__media-image',
     ]); ?>
   </figure>
