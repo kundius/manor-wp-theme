@@ -7,9 +7,8 @@ $inquiry_options = [
   'Добавить утеплитель',
   'Изменить высоту потолков',
   'Увеличить/изменить окна',
-  'Добавить/убрать терассу, крыльцо и др.'
-];
-?>
+  'Добавить/убрать терассу, крыльцо и др.',
+]; ?>
 <section class="project-inquiry" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0">
   <div class="container">
     <div class="project-inquiry__layout">
@@ -42,7 +41,7 @@ $inquiry_options = [
             <button type="submit" class="project-inquiry__control-submit">Получить расчёт</button>
           </div>
           <div class="project-inquiry__rules">
-            Нажимая на кнопку, я даю своё <a href="">согласие на взаимодействие и обработку персональных данных</a>
+            <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
           </div>
         </form>
       </div>

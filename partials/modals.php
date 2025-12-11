@@ -28,11 +28,7 @@
           </div>
 
           <div class="modal-form__rules">
-            Нажимая “Отправить”, вы даете <a href="<?php the_permalink(
-              AGREEMENT_PAGE_ID,
-            ); ?>" target="_blank">согласие</a> на <a href="<?php the_permalink(
-  PRIVACY_PAGE_ID,
-); ?>" target="_blank">обработку персональных данных</a>
+            <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
           </div>
 
           <div class="modal-form__errors" data-feedback-form-errors></div>
@@ -90,11 +86,7 @@
           </div>
 
           <div class="modal-form__rules">
-            Нажимая “Отправить”, вы даете <a href="<?php the_permalink(
-              AGREEMENT_PAGE_ID,
-            ); ?>" target="_blank">согласие</a> на <a href="<?php the_permalink(
-  PRIVACY_PAGE_ID,
-); ?>" target="_blank">обработку персональных данных</a>
+            <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
           </div>
 
           <div class="modal-form__errors" data-feedback-form-errors></div>

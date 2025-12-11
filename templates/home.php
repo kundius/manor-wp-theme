@@ -277,6 +277,9 @@ $cases = new WP_Query([
                   <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="phone-control__input" required>
                 </div>
                 <button type="submit" class="equipment-help__submit">Проконсультироваться</button>
+                <div class="equipment-help__rules">
+                  <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
+                </div>
 
                 <div class="equipment-help-success">
                   <div class="equipment-help-success__title">
@@ -371,7 +374,7 @@ $cases = new WP_Query([
                 <button type="submit" class="advantage-calc__form-submit">Отправить заявку</button>
               </div>
               <div class="advantage-calc__rules">
-                Нажимая на кнопку, я даю своё <a href="">согласие на взаимодействие и обработку персональных данных</a>
+                <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
               </div>
               <div class="advantage-calc-success">
                 <div class="advantage-calc-success__title">

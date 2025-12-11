@@ -834,6 +834,15 @@
   display: none;
 }
 
+.equipment-help__rules {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.5;
+  margin-top: 16px;
+  text-wrap: balance;
+  text-align: center;
+}
+
 .equipment-help-success {
   display: none;
   position: absolute;
@@ -897,11 +906,11 @@
   color: rgb(255, 255, 255);
   line-height: 1.5;
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
   text-wrap: balance;
 
   @media (--max-lg) {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   @media (--max-md) {
