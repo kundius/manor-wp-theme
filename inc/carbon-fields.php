@@ -4,178 +4,21 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 use Carbon_Fields\Block;
 
-$theme_options_container = null;
-
-add_action('after_setup_theme', function () {
-  \Carbon_Fields\Carbon_Fields::boot();
-});
-
-add_action('admin_head', function () {
-  echo '<style>
-    .cf-radio__list {
-      margin: 0;
-      padding: 0;
-    }
-
-    [data-type^="carbon-fields/block"] {
-      position: relative;
-      z-index: 1;
-    }
-
-    [data-type^="carbon-fields/block"].is-hovered {
-      z-index: 2;
-    }
-
-    [data-type^="carbon-fields/block"]::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      border: .125em solid #6b6d89;
-      background: #f0f0f0;
-    }
-
-    [data-type^="carbon-fields/block"] .cf-block__fields {
-      position: relative;
-      padding: 16px 24px;
-      z-index: 2;
-    }
-
-    .cf-block__fields__title {
-      margin: 0;
-      font-size: 20px;
-      font-weight: 500;
-      color: #000;
-      line-height: 32px;
-    }
-
-    [data-type^="carbon-fields/block"] .cf-block__fields > .cf-field.cf-set:nth-child(2) {
-      position: absolute;
-      right: 24px;
-      top: 16px;
-      z-index: 20;
-    }
-
-    [data-type^="carbon-fields/block"] .cf-block__fields > .cf-field.cf-set:nth-child(2) .cf-field__head label {
-      display: block;
-      margin: 0;
-      background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
-      color: var(--wp-components-color-accent-inverted, #fff);
-      outline: 1px solid #0000;
-      text-decoration: none;
-      text-shadow: none;
-      white-space: nowrap;
-      height: 32px;
-      line-height: 32px;
-      padding: 0 12px;
-    }
-
-    [data-type^="carbon-fields/block"] .cf-block__fields > .cf-field.cf-set:nth-child(2) .cf-field__body {
-      display: none;
-      position: absolute;
-      right: 8px;
-      top: 100%;
-      background: #fff;
-      border-radius: 4px;
-      box-shadow: 0 0 0 1px #ccc, 0 2px 3px #0000000d, 0 4px 5px #0000000a, 0 12px 12px #00000008, 0 16px 16px #00000005;
-      box-sizing: border-box;
-      width: min-content;
-      white-space: nowrap;
-      padding: 8px 12px;
-      min-width: 160px;
-    }
-
-    [data-type^="carbon-fields/block"] .cf-block__fields > .cf-field.cf-set:nth-child(2):hover .cf-field__body {
-      display: block;
-    }
-
-    [data-type^="carbon-fields/block"] .cf-block__fields > .cf-field.cf-set:nth-child(2) .cf-field__body .cf-set__list {
-      padding: 0;
-    }
-  </style>';
-});
-
-function create_block($key, $name, $fields)
-{
-  global $theme_options_container;
-
-  foreach ($fields as $field) {
-    // добавить к простым названиям название блока, чтобы в опциях они были уникальны
-    $field->set_base_name($key . '_' . $field->get_base_name());
-    // добавить условную логику
-    $field->set_conditional_logic([
-      [
-        'field' => $key . '_block_fields',
-        'value' => $field->get_base_name(),
-        'compare' => 'INCLUDES',
-      ],
-    ]);
-  }
-
-  // список полей для переключателя
-  $edit_fields = [];
-  foreach ($fields as $field) {
-    $edit_fields[$field->get_base_name()] = $field->get_label();
-  }
-
-  $block_fields = array_merge(
-    [
-      Field::make('html', $key . '_block_name')->set_html(
-        '<div class="cf-block__fields__title">' . $name . '</div>',
-      ),
-      Field::make('set', $key . '_block_fields', 'Редактировать')->set_options($edit_fields),
-    ],
-    $fields,
-  );
-  $theme_options_fields = array_merge(
-    [
-      // условная логика в опциях применяется тоже, поэтому необходимо список полей добавить и туда
-      Field::make('set', $key . '_block_fields', 'Редактировать')
-        ->set_options($edit_fields)
-        ->set_default_value(array_keys($edit_fields)),
-      // ->set_conditional_logic([[ 'field' => $key . '_block_fields' ]])
-    ],
-    $fields,
-  );
-
-  Container::make('theme_options', $name)
-    ->set_page_parent($theme_options_container)
-    ->add_fields($theme_options_fields);
-
-  Block::make('block_' . $key, $name)
-    ->add_fields($block_fields)
-    ->set_category('layout')
-    ->set_mode('edit')
-    ->set_render_callback(function ($fields, $attributes, $inner_blocks) use ($key) {
-      $block_name = $fields[$key . '_block_name'];
-      $block_fields = $fields[$key . '_block_fields'];
-
-      unset($fields[$key . '_block_name']);
-      unset($fields[$key . '_block_fields']);
-
-      $args_fields = [];
-
-      foreach ($fields as $field_key => $field_value) {
-        $short_key = str_replace($key . '_', '', $field_key);
-        if (in_array($field_key, $block_fields)) {
-          $args_fields[$short_key] = $field_value;
-        } else {
-          $args_fields[$short_key] = carbon_get_theme_option($field_key);
-        }
-      }
-
-      get_template_part('blocks/' . $key, null, [
-        'fields' => $args_fields,
-      ]);
-    });
-}
-
 add_action('carbon_fields_register_fields', 'register_carbon_fields_blocks');
 function register_carbon_fields_blocks()
 {
-  global $theme_options_container;
+  Container::make('post_meta', 'SEO')
+    ->where('post_type', '=', 'page')
+    ->or_where('post_type', '=', 'post')
+    ->or_where('post_type', '=', 'case')
+    ->or_where('post_type', '=', 'project')
+    ->add_fields([
+
+      Field::make('text', 'crb_seo_title', 'Заголовок'),
+      Field::make('text', 'crb_seo_keywords', 'Ключевые слова'),
+      Field::make('textarea', 'crb_seo_description', 'Описание'),
+
+    ]);
 
   // Поля шаблона Отзывы
   Container::make('post_meta', 'Отзывы')
@@ -291,7 +134,7 @@ function register_carbon_fields_blocks()
     });
 
   // Страницы параметров
-  $theme_options_container = Container::make('theme_options', 'Параметры')
+  Container::make('theme_options', 'Параметры')
     ->add_tab('Общее', [Field::make('textarea', 'crb_form_rules', 'Согласие в форме')->set_rows(4)])
     ->add_tab('Подвал', [
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
