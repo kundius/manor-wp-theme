@@ -76,17 +76,17 @@ $filters = [
           ],
         ],
       ],
-      'two' => [
-        'title' => '2х-этажные',
-        'count' => 0,
-        'params' => [
-          [
-            'key' => 'floor_count',
-            'compare_key' => '=',
-            'value' => '2',
-          ],
-        ],
-      ],
+      // 'two' => [
+      //   'title' => '2х-этажные',
+      //   'count' => 0,
+      //   'params' => [
+      //     [
+      //       'key' => 'floor_count',
+      //       'compare_key' => '=',
+      //       'value' => '2',
+      //     ],
+      //   ],
+      // ],
       'with_attic' => [
         'title' => 'С мансардой',
         'count' => 0,
@@ -210,11 +210,11 @@ $projects = new WP_Query($query_args);
         </div>
 
         <?php if ($title = get_the_title()): ?>
-        <h1 class="page-section__title<?php if (
-          mb_strlen($title) > 20
-        ): ?> page-section__title--small<?php endif; ?>">
+          <h1 class="page-section__title<?php if (
+                                          mb_strlen($title) > 20
+                                        ): ?> page-section__title--small<?php endif; ?>">
             <?php echo $title; ?>
-        </h1>
+          </h1>
         <?php endif; ?>
 
         <div class="catalog-filter" data-catalog-filter>
@@ -226,9 +226,9 @@ $projects = new WP_Query($query_args);
                   <button
                     type="button"
                     class="catalog-filter__toggle <?php if (
-                      !empty($_GET[$filter_name]) &&
-                      in_array($option_name, explode(',', $_GET[$filter_name]))
-                    ): ?>active<?php endif; ?>"
+                                                    !empty($_GET[$filter_name]) &&
+                                                    in_array($option_name, explode(',', $_GET[$filter_name]))
+                                                  ): ?>active<?php endif; ?>"
                     data-catalog-filter-toggle="<?php echo $filter_name; ?>:<?php echo $option_name; ?>"
                     <?php if ($option['count'] === 0): ?> disabled<?php endif; ?>>
                     <?php echo $option['title']; ?>
@@ -245,16 +245,16 @@ $projects = new WP_Query($query_args);
             <div class="catalog-filter__list">
               <select class="catalog-filter__select" data-catalog-filter-sort>
                 <option value="" <?php if (
-                  empty($_GET['sort'])
-                ): ?>selected<?php endif; ?>>По популярности</option>
+                                    empty($_GET['sort'])
+                                  ): ?>selected<?php endif; ?>>По популярности</option>
                 <option value="cheaper" <?php if (
-                  !empty($_GET['sort']) &&
-                  $_GET['sort'] == 'cheaper'
-                ): ?>selected<?php endif; ?>>Сначала дешевле</option>
+                                          !empty($_GET['sort']) &&
+                                          $_GET['sort'] == 'cheaper'
+                                        ): ?>selected<?php endif; ?>>Сначала дешевле</option>
                 <option value="expensive" <?php if (
-                  !empty($_GET['sort']) &&
-                  $_GET['sort'] == 'expensive'
-                ): ?>selected<?php endif; ?>>Сначала дороже</option>
+                                            !empty($_GET['sort']) &&
+                                            $_GET['sort'] == 'expensive'
+                                          ): ?>selected<?php endif; ?>>Сначала дороже</option>
               </select>
               <button type="button" class="catalog-filter__reset" data-catalog-filter-reset>
                 Сбросить
