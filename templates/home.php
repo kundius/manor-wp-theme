@@ -191,16 +191,16 @@ $cases = new WP_Query([
                         <span class="icon icon-snowflake"></span>
                       </div>
                       <div class="equipment-card__title">
-                        Тёплый контур
+                        Круглогодично
                       </div>
                       <a href="<?php the_permalink(
-                        CATALOG_PAGE_ID,
-                      ); ?>" class="equipment-card__more">
+                                  CATALOG_PAGE_ID,
+                                ); ?>" class="equipment-card__more">
                         смотреть проекты
                       </a>
                     </div>
                     <div class="equipment-card__desc">
-                      Для круглогодичного проживания - Краткое описание типа проектов в 2-3-4 строки
+                      Для круглогодичного проживания, включает утепление и полноценную внутреннюю отделку
                     </div>
                     <div class="equipment-card__price">
                       <div class="equipment-card__price-lbl">
@@ -225,13 +225,13 @@ $cases = new WP_Query([
                         Холодный контур
                       </div>
                       <a href="<?php the_permalink(
-                        CATALOG_PAGE_ID,
-                      ); ?>" class="equipment-card__more">
+                                  CATALOG_PAGE_ID,
+                                ); ?>" class="equipment-card__more">
                         смотреть проекты
                       </a>
                     </div>
                     <div class="equipment-card__desc">
-                      Для круглогодичного проживания - Краткое описание типа проектов в 2-3-4 строки
+                      Включает стены, кровлю и оконные проёмы без внутренней отделки и отопления
                     </div>
                     <div class="equipment-card__price">
                       <div class="equipment-card__price-lbl">
@@ -257,12 +257,11 @@ $cases = new WP_Query([
                 action="<?php echo admin_url('admin-ajax.php'); ?>"
                 data-feedback-form
                 data-feedback-form-goal=""
-                data-feedback-form-action="feedback_form"
-              >
+                data-feedback-form-action="feedback_form">
                 <input type="hidden" name="submitted" value="">
                 <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(
-                  'feedback-nonce',
-                ); ?>">
+                                                            'feedback-nonce',
+                                                          ); ?>">
                 <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
                 <input type="hidden" name="subject" value="Заказать звонок">
 
@@ -354,12 +353,11 @@ $cases = new WP_Query([
               action="<?php echo admin_url('admin-ajax.php'); ?>"
               data-feedback-form
               data-feedback-form-goal=""
-              data-feedback-form-action="feedback_form"
-            >
+              data-feedback-form-action="feedback_form">
               <input type="hidden" name="submitted" value="">
               <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(
-                'feedback-nonce',
-              ); ?>">
+                                                          'feedback-nonce',
+                                                        ); ?>">
               <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
               <input type="hidden" name="subject" value="Заказать звонок">
 
