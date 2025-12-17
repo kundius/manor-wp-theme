@@ -76,17 +76,6 @@ $filters = [
           ],
         ],
       ],
-      // 'two' => [
-      //   'title' => '2х-этажные',
-      //   'count' => 0,
-      //   'params' => [
-      //     [
-      //       'key' => 'floor_count',
-      //       'compare_key' => '=',
-      //       'value' => '2',
-      //     ],
-      //   ],
-      // ],
       'with_attic' => [
         'title' => 'С мансардой',
         'count' => 0,
@@ -99,17 +88,7 @@ $filters = [
         ],
       ],
     ],
-  ],
-  // 'packages' => [
-  //   'title' => 'Этажность:',
-  //   'options' => [
-  //     '1' => [
-  //       'title' => 'Холодный контур',
-  //       'count' => 0,
-  //       'params' => []
-  //     ],
-  //   ]
-  // ]
+  ]
 ];
 
 $query_args = [
@@ -154,18 +133,18 @@ foreach ($filters as $filter_name => $filter) {
 // добавить сортировку из адресной строки
 if (!empty($_GET['sort'])) {
   switch ($_GET['sort']) {
-    // case 'cheaper':
-    //   $query_args['meta_key'] = 'price';
-    //   $query_args['orderby'] = 'meta_value_num';
-    //   $query_args['order'] = 'ASC';
-    //   $query_args['meta_type'] = 'NUMBER';
-    //   break;
-    // case 'expensive':
-    //   $query_args['meta_key'] = 'price';
-    //   $query_args['orderby'] = 'meta_value_num';
-    //   $query_args['order'] = 'DESC';
-    //   $query_args['meta_type'] = 'NUMBER';
-    //   break;
+    case 'cheaper':
+      $query_args['meta_key'] = 'price';
+      $query_args['orderby'] = 'meta_value_num';
+      $query_args['order'] = 'ASC';
+      $query_args['meta_type'] = 'NUMBER';
+      break;
+    case 'expensive':
+      $query_args['meta_key'] = 'price';
+      $query_args['orderby'] = 'meta_value_num';
+      $query_args['order'] = 'DESC';
+      $query_args['meta_type'] = 'NUMBER';
+      break;
     default:
       $query_args['orderby'] = [
         'menu_order' => 'ASC',
@@ -187,6 +166,8 @@ $projects = new WP_Query($query_args);
 
   <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
+
+    <?php print_r($query_args); ?>
 
     <section class="page-section">
       <div class="page-bg-sharp" data-scroll data-scroll-css-progress data-scroll-position="start, end" data-scroll-offset="0, 0"></div>
