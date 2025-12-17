@@ -134,16 +134,20 @@ foreach ($filters as $filter_name => $filter) {
 if (!empty($_GET['sort'])) {
   switch ($_GET['sort']) {
     case 'cheaper':
-      $query_args['meta_key'] = 'price';
+      $query_args['meta_query'][] = [
+        'key' => 'price',
+        'type' => 'NUMERIC'
+      ];
       $query_args['orderby'] = 'meta_value_num';
       $query_args['order'] = 'ASC';
-      $query_args['meta_type'] = 'NUMBER';
       break;
     case 'expensive':
-      $query_args['meta_key'] = 'price';
+      $query_args['meta_query'][] = [
+        'key' => 'price',
+        'type' => 'NUMERIC'
+      ];
       $query_args['orderby'] = 'meta_value_num';
       $query_args['order'] = 'DESC';
-      $query_args['meta_type'] = 'NUMBER';
       break;
     default:
       $query_args['orderby'] = [
