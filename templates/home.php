@@ -188,37 +188,6 @@ $cases = new WP_Query([
                   <div class="equipment-card">
                     <div class="equipment-card__header">
                       <div class="equipment-card__icon">
-                        <span class="icon icon-snowflake"></span>
-                      </div>
-                      <div class="equipment-card__title">
-                        Круглогодично
-                      </div>
-                      <a href="<?php the_permalink(
-                                  CATALOG_PAGE_ID,
-                                ); ?>" class="equipment-card__more">
-                        смотреть проекты
-                      </a>
-                    </div>
-                    <div class="equipment-card__desc">
-                      Для круглогодичного проживания, включает утепление и полноценную внутреннюю отделку
-                    </div>
-                    <div class="equipment-card__price">
-                      <div class="equipment-card__price-lbl">
-                        Цена от:
-                      </div>
-                      <div class="equipment-card__price-val">
-                        <span class="equipment-card__price-num">751 000</span>
-                        <span class="equipment-card__price-cur">Р</span>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="equipment-main__cell">
-
-                  <div class="equipment-card">
-                    <div class="equipment-card__header">
-                      <div class="equipment-card__icon">
                         <span class="icon icon-sun"></span>
                       </div>
                       <div class="equipment-card__title">
@@ -239,6 +208,37 @@ $cases = new WP_Query([
                       </div>
                       <div class="equipment-card__price-val">
                         <span class="equipment-card__price-num">590 000</span>
+                        <span class="equipment-card__price-cur">Р</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="equipment-main__cell">
+
+                  <div class="equipment-card">
+                    <div class="equipment-card__header">
+                      <div class="equipment-card__icon">
+                        <span class="icon icon-snowflake"></span>
+                      </div>
+                      <div class="equipment-card__title">
+                        Круглогодично
+                      </div>
+                      <a href="<?php the_permalink(
+                                  CATALOG_PAGE_ID,
+                                ); ?>" class="equipment-card__more">
+                        смотреть проекты
+                      </a>
+                    </div>
+                    <div class="equipment-card__desc">
+                      Для круглогодичного проживания, включает утепление и полноценную внутреннюю отделку
+                    </div>
+                    <div class="equipment-card__price">
+                      <div class="equipment-card__price-lbl">
+                        Цена от:
+                      </div>
+                      <div class="equipment-card__price-val">
+                        <span class="equipment-card__price-num">751 000</span>
                         <span class="equipment-card__price-cur">Р</span>
                       </div>
                     </div>
