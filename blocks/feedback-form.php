@@ -14,7 +14,7 @@
         Телефон для связи
       </div>
       <div class="feedback-form__phone-val">
-        8-960-209-79-33
+        <?php echo carbon_get_post_meta(CONTACTS_PAGE_ID, 'phone_number'); ?>
       </div>
     </div>
   </div>
