@@ -368,23 +368,6 @@ $similar = new WP_Query([
                   В проект можно внести любые изменения по желанию заказчика
                 </div>
               </div>
-              <div class="project-benefits__item">
-                <div class="project-benefits__item-ico">
-                  <img src="<?php bloginfo('template_url'); ?>/assets/benefit-2.png" alt="">
-                </div>
-                <div class="project-benefits__item-txt">
-                  Возможна оплата строительства дома для ПМЖ сертификатом материнского капитала
-                </div>
-              </div>
-              <div class="project-benefits__item">
-                <div class="project-benefits__item-ico">
-                  <img src="<?php bloginfo('template_url'); ?>/assets/benefit-3.png" alt="">
-                </div>
-                <div class="project-benefits__item-txt">
-                  Вы можете воспользоваться выгодным кредитом от банков-партнеров: Т-Банк, Альфа Банк, Сбербанк, МТС Банк, Локо Банк, Совком Банк, ОТП Банк, Кредит Европа Банк, Ренесанс банк.<br>
-                  <button type="button" data-order-button="Консультация по кредиту">Консультация по кредиту</button>
-                </div>
-              </div>
             </div>
           </div>
           <?php if ($packages->have_posts()): ?>

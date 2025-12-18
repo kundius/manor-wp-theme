@@ -61,6 +61,7 @@
 
 .project-layout__benefits {
   grid-area: benefits;
+  display: flex;
 }
 
 .project-layout__packages {
@@ -663,7 +664,7 @@
   display: grid;
   row-gap: 10px;
   column-gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   zoom: var(--global-scale);
 
   @media (--max-md) {
@@ -682,19 +683,28 @@
 }
 
 .project-benefits__item-ico {
-  width: 56px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (--max-md) {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 .project-benefits__item-txt {
-  font-size: 14px;
+  font-size: 18px;
   color: rgb(193, 155, 75);
   line-height: 1.2;
   text-wrap: balance;
+
+  @media (--max-md) {
+    font-size: 14px;
+  }
 }
 
 .project-benefits__item:nth-child(3) {
