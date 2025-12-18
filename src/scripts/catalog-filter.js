@@ -3,15 +3,14 @@ export function initCatalogFilter() {
 
   if (!filter) return
 
-  const url = new URL(location.href)
+  const permalink = filter.dataset.catalogFilterPermalink
+  const searchParams = new URLSearchParams(window.location.search)
 
   const toggles = document.querySelectorAll('[data-catalog-filter-toggle]') || []
 
   toggles.forEach((toggle) => {
     const [option, param] = toggle.dataset.catalogFilterToggle.split(':')
-    const currentParams = url.searchParams.has(option)
-      ? url.searchParams.get(option).split(',')
-      : []
+    const currentParams = searchParams.has(option) ? searchParams.get(option).split(',') : []
 
     toggle.addEventListener('click', () => {
       const index = currentParams.indexOf(param)
@@ -21,11 +20,11 @@ export function initCatalogFilter() {
         currentParams.splice(index, 1)
       }
       if (currentParams.length === 0) {
-        url.searchParams.delete(option)
+        searchParams.delete(option)
       } else {
-        url.searchParams.set(option, currentParams.join(','))
+        searchParams.set(option, currentParams.join(','))
       }
-      location.href = url.href
+      location.href = `${permalink}?${searchParams.toString()}`
     })
   })
 
@@ -33,23 +32,23 @@ export function initCatalogFilter() {
   if (sort) {
     sort.addEventListener('change', () => {
       if (!sort.value) {
-        url.searchParams.delete('sort')
+        searchParams.delete('sort')
       } else {
-        url.searchParams.set('sort', sort.value)
+        searchParams.set('sort', sort.value)
       }
-      location.href = url.href
+      location.href = `${permalink}?${searchParams.toString()}`
     })
   }
 
   const reset = document.querySelector('[data-catalog-filter-reset]')
   if (reset) {
     reset.addEventListener('click', () => {
-      url.searchParams.delete('sort')
+      searchParams.delete('sort')
       toggles.forEach((toggle) => {
         const [option] = toggle.dataset.catalogFilterToggle.split(':')
-        url.searchParams.delete(option)
+        searchParams.delete(option)
       })
-      location.href = url.href
+      location.href = `${permalink}?${searchParams.toString()}`
     })
   }
 }

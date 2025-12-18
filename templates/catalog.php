@@ -200,7 +200,7 @@ $projects = new WP_Query($query_args);
           </h1>
         <?php endif; ?>
 
-        <div class="catalog-filter" data-catalog-filter>
+        <div class="catalog-filter" data-catalog-filter data-catalog-filter-permalink="<?php the_permalink() ?>">
           <?php foreach ($filters as $filter_name => $filter): ?>
             <div class="catalog-filter__group">
               <div class="catalog-filter__title"><?php echo $filter['title']; ?></div>
