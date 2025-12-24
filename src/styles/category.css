@@ -39,7 +39,7 @@
     row-gap: 48px;
   }
 
-  @media (--max-md) {
+  @media (--max-lg) {
     grid-template-columns: 1fr;
   }
 }
