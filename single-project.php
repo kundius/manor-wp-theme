@@ -117,8 +117,7 @@ $similar = new WP_Query([
                       <div class="icon icon-pay"></div>
                     </div>
                     <div class="gallery-label__title">
-                      Оплата<br>
-                      в 2 этапа
+                      Оплата в 2 этапа
                     </div>
                   </div>
                   <div class="gallery-label">

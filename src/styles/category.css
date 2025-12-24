@@ -45,30 +45,34 @@
 .article-card-big__media {
   position: relative;
   z-index: 10;
-  padding: 64px;
   margin: 0;
+
+  @media (--max-md) {
+    padding: 24px;
+  }
+}
+
+.article-card-big__header {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
+  padding: 64px;
   text-align: right;
   background-color: #dcdcdc;
-  overflow: hidden;
 
   @media (--max-md) {
     padding: 24px;
-    aspect-ratio: 4 / 3;
   }
 }
 
 .article-card-big__image {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 .article-card-big__date {

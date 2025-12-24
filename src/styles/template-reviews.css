@@ -57,9 +57,13 @@
 .reviews-graphic-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: calc(40px * var(--global-scale));
-  row-gap: calc(64px * var(--global-scale));
-  margin-top: calc(72px * var(--global-scale));
+  column-gap: 40px;
+  row-gap: 64px;
+  margin-top: 72px;
+
+  @media (--max-3xl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media (--max-lg) {
     grid-template-columns: repeat(1, 1fr);
@@ -75,8 +79,8 @@
 .reviews-video-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: calc(20px * var(--global-scale));
-  margin-top: calc(16px * var(--global-scale));
+  gap: 20px;
+  margin-top: 16px;
 
   @media (--max-lg) {
     grid-template-columns: repeat(2, 1fr);
@@ -90,7 +94,6 @@
 
 .review-video-card {
   position: relative;
-  zoom: var(--global-scale);
 }
 
 .review-video-card__media {
@@ -146,7 +149,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  zoom: var(--global-scale);
 
   @media (--max-md) {
     grid-template-columns: 1fr;

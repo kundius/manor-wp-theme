@@ -67,7 +67,11 @@ $articles = new WP_Query($query_params);
               $position = $index % 3;
               $articles->the_post();
 
-              if ($position === 0) {
+              echo '<div class="articles-list__item articles-list__item-wide">';
+              get_template_part('partials/article-card', 'big');
+              echo '</div>';
+
+              /*if ($position === 0) {
                 echo '<div class="articles-list__item articles-list__item-wide">';
                 get_template_part('partials/article-card', 'big');
                 echo '</div>';
@@ -81,7 +85,7 @@ $articles = new WP_Query($query_params);
                 echo '<div class="articles-list__item">';
                 get_template_part('partials/article-card');
                 echo '</div>';
-              }
+                }*/
 
               $index++;
             }
