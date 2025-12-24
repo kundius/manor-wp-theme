@@ -19,10 +19,25 @@
   display: flex;
 }
 
-.articles-list__item-wide {
-  @media (--min-md) {
-    grid-column: 2 span;
+.actions-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 48px;
+  row-gap: 96px;
+
+  @media (--max-xl) {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    row-gap: 48px;
   }
+
+  @media (--max-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.actions-list__item {
+  display: flex;
 }
 
 .action-card {
