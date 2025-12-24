@@ -558,8 +558,7 @@
   }
 
   @media (--max-2xl) {
-    padding-right: 24px;
-    padding-left: 24px;
+    padding: 24px;
   }
 
   @media (--max-lg) {
@@ -638,6 +637,10 @@
   text-align: center;
   width: 100%;
   cursor: pointer;
+
+  @media (--max-2xl) {
+    height: 68px;
+  }
 
   @media (--max-md) {
     margin-left: -40px;
