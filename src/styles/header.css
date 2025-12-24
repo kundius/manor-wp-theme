@@ -13,7 +13,9 @@
   margin: 0 24px;
 
   @media (--max-xl) {
-    top: calc((12px + var(--header-before) + var(--header-height)));
+    top: calc(
+      (12px + var(--header-before) + var(--header-height) + var(--wp-admin--admin-bar--height, 0px))
+    );
     /* top: calc((32px + var(--header-before) + var(--header-height))); */
   }
 
