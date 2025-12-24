@@ -4,10 +4,6 @@
 [data-project-layout-item] {
   width: calc(50% - 25px);
 
-  @media (--max-xl) {
-    width: calc(50% - 20px);
-  }
-
   @media (--max-lg) {
     width: 100%;
   }
@@ -16,10 +12,6 @@
 [data-project-layout-column] {
   width: calc(50% - 25px);
 
-  @media (--max-xl) {
-    width: calc(50% - 20px);
-  }
-
   @media (--max-lg) {
     width: 100%;
   }
@@ -27,10 +19,6 @@
 
 [data-project-layout-gutter] {
   width: 50px;
-
-  @media (--max-xl) {
-    width: 40px;
-  }
 }
 
 .project-layout__discount {
