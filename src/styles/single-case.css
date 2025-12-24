@@ -113,6 +113,7 @@
 
 .case-details-thumbnail__link {
   display: flex;
+  width: 100%;
 }
 
 .case-details-thumbnail__image {

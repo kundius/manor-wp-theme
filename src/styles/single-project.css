@@ -71,6 +71,9 @@
   @media (--max-2xl) {
     margin-bottom: 20px;
   }
+  @media (--max-xl) {
+    margin-bottom: 0;
+  }
 }
 
 .project-layout__prices {
@@ -84,6 +87,12 @@
   @media (--max-2xl) {
     margin-bottom: 20px;
     margin-top: 0;
+  }
+}
+
+.project-layout__contact {
+  @media (--max-xl) {
+    margin-top: 40px;
   }
 }
 
@@ -728,6 +737,10 @@
 
   @media (--max-3xl) {
     font-size: 14px;
+  }
+
+  @media (--max-xl) {
+    display: none;
   }
 
   @media (--max-md) {

@@ -438,6 +438,10 @@
     margin-left: 0;
   }
 
+  @media (--max-xl) {
+    margin-left: 96px;
+  }
+
   @media (--max-md) {
     font-size: 18px;
     max-width: initial;
@@ -877,6 +881,9 @@
 
 .equipment-help__input {
   margin-bottom: 16px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .equipment-help__submit {
@@ -894,6 +901,9 @@
   width: 100%;
   cursor: pointer;
   transition-duration: 150ms;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .equipment-help__submit:hover {
@@ -1281,11 +1291,9 @@
   @media (--max-xl) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    margin-top: 64px;
   }
 
   @media (--max-md) {
-    margin-top: 40px;
   }
 }
 
