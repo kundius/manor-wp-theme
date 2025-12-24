@@ -514,6 +514,10 @@
   aspect-ratio: 864 / 620;
   width: 100%;
   z-index: 10;
+
+  @media (--max-2xl) {
+    aspect-ratio: 800 / 600;
+  }
 }
 
 .showcase-card__image {
@@ -564,6 +568,11 @@
   opacity: 0;
   white-space: nowrap;
   transition-duration: 150ms;
+
+  @media (--max-2xl) {
+    font-size: 20px;
+    padding: 0 32px;
+  }
 }
 
 .showcase-card__media:hover .showcase-card__more {
@@ -608,12 +617,12 @@
 }
 
 .showcase-card__more:hover::after {
-  width: 185px;
+  width: 8em;
   transition-duration: 600ms;
 }
 
 .showcase-card__more:hover::before {
-  width: 185px;
+  width: 8em;
   transition-duration: 600ms;
 }
 
@@ -635,6 +644,10 @@
   gap: 28px;
   z-index: 20;
   padding-left: calc((72px * 2) + 28px);
+
+  @media (--max-2xl) {
+    padding-left: calc((72px * 2) + 16px);
+  }
 }
 
 .showcase-card__footer::after {
@@ -652,6 +665,11 @@
   white-space: nowrap;
   color: #fff;
   font-family: 'Gilroy', sans-serif;
+
+  @media (--max-2xl) {
+    font-weight: 500;
+    font-size: 24px;
+  }
 }
 
 .showcase-card__price {
@@ -666,10 +684,18 @@
 
 .showcase-card__price-num {
   font-size: 33px;
+
+  @media (--max-2xl) {
+    font-size: 30px;
+  }
 }
 
 .showcase-card__price-cur {
   font-size: 22px;
+
+  @media (--max-2xl) {
+    font-size: 20px;
+  }
 }
 
 .showcase-embla__controls {
