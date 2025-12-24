@@ -146,6 +146,10 @@
     grid-template-columns: 1fr;
   }
 
+  @media (--max-lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+
   @media (--max-md) {
     grid-template-columns: 1fr;
     gap: 12px;
