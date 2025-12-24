@@ -815,6 +815,10 @@
     padding-left: 64px;
   }
 
+  @media (--max-xl) {
+    padding-left: 20px;
+  }
+
   @media (--max-md) {
     padding: 20px 16px;
     margin-left: calc(var(--container-padding) * -1);
@@ -843,6 +847,10 @@
     top: 12px;
     width: calc(200px * 0.6);
     height: calc(198px * 0.6);
+  }
+
+  @media (--max-xl) {
+    display: none;
   }
 
   @media (--max-md) {
