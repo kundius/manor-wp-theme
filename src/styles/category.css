@@ -294,7 +294,19 @@
 }
 
 .article-card__more-link {
-  display: inline-block;
+  padding: 0px 32px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(237, 239, 245);
+  font-size: 16px;
+  color: rgb(167, 167, 167);
+}
+
+.article-card__more-link:over {
+  background-color: rgb(225, 229, 238);
+  color: rgb(118, 118, 118);
 }
 
 .article-card__more-link::before {
