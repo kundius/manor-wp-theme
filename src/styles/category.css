@@ -156,11 +156,16 @@
   }
 }
 
-.action-card__content .more-link {
+.action-card__more {
+  display: block;
+  margin-top: 12px;
+}
+
+.action-card__more-link {
   display: inline-block;
 }
 
-.action-card__content .more-link::before {
+.action-card__more-link::before {
   content: '';
   position: absolute;
   left: 0;
@@ -283,11 +288,16 @@
   }
 }
 
-.article-card__content .more-link {
+.article-card__more {
+  display: block;
+  margin-top: 12px;
+}
+
+.article-card__more-link {
   display: inline-block;
 }
 
-.article-card__content .more-link::before {
+.article-card__more-link::before {
   content: '';
   position: absolute;
   left: 0;
