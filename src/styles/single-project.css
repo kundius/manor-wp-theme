@@ -854,7 +854,8 @@
   }
 
   @media (--max-xl) {
-    display: none;
+    width: 0;
+    height: 0;
   }
 
   @media (--max-md) {
