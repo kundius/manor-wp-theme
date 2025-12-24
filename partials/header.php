@@ -59,10 +59,4 @@
     <?php endforeach; ?>
   </div>
   <?php endif; ?>
-  <?php if ($email = carbon_get_post_meta(CONTACTS_PAGE_ID, 'email')): ?>
-  <a href="mailto:<?php echo $email; ?>" class="v-email">
-    <span class="icon icon-mail"></span>
-    <?php echo $email; ?>
-  </a>
-  <?php endif; ?>
 </div>
