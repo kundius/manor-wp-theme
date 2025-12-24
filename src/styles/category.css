@@ -35,8 +35,8 @@
 
   @media (--max-xl) {
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    row-gap: 48px;
+    gap: 40px;
+    row-gap: 40px;
   }
 
   @media (--max-lg) {
