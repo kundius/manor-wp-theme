@@ -132,3 +132,37 @@ function get_pagination($query)
     return '<div class="pagination">' . $links . '</div>';
   }
 }
+
+function getLastDayAndMonth(): array
+{
+  $now = new DateTime();
+  $lastDayOfMonth = clone $now;
+  $lastDayOfMonth->modify('last day of this month');
+
+  $day = (int) $lastDayOfMonth->format('j'); // без ведущего нуля
+
+  $monthNum = (int) $lastDayOfMonth->format('n');
+
+  // Названия месяцев в родительном падеже
+  $months = [
+    1 => 'января',
+    2 => 'февраля',
+    3 => 'марта',
+    4 => 'апреля',
+    5 => 'мая',
+    6 => 'июня',
+    7 => 'июля',
+    8 => 'августа',
+    9 => 'сентября',
+    10 => 'октября',
+    11 => 'ноября',
+    12 => 'декабря',
+  ];
+
+  $monthName = $months[$monthNum] ?? 'неизвестного месяца';
+
+  return [
+    'day' => $day,
+    'month' => $monthName,
+  ];
+}
