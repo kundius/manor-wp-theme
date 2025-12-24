@@ -77,6 +77,26 @@
   height: auto;
 }
 
+.action-card__body {
+  padding: 64px;
+
+  @media (--max-2xl) {
+    padding: 48px;
+  }
+
+  @media (--max-xl) {
+    padding: 40px;
+  }
+
+  @media (--max-lg) {
+    padding: 32px;
+  }
+
+  @media (--max-md) {
+    padding: 24px;
+  }
+}
+
 .action-card__header {
   display: flex;
   align-items: flex-start;
@@ -90,7 +110,7 @@
 .action-card__date {
   position: relative;
   z-index: 20;
-  font-size: 16px;
+  font-size: 20px;
   color: #303437;
   font-weight: 500;
   line-height: 1.2;
