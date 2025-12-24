@@ -2349,6 +2349,10 @@
   color: #000;
   margin-bottom: 48px;
 
+  @media (--max-3xl) {
+    font-size: 64px;
+  }
+
   @media (--max-lg) {
     font-size: 56px;
     margin-bottom: 36px;
