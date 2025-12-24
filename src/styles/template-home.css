@@ -1053,6 +1053,7 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
+  flex-grow: 1;
   gap: 8px;
 }
 
