@@ -91,7 +91,7 @@
   min-width: 0px;
   margin: 0;
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     font-size: 48px;
   }
 
@@ -112,7 +112,7 @@
 .content * + h2 {
   margin-top: 80px;
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     margin-top: 64px;
   }
 
@@ -124,7 +124,7 @@
 .content * + .content-orbit {
   margin-top: 80px;
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     margin-top: 64px;
   }
 
@@ -145,7 +145,7 @@
 }
 
 .content * + .content-orbit__item {
-  @media (--max-lg) {
+  @media (--max-xl) {
     margin-top: 58px;
   }
 
@@ -291,7 +291,7 @@
     background-position-y: calc(50% - (200px - (200px * var(--progress))));
   }
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     display: none;
   }
 }
@@ -311,7 +311,7 @@
     height: 400px;
   }
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     display: none;
   }
 }

@@ -24,7 +24,7 @@
     auto /* 10 */;
   grid-template-columns: 1fr 40px 1fr;
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     grid-template-areas:
       'date' /* 1 */
       '.' /* 2 */
@@ -73,7 +73,7 @@
   grid-area: params;
   margin-left: -40px;
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     margin-left: 0;
   }
 }
@@ -156,7 +156,7 @@
     row-gap: 20px;
   }
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     padding: 0;
     background: transparent;
   }
@@ -261,7 +261,7 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 32px;
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
   }
