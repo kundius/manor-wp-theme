@@ -84,7 +84,6 @@
   border-width: 1px;
   border-color: rgb(204, 204, 204);
   background-color: rgba(255, 255, 255, 0.8);
-  zoom: var(--global-scale);
   padding: 20px 72px 48px 50px;
 
   @media (--max-lg) {
@@ -277,7 +276,6 @@
   color: #fff;
   opacity: 0.4;
   font-size: 36px;
-  zoom: var(--global-scale);
 
   .gallery-main__slide:hover & {
     opacity: 1;
@@ -304,7 +302,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  zoom: var(--global-scale);
 
   &[disabled] {
     display: none;
@@ -365,7 +362,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  zoom: var(--global-scale);
 
   &[disabled] {
     display: none;
@@ -438,7 +434,6 @@
   gap: 8px;
   border-radius: 12px;
   background-color: rgba(19, 19, 19, 0.8);
-  zoom: var(--global-scale);
 }
 
 .gallery-label__icon {
@@ -462,7 +457,6 @@
 }
 
 .project-params {
-  zoom: var(--global-scale);
 }
 
 .project-params__title {
@@ -680,7 +674,6 @@
   column-gap: 20px;
   grid-template-columns: 1fr;
   width: 100%;
-  zoom: var(--global-scale);
 
   @media (--max-md) {
     grid-template-columns: 1fr;
@@ -733,7 +726,6 @@
   position: relative;
   background-color: rgba(251, 238, 162, 0.6);
   padding: 20px 20px 30px 242px;
-  zoom: var(--global-scale);
 
   @media (--max-3xl) {
     padding-left: 160px;
@@ -861,7 +853,6 @@
 }
 
 .project-packages {
-  zoom: var(--global-scale);
 }
 
 .project-packages__title {
@@ -1035,7 +1026,6 @@
 
 .project-inquiry__content {
   position: relative;
-  zoom: var(--global-scale);
 }
 
 .project-inquiry__content::before {
@@ -1088,7 +1078,6 @@
 
 .project-inquiry__form {
   position: relative;
-  zoom: var(--global-scale);
 }
 
 .project-inquiry__errors {
@@ -1424,7 +1413,6 @@
   text-transform: uppercase;
   line-height: 1.25;
   text-align: center;
-  zoom: var(--global-scale);
 
   @media (--max-md) {
     font-size: 24px;
@@ -1493,7 +1481,6 @@
 }
 
 .work-scheme__item {
-  zoom: var(--global-scale);
 }
 
 .work-scheme__item-num {
@@ -1584,7 +1571,6 @@
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 32px;
-  zoom: var(--global-scale);
 }
 
 .project-similar__title {
@@ -1675,7 +1661,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  zoom: var(--global-scale);
 
   &[disabled] {
     display: none;

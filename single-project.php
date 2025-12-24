@@ -337,18 +337,6 @@ $similar = new WP_Query([
               </div>
             </div>
           </div>
-          <div class="project-layout__benefits" data-project-layout-item>
-            <div class="project-benefits">
-              <div class="project-benefits__item">
-                <div class="project-benefits__item-ico">
-                  <img src="<?php bloginfo('template_url'); ?>/assets/benefit-1.png" alt="">
-                </div>
-                <div class="project-benefits__item-txt">
-                  В проект можно внести любые изменения по желанию заказчика
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="project-layout__discount" data-project-layout-item>
             <div class="project-discount">
               <div class="project-discount__sticker"></div>
@@ -365,6 +353,18 @@ $similar = new WP_Query([
                     <strong>Антисептирование</strong> основания, лаг, чернового пола
                   </li>
                 </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project-layout__benefits" data-project-layout-item>
+            <div class="project-benefits">
+              <div class="project-benefits__item">
+                <div class="project-benefits__item-ico">
+                  <img src="<?php bloginfo('template_url'); ?>/assets/benefit-1.png" alt="">
+                </div>
+                <div class="project-benefits__item-txt">
+                  В проект можно внести любые изменения по желанию заказчика
+                </div>
               </div>
             </div>
           </div>
