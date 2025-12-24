@@ -166,7 +166,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  zoom: var(--global-scale);
 }
 
 .article-card--reverse {

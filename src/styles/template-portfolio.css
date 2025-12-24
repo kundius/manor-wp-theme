@@ -1,8 +1,8 @@
 .portfolio-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: calc(40px * var(--global-scale));
-  row-gap: calc(96px * var(--global-scale));
+  column-gap: 40px;
+  row-gap: 96px;
 
   @media (--max-lg) {
     grid-template-columns: repeat(2, 1fr);
@@ -19,7 +19,6 @@
   flex-direction: column;
   position: relative;
   gap: 16px;
-  zoom: var(--global-scale);
 }
 
 .case-card:nth-child(2n) .case-card__body {

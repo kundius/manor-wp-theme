@@ -1,8 +1,8 @@
 .catalog-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: calc(40px * var(--global-scale));
-  margin: calc(24px * var(--global-scale)) 0;
+  gap: 40px;
+  margin: 24px 0;
 
   @media (--max-3xl) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -27,7 +27,6 @@
   padding: 32px;
   display: flex;
   gap: 64px;
-  zoom: var(--global-scale);
 
   @media (--max-lg) {
     gap: 32px;

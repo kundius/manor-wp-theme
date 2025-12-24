@@ -242,7 +242,7 @@
 }
 
 .gallery-main {
-  --carousel-gap: calc(32px * var(--global-scale));
+  --carousel-gap: 32px;
   --carousel-columns: 1;
 
   position: relative;
@@ -999,8 +999,8 @@
   background-image: url('../images/advantages-bg2.jpg');
   background-position: 50% calc(50% + (300px * var(--progress)));
   background-size: auto auto;
-  padding-top: calc(180px * var(--global-scale));
-  padding-bottom: calc(110px * var(--global-scale));
+  padding-top: 180px;
+  padding-bottom: 110px;
   position: relative;
   z-index: 1;
 
@@ -1036,8 +1036,8 @@
   @media (--max-lg) {
     width: 100%;
     padding: 0;
-    padding-left: calc(116px * var(--global-scale));
-    margin-bottom: calc(116px * var(--global-scale));
+    padding-left: 116px;
+    margin-bottom: 116px;
   }
 
   @media (--max-md) {
@@ -1422,8 +1422,8 @@
 
 .work-scheme {
   overflow: hidden;
-  padding-top: calc(96px * var(--global-scale));
-  padding-bottom: calc(96px * var(--global-scale));
+  padding-top: 96px;
+  padding-bottom: 96px;
   background: #e0e4ed url('../images/bg-work-scheme.jpg') no-repeat 50% 100%;
 
   @media (--max-md) {
@@ -1497,7 +1497,7 @@
 .work-scheme__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: calc(32px * var(--global-scale));
+  gap: 32px;
 
   @media (--max-lg) {
     gap: 24px;
@@ -1587,8 +1587,8 @@
 
 .project-similar {
   overflow: hidden;
-  padding-top: calc(68px * var(--global-scale));
-  padding-bottom: calc(68px * var(--global-scale));
+  padding-top: 68px;
+  padding-bottom: 68px;
 
   @media (--max-md) {
     padding-top: 36px;

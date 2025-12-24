@@ -52,22 +52,6 @@
   }
 
   --global-scale: 1;
-
-  /* @media (--max-3xl) {
-    --global-scale: 0.8;
-  }
-
-  @media (--max-2xl) {
-    --global-scale: 0.7;
-  }
-
-  @media (--max-xl) {
-    --global-scale: 0.54;
-  }
-
-  @media (--max-lg) {
-    --global-scale: 1;
-  } */
 }
 
 body {
@@ -87,13 +71,13 @@ body {
 }
 
 .page-section {
-  --bg-cf: var(--global-scale);
+  --bg-cf: 1;
 
   flex-grow: 1;
   margin-top: calc((var(--header-before) + var(--header-height)) * -1);
   position: relative;
   z-index: 50;
-  padding-top: calc((var(--header-before) + var(--header-height)) + (64px * var(--global-scale)));
+  padding-top: calc((var(--header-before) + var(--header-height)) + 64px);
   padding-bottom: 80px;
 
   @media (--max-lg) {
@@ -116,7 +100,7 @@ body {
   left: 0;
   top: 0;
   right: 0;
-  height: calc(var(--bg-height) * var(--global-scale));
+  height: var(--bg-height);
   z-index: -1;
   overflow: hidden;
   background-image: var(--bg-image);
@@ -124,7 +108,7 @@ body {
   background-position: 50% 50%;
   background-size: cover;
   display: grid;
-  grid-template-columns: 1fr calc(var(--bg-width) * var(--global-scale)) 1fr;
+  grid-template-columns: 1fr var(--bg-width) 1fr;
   grid-template-rows: 1fr;
 
   @media (--max-lg) {
@@ -165,7 +149,7 @@ body {
 }
 
 .page-bg-sharp {
-  --scale: var(--global-scale);
+  --scale: 1;
   --height-origin: 717px;
   --width-origin: 1920px;
   --height-scaled: calc(var(--height-origin) * var(--scale));
@@ -263,7 +247,6 @@ body {
 
 .breadcrumbs {
   display: flex;
-  zoom: var(--global-scale);
 
   @media (--max-lg) {
     filter: drop-shadow(0px 0px 20px #fff) drop-shadow(0px 0px 20px #fff)
@@ -350,7 +333,6 @@ a.breadcrumbs__item {
   text-wrap: balance;
   line-height: 1;
   margin-bottom: 64px;
-  zoom: var(--global-scale);
   filter: drop-shadow(0px 0px 1em #fff) drop-shadow(0px 0px 1em #fff) drop-shadow(0px 0px 1em #fff);
 
   @media (--max-lg) {
@@ -411,7 +393,6 @@ a.breadcrumbs__item {
   max-width: 50%;
   padding-left: 44px;
   margin-bottom: 40px;
-  zoom: var(--global-scale);
 
   @media (--max-lg) {
     max-width: 100%;
@@ -427,17 +408,17 @@ a.breadcrumbs__item {
 }
 
 .page-section__breadcrumbs {
-  margin-bottom: calc(16px * var(--global-scale));
+  margin-bottom: 16px;
   position: relative;
   z-index: 20;
 }
 
 .page-section__content {
   filter: drop-shadow(0px 0px 1em #fff) drop-shadow(0px 0px 1em #fff) drop-shadow(0px 0px 1em #fff);
-  margin-top: calc(68px * var(--global-scale));
+  margin-top: 68px;
 
   @media (--min-lg) {
-    max-width: calc(1280px * var(--global-scale));
+    max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
 
@@ -455,8 +436,8 @@ a.breadcrumbs__item {
 
 .feedback {
   overflow: hidden;
-  padding-top: calc(64px * var(--global-scale));
-  padding-bottom: calc(104px * var(--global-scale));
+  padding-top: 64px;
+  padding-bottom: 104px;
   position: relative;
   z-index: 60;
 
@@ -491,7 +472,6 @@ a.breadcrumbs__item {
   position: relative;
   margin-bottom: 64px;
   /* transform: scale(calc((1.15 - (0.15 * var(--progress))))); */
-  zoom: var(--global-scale);
 
   @media (--max-3xl) {
   }
@@ -921,8 +901,8 @@ a.breadcrumbs__item {
 
 .home-content {
   overflow: hidden;
-  padding-top: calc(80px * var(--global-scale));
-  padding-bottom: calc(64px * var(--global-scale));
+  padding-top: 80px;
+  padding-bottom: 64px;
 
   @media (--max-lg) {
     padding-top: 64px;
@@ -1006,11 +986,11 @@ a.breadcrumbs__item {
   overflow: hidden;
   background-repeat: repeat;
   background-image: url('../images/advantages-bg2.jpg');
-  background-position: 50% calc(50% + (calc(300px * var(--global-scale)) * var(--progress)));
+  background-position: 50% calc(50% + (300px * var(--progress)));
   background-size: auto auto;
 
-  padding-top: calc(110px * var(--global-scale));
-  padding-bottom: calc(110px * var(--global-scale));
+  padding-top: 110px;
+  padding-bottom: 110px;
   position: relative;
   z-index: 1;
 
@@ -1082,7 +1062,6 @@ a.breadcrumbs__item {
   background: url('../images/advantage-calc-bg.jpg') no-repeat 50% 50%;
   background-size: cover;
   padding: 113px 90px 102px 116px;
-  zoom: var(--global-scale);
   position: relative;
   z-index: 1;
 
@@ -1347,7 +1326,6 @@ a.breadcrumbs__item {
   width: 100%;
   min-width: 0;
   padding: 68px 80px 60px;
-  zoom: var(--global-scale);
 
   @media (--max-3xl) {
     padding-left: 40px;
@@ -1459,7 +1437,6 @@ a.breadcrumbs__item {
   width: 100%;
   min-width: 0;
   padding: 56px 48px 48px 52px;
-  zoom: var(--global-scale);
 
   @media (--max-3xl) {
     padding-left: 40px;

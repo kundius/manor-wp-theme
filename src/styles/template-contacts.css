@@ -1,9 +1,9 @@
 .contacts-layout {
   display: grid;
-  gap: calc(20px * var(--global-scale));
+  gap: 20px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto;
-  margin-top: calc(280px * var(--global-scale));
+  margin-top: 280px;
   overflow: hidden;
 
   @media (--max-3xl) {
@@ -57,7 +57,6 @@
   padding: 25px 30px 40px;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  zoom: var(--global-scale);
 
   @media (--max-md) {
     padding: 24px;
@@ -106,7 +105,6 @@
   padding: 25px 30px 40px;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  zoom: var(--global-scale);
 
   @media (--max-lg) {
     padding-right: 96px;
@@ -252,7 +250,6 @@
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  zoom: var(--global-scale);
 
   @media (--max-md) {
     padding: 24px;
@@ -269,7 +266,6 @@
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
-  zoom: var(--global-scale);
 
   @media (--max-lg) {
     margin-bottom: 64px;

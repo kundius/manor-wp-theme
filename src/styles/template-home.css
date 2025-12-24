@@ -50,13 +50,13 @@
 }
 
 .intro-section {
-  --bg-cf: var(--global-scale);
+  --bg-cf: 1;
 
   margin-top: calc((var(--header-before) + var(--header-height)) * -1);
   position: relative;
   z-index: 1;
-  padding-top: calc(192px * var(--global-scale));
-  padding-bottom: calc(152px * var(--global-scale));
+  padding-top: 192px;
+  padding-bottom: 152px;
 
   @media (--max-lg) {
     padding-top: calc(40px + var(--header-before) + var(--header-height));
@@ -172,7 +172,6 @@
 
 .intro-content {
   position: relative;
-  zoom: var(--global-scale);
 }
 
 .intro-content__vertical-text {
@@ -404,7 +403,6 @@
 }
 
 .catalog-preview {
-  zoom: var(--global-scale);
 }
 
 .catalog-preview__header {
@@ -590,7 +588,6 @@
 .showcase-card {
   width: 100%;
   position: relative;
-  zoom: var(--global-scale);
 
   @media (--max-md) {
     zoom: 0.5;
@@ -766,7 +763,6 @@
   left: 0;
   bottom: 0;
   transition-duration: 150ms;
-  zoom: var(--global-scale);
 
   @media (--max-md) {
     zoom: 0.5;
@@ -803,7 +799,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  zoom: var(--global-scale);
   position: relative;
 
   @media (--max-md) {
@@ -988,7 +983,6 @@
   padding: 48px 56px 56px;
   min-width: 0;
   background-position: calc(100% + (40% - (40% * var(--progress)))) 0;
-  zoom: var(--global-scale);
 
   @media (--max-lg) {
     padding-left: 60px;
@@ -1202,8 +1196,8 @@
 }
 
 .home-primary {
-  padding-top: calc(134px * var(--global-scale));
-  padding-bottom: calc(115px * var(--global-scale));
+  padding-top: 134px;
+  padding-bottom: 115px;
 
   @media (--max-lg) {
     padding-top: 96px;
@@ -1226,7 +1220,7 @@
 }
 
 .home-primary__catalog-main {
-  padding-right: calc(96px * var(--global-scale));
+  padding-right: 96px;
   width: 50%;
   min-width: 0;
   flex-shrink: 0;
@@ -1241,7 +1235,7 @@
   width: 50%;
   min-width: 0;
   flex-shrink: 0;
-  margin-top: calc(-246px * var(--global-scale));
+  margin-top: -246px;
   /* transform: translateY(calc(64x * var(--progress))); */
 
   @media (--max-lg) {
@@ -1255,7 +1249,7 @@
 }
 
 .home-primary__equipment {
-  margin-top: calc(128px * var(--global-scale));
+  margin-top: 128px;
   display: flex;
 
   @media (--max-lg) {
@@ -1280,7 +1274,7 @@
 
 .home-primary__equipment-help {
   width: calc(100% / 3);
-  margin-top: calc(-106px * var(--global-scale));
+  margin-top: -106px;
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -1297,7 +1291,7 @@
 
 .home-primary__equipment-help-inner {
   display: flex;
-  max-width: calc(390px * var(--global-scale));
+  max-width: 390px;
 
   @media (--max-lg) {
     max-width: 100%;
@@ -1306,7 +1300,7 @@
 }
 
 .home-primary__popular {
-  margin-top: calc(64px * var(--global-scale));
+  margin-top: 64px;
 }
 
 .popular-preview {
@@ -1319,7 +1313,6 @@
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 32px;
-  zoom: var(--global-scale);
 
   @media (--max-md) {
     height: 48px;
@@ -1368,7 +1361,6 @@
   bottom: 0;
   right: 0;
   background: #fff;
-  zoom: var(--global-scale);
 
   @media (--max-lg) {
     position: relative;
@@ -1486,7 +1478,7 @@
 }
 
 .popular-embla {
-  --slide-spacing: calc(50px * var(--global-scale));
+  --slide-spacing: 50px;
 
   position: relative;
   z-index: 20;
@@ -1540,16 +1532,12 @@
 }
 
 .popular-embla__slide:nth-child(3n) {
-  /* padding-bottom: calc(150px * var(--global-scale)); */
-
   .project-card {
     display: block;
   }
 }
 
 .popular-embla__slide:nth-child(3n-1) {
-  /* padding-bottom: calc(150px * var(--global-scale)); */
-
   .project-card {
     display: block;
   }
@@ -1579,7 +1567,6 @@
 .project-teaser {
   width: 100%;
   position: relative;
-  zoom: var(--global-scale);
 }
 
 .project-teaser__media {
@@ -1787,7 +1774,6 @@
 .project-card {
   width: 100%;
   position: relative;
-  zoom: var(--global-scale);
 }
 
 .project-card__media {
@@ -1974,8 +1960,8 @@
 
 .portfolio {
   overflow: hidden;
-  padding-top: calc(132px * var(--global-scale));
-  padding-bottom: calc(132px * var(--global-scale));
+  padding-top: 132px;
+  padding-bottom: 132px;
 
   @media (--max-lg) {
     padding-top: 96px;
@@ -1994,7 +1980,6 @@
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 148px;
-  zoom: var(--global-scale);
 
   @media (--max-lg) {
     width: 100%;
@@ -2065,8 +2050,8 @@
 
 .portfolio__list {
   position: relative;
-  margin-left: calc(116px * var(--global-scale));
-  margin-right: calc(116px * var(--global-scale));
+  margin-left: 116px;
+  margin-right: 116px;
 
   @media (--max-lg) {
     margin-left: 0;
@@ -2084,7 +2069,6 @@
   bottom: 0;
   right: 0;
   background: #fff;
-  zoom: var(--global-scale);
 
   @media (--max-lg) {
     position: relative;
@@ -2180,7 +2164,7 @@
 }
 
 .portfolio-embla {
-  --slide-spacing: calc(32px * var(--global-scale));
+  --slide-spacing: 32px;
 
   position: relative;
   z-index: 20;
@@ -2253,7 +2237,6 @@
   color: #fff;
   opacity: 0.4;
   font-size: 36px;
-  zoom: var(--global-scale);
 
   .portfolio-card-thumb:hover & {
     opacity: 1;
