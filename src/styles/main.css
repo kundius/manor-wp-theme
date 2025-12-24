@@ -1087,6 +1087,11 @@ a.breadcrumbs__item {
   }
 
   @media (--max-xl) {
+    padding-left: 96px;
+    padding-right: 96px;
+  }
+
+  @media (--max-lg) {
     zoom: 0.8;
   }
 
@@ -1363,7 +1368,7 @@ a.breadcrumbs__item {
     padding-right: 32px;
   }
 
-  @media (--max-xl) {
+  @media (--max-lg) {
     zoom: 0.8;
   }
 
@@ -1491,7 +1496,7 @@ a.breadcrumbs__item {
     padding-right: 32px;
   }
 
-  @media (--max-xl) {
+  @media (--max-lg) {
     zoom: 0.8;
   }
 

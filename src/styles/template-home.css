@@ -752,6 +752,7 @@
 
 .equipment-help {
   padding: 32px 60px;
+  width: 100%;
   background: #afadad;
   display: flex;
   flex-direction: column;
@@ -942,6 +943,7 @@
 .equipment-main {
   background: #c9413c url('../images/equipment-lights.png') no-repeat 100% 0;
   /*padding: 48px 60px 60px 116px;*/
+  width: 100%;
   padding: 48px 56px 56px;
   min-width: 0;
   background-position: calc(100% + (40% - (40% * var(--progress)))) 0;
@@ -990,6 +992,10 @@
   }
 
   @media (--max-xl) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (--max-lg) {
     grid-template-columns: 1fr;
   }
 
@@ -1217,6 +1223,11 @@
 
   @media (--max-xl) {
     margin-top: 96px;
+    width: 80%;
+    margin-left: auto;
+  }
+
+  @media (--max-lg) {
     width: 100%;
   }
 
@@ -1236,7 +1247,7 @@
 
   @media (--max-xl) {
     margin-top: 64px;
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   @media (--max-md) {
