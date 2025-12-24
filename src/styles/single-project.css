@@ -1255,8 +1255,8 @@
   }
 
   @media (--max-2xl) {
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media (--max-lg) {
@@ -1370,8 +1370,8 @@
   }
 
   @media (--max-2xl) {
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media (--max-lg) {
