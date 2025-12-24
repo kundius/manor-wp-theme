@@ -322,6 +322,7 @@
   font-size: 18px;
   color: #b4afb1;
   line-height: 1.25;
+  text-wrap: balance;
   filter: drop-shadow(0px 0px 1em #000) drop-shadow(0px 0px 1em #000) drop-shadow(0px 0px 1em #000);
 
   @media (--max-xl) {
