@@ -276,6 +276,12 @@
   background-position-y: calc(50% - (240px - (240px * var(--progress))));
   z-index: 20;
 
+  @media (--max-2xl) {
+    width: 400px;
+    height: 400px;
+    background-position-y: calc(50% - (200px - (200px * var(--progress))));
+  }
+
   @media (--max-lg) {
     display: none;
   }
@@ -291,6 +297,11 @@
   width: 480px;
   height: 480px;
 
+  @media (--max-2xl) {
+    width: 400px;
+    height: 400px;
+  }
+
   @media (--max-lg) {
     display: none;
   }
@@ -303,4 +314,8 @@
   margin: 88px 0 0 -22px;
   transform: translate(-50%, -50%) skew(calc(10deg - (10deg * var(--progress))))
     rotate(calc((10deg - (10deg * var(--progress))) * -1));
+
+  @media (--max-2xl) {
+    zoom: calc(400 / 480);
+  }
 }

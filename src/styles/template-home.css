@@ -1214,7 +1214,7 @@
   grid-template-columns: 1fr 1fr 1fr;
 
   @media (--max-2xl) {
-    gap: 40px;
+    gap: 32px;
   }
 
   @media (--max-lg) {
@@ -1460,7 +1460,7 @@
   z-index: 20;
 
   @media (--max-2xl) {
-    --slide-spacing: 40px;
+    --slide-spacing: 32px;
   }
 
   @media (--max-md) {
@@ -2025,7 +2025,7 @@
   margin-left: 116px;
   margin-right: 116px;
 
-  @media (--max-lg) {
+  @media (--max-2xl) {
     margin-left: 0;
     margin-right: 0;
   }
