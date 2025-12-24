@@ -180,6 +180,10 @@ body {
   grid-template-rows: 1fr;
 
   @media (--max-xl) {
+    --scale: calc(1024 / 1920);
+  }
+
+  @media (--max-lg) {
     --scale: calc(768 / 1920);
   }
 }
