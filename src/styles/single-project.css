@@ -53,7 +53,7 @@
   margin-top: 32px;
 
   @media (--max-3xl) {
-    margin-top: 24px;
+    margin-top: 20px;
   }
 }
 
@@ -61,7 +61,7 @@
   margin-top: 32px;
 
   @media (--max-3xl) {
-    margin-top: 24px;
+    margin-top: 20px;
   }
 }
 
@@ -72,6 +72,10 @@
 .project-layout__prices {
   margin-top: 40px;
   margin-bottom: 52px;
+
+  @media (--max-3xl) {
+    margin-bottom: 40px;
+  }
 }
 
 .project-layout__packages {
@@ -93,6 +97,10 @@
   border-color: rgb(204, 204, 204);
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px 72px 48px 50px;
+
+  @media (--max-3xl) {
+    padding-bottom: 40px;
+  }
 
   @media (--max-lg) {
     padding: 0;
@@ -335,11 +343,15 @@
 }
 
 .gallery-thumbs {
-  --carousel-gap: calc(16px * var(--global-scale));
+  --carousel-gap: 16px;
   --carousel-columns: 3;
 
   position: relative;
-  margin-top: calc(24px * var(--global-scale));
+  margin-top: 24px;
+
+  @media (--max-3xl) {
+    margin-top: 20px;
+  }
 
   @media (--max-md) {
     --carousel-gap: 8px;
