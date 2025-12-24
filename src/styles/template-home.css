@@ -985,7 +985,8 @@
 
 .equipment-main {
   background: #c9413c url('../images/equipment-lights.png') no-repeat 100% 0;
-  padding: 48px 60px 60px 116px;
+  /*padding: 48px 60px 60px 116px;*/
+  padding: 48px 56px;
   min-width: 0;
   background-position: calc(100% + (40% - (40% * var(--progress)))) 0;
   zoom: var(--global-scale);
@@ -1039,7 +1040,7 @@
 
 .equipment-card {
   border: 1px solid rgb(255, 255, 255, 0.3);
-  padding: 26px 48px 26px 28px;
+  padding: 24px;
   width: 100%;
 
   @media (--max-md) {
