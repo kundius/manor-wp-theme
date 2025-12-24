@@ -49,45 +49,26 @@
   width: 50px;
 }
 
-/*.project-layout::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.project-layout__media {
-  float: left;
-  width: calc(50% - 25px);
-}
-
 .project-layout__discount {
-  float: left;
-  width: calc(50% - 25px);
-}
-
-.project-layout__prices {
-  float: left;
-  width: calc(50% - 25px);
-}
-
-.project-layout__params {
-  float: left;
-  width: calc(50% - 25px);
-}
-
-.project-layout__contact {
-  float: left;
-  width: calc(50% - 25px);
+  margin-top: 32px;
 }
 
 .project-layout__benefits {
-  grid-area: benefits;
-  float: left;
-  width: calc(50% - 25px);
-}*/
+  margin-top: 32px;
+}
+
+.project-layout__params {
+  margin-bottom: 24px;
+}
+
+.project-layout__prices {
+  margin-top: 42px;
+  margin-bottom: 52px;
+}
 
 .project-layout__packages {
   width: 100%;
+  margin-top: 64px;
 }
 
 .project-layout__prices-inner {
