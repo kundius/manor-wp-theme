@@ -427,6 +427,16 @@
   bottom: 24px;
   right: calc(88px + 24px);
 
+  @media (--max-3xl) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    left: 12px;
+    bottom: 12px;
+    right: auto;
+  }
+
   @media (--max-lg) {
     right: 112px;
   }

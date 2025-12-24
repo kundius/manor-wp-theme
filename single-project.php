@@ -114,19 +114,19 @@ $similar = new WP_Query([
                 <div class="gallery-labels">
                   <div class="gallery-label">
                     <div class="gallery-label__icon">
-                      <div class="icon icon-guarante"></div>
-                    </div>
-                    <div class="gallery-label__title">
-                      Расширенная двойная гарантия 3 года
-                    </div>
-                  </div>
-                  <div class="gallery-label">
-                    <div class="gallery-label__icon">
                       <div class="icon icon-pay"></div>
                     </div>
                     <div class="gallery-label__title">
                       Оплата<br>
                       в 2 этапа
+                    </div>
+                  </div>
+                  <div class="gallery-label">
+                    <div class="gallery-label__icon">
+                      <div class="icon icon-guarante"></div>
+                    </div>
+                    <div class="gallery-label__title">
+                      Расширенная двойная гарантия 3 года
                     </div>
                   </div>
                   <div class="gallery-label">
