@@ -83,11 +83,13 @@
   margin-left: -22px;
 
   @media (--max-xl) {
-    zoom: calc(1024 / 1920);
+    width: calc(45px * (1024 / 1920));
+    height: calc(577px * (1024 / 1920));
   }
 
   @media (--max-lg) {
-    zoom: calc(768 / 1920);
+    width: calc(45px * (768 / 1920));
+    height: calc(577px * (768 / 1920));
   }
 
   @media (--max-md) {
