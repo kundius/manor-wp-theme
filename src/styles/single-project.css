@@ -51,18 +51,26 @@
 
 .project-layout__discount {
   margin-top: 32px;
+
+  @media (--max-3xl) {
+    margin-top: 24px;
+  }
 }
 
 .project-layout__benefits {
   margin-top: 32px;
+
+  @media (--max-3xl) {
+    margin-top: 24px;
+  }
 }
 
 .project-layout__params {
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .project-layout__prices {
-  margin-top: 42px;
+  margin-top: 40px;
   margin-bottom: 52px;
 }
 
@@ -464,7 +472,7 @@
   font-weight: 500;
   color: #000000;
   line-height: 1.25;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 
   @media (--max-md) {
     font-size: 20px;
