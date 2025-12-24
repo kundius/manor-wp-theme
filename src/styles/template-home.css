@@ -1632,6 +1632,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   column-gap: 24px;
   row-gap: 4px;
 }
@@ -1663,6 +1664,7 @@
   color: rgb(1, 1, 1);
   line-height: 1.2;
   font-weight: 500;
+  flex-shrink: 0;
 }
 
 .project-teaser__params {
