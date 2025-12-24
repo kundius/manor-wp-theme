@@ -247,6 +247,14 @@ body {
   @media (--max-2xl) {
     --scale: 0.9;
   }
+
+  @media (--max-xl) {
+    --scale: calc(1024 / 1920);
+  }
+
+  @media (--max-lg) {
+    --scale: calc(768 / 1920);
+  }
 }
 
 .breadcrumbs {

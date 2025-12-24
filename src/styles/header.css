@@ -116,7 +116,7 @@
     }
   }
 
-  @media (--min-lg) {
+  @media (--min-xl) {
     display: none;
   }
 

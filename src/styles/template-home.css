@@ -83,6 +83,10 @@
   margin-left: -22px;
 
   @media (--max-xl) {
+    zoom: calc(1024 / 1920);
+  }
+
+  @media (--max-lg) {
     zoom: calc(768 / 1920);
   }
 
