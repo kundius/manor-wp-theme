@@ -3,7 +3,7 @@
     <div class="feedback-form__photo"></div>
     <div class="feedback-form__person">
       <div class="feedback-form__person-name">
-        Фамилия И.О.
+        Дарья Морозова
       </div>
       <div class="feedback-form__person-job">
         Менеджер компании

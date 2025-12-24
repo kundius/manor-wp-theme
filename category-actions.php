@@ -60,13 +60,13 @@ $articles = new WP_Query($query_params);
         <?php endif; ?>
 
         <?php if ($articles->have_posts()): ?>
-          <div class="articles-list">
+          <div class="actions-list">
             <?php
             while ($articles->have_posts()) {
               $articles->the_post();
 
-              echo '<div class="articles-list__item">';
-              get_template_part('partials/article-card');
+              echo '<div class="actions-list__item">';
+              get_template_part('partials/action-card');
               echo '</div>';
             }
             wp_reset_postdata();

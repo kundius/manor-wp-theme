@@ -79,12 +79,12 @@ $cases = new WP_Query([
             </div>
           </div>
           <div class="intro-content__actions">
-            <a href="<?php the_permalink(CATALOG_PAGE_ID); ?>" class="intro-content__action">
-              <div class="intro-content__action-text">
-                Каталог проектов
-              </div>
+            <button type="button" class="intro-content__action" data-order-button="Каркасные дома">
+              <span class="intro-content__action-text">
+                Оставить заявку
+              </span>
               <span class="icon icon-arrow-right"></span>
-            </a>
+            </button>
           </div>
           <div class="intro-content__enum" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 60%">
             <div class="intro-content__enum-item">
@@ -432,8 +432,7 @@ $cases = new WP_Query([
                       2 этап -
                     </div>
                     <div class="advantage-payment__step-desc">
-                      после подписания
-                      передаточного акта
+                      после подписания акта выполненных работ
                     </div>
                   </div>
                 </div>
