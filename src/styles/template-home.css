@@ -326,12 +326,12 @@
 }
 
 .intro-content__enum {
-  width: 865px;
-  padding-top: 98px;
+  width: 900px;
+  padding-top: 96px;
   position: relative;
   display: flex;
   align-items: flex-start;
-  gap: 48px;
+  gap: 32px;
 
   @media (--max-lg) {
     background: #191c15;
@@ -380,8 +380,8 @@
 }
 
 .intro-content__enum-item-check {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -393,7 +393,7 @@
 }
 
 .intro-content__enum-item-text {
-  font-size: 16px;
+  font-size: 18px;
   color: #b4afb1;
   line-height: 1.25;
   filter: drop-shadow(0px 0px 1em #000) drop-shadow(0px 0px 1em #000) drop-shadow(0px 0px 1em #000);
@@ -1064,7 +1064,8 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .equipment-card__icon {
@@ -1627,6 +1628,14 @@
   z-index: 10;
 }
 
+.project-teaser__data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 24px;
+  row-gap: 4px;
+}
+
 .project-teaser__bar {
   position: absolute;
   bottom: 0;
@@ -1831,13 +1840,8 @@
   gap: 20px;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 20px;
-
-  /* @media (--max-3xl) {
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 12px;
-  } */
 }
 
 .project-card__title {

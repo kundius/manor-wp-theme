@@ -7,7 +7,7 @@ $type_label = [
 ?>
 <div class="showcase-card">
   <div class="showcase-card__media">
-    <?php the_post_thumbnail('custom-medium', [
+    <?php the_post_thumbnail('custom-large', [
       'class' => 'showcase-card__image',
     ]); ?>
     <a href="<?php the_permalink(); ?>" class="showcase-card__more">смотреть проект подробнее</a>

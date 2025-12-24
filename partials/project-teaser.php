@@ -23,41 +23,43 @@ $type_label = [
           $type
         ]; ?> <span class="font-for-number"><?php echo $dimensions; ?></span> «<?php the_title(); ?>»
       </div>
-      <div class="project-teaser__params">
-        <?php if ($total_area = carbon_get_the_post_meta('total_area')): ?>
-          <div class="project-teaser__param">
-            <div class="project-teaser__param-ico">
-              <span class="icon icon-area"></span>
+      <div class="project-teaser__data">
+        <div class="project-teaser__params">
+          <?php if ($total_area = carbon_get_the_post_meta('total_area')): ?>
+            <div class="project-teaser__param">
+              <div class="project-teaser__param-ico">
+                <span class="icon icon-area"></span>
+              </div>
+              <div class="project-teaser__param-val">
+                <?php echo $total_area; ?> м<sup>2</sup>
+              </div>
             </div>
-            <div class="project-teaser__param-val">
-              <?php echo $total_area; ?> м<sup>2</sup>
+          <?php endif; ?>
+          <?php if ($duration = carbon_get_the_post_meta('duration')): ?>
+            <div class="project-teaser__param">
+              <div class="project-teaser__param-ico">
+                <span class="icon icon-calendar"></span>
+              </div>
+              <div class="project-teaser__param-val">
+                <?php echo $duration; ?>
+              </div>
             </div>
-          </div>
-        <?php endif; ?>
-        <?php if ($duration = carbon_get_the_post_meta('duration')): ?>
-          <div class="project-teaser__param">
-            <div class="project-teaser__param-ico">
-              <span class="icon icon-calendar"></span>
+          <?php endif; ?>
+        </div>
+        <?php if ($price = carbon_get_the_post_meta('price')): ?>
+          <div class="project-teaser__price">
+            <div class="project-teaser__price-lbl">
+              от
             </div>
-            <div class="project-teaser__param-val">
-              <?php echo $duration; ?>
+            <div class="project-teaser__price-val">
+              <?php echo number_format($price, 0, ',', ' '); ?>
+            </div>
+            <div class="project-teaser__price-cur">
+              ₽
             </div>
           </div>
         <?php endif; ?>
       </div>
-      <?php if ($price = carbon_get_the_post_meta('price')): ?>
-        <div class="project-teaser__price">
-          <div class="project-teaser__price-lbl">
-            от
-          </div>
-          <div class="project-teaser__price-val">
-            <?php echo number_format($price, 0, ',', ' '); ?>
-          </div>
-          <div class="project-teaser__price-cur">
-            ₽
-          </div>
-        </div>
-      <?php endif; ?>
     </div>
   </div>
   <div class="project-teaser__actions">
