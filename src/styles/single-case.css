@@ -154,6 +154,11 @@
   gap: 40px;
   zoom: var(--global-scale);
 
+  @media (--max-3xl) {
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+
   @media (--max-lg) {
     padding: 0;
     background: transparent;
@@ -222,14 +227,14 @@
 }
 
 .case-specifications__list dt {
-  font-size: 16px;
-  line-height: 1;
+  font-size: 18px;
+  line-height: 1.2;
   color: #959595;
 }
 
 .case-specifications__list dd {
-  font-size: 16px;
-  line-height: 1;
+  font-size: 18px;
+  line-height: 1.2;
   color: #303437;
   font-weight: 500;
 }

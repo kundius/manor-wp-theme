@@ -4,6 +4,9 @@
   gap: calc(40px * var(--global-scale));
   margin: calc(24px * var(--global-scale)) 0;
 
+  @media (--max-3xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   @media (--max-lg) {
     grid-template-columns: 1fr 1fr;
     .project-card {
