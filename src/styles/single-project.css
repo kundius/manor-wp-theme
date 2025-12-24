@@ -37,6 +37,12 @@
   }
 }
 
+.project-layout::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 .project-layout__media {
   /*grid-area: media;*/
   float: left;
