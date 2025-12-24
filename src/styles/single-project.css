@@ -1286,6 +1286,11 @@
   }
 
   @media (--max-xl) {
+    margin-left: 96px;
+    margin-right: 96px;
+  }
+
+  @media (--max-lg) {
     margin-left: 0;
     margin-right: 0;
   }
@@ -1401,6 +1406,11 @@
   }
 
   @media (--max-xl) {
+    margin-left: 96px;
+    margin-right: 96px;
+  }
+
+  @media (--max-lg) {
     margin-left: 0;
     margin-right: 0;
   }
