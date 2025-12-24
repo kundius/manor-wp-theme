@@ -135,12 +135,10 @@ $cases = new WP_Query([
                 </a>
               </div>
               <div class="catalog-preview__content">
-                <div class="catalog-preview__desc">
-                  Недорогой загородный дом
-                  от&nbsp;компании «СК Поместье» -
-                  это&nbsp;современное архитектурное решение, обладающее привлекательным внешним видом, продуманной планировкой
-                  и&nbsp;комфортными условиями проживания
-                </div>
+                Недорогой загородный дом
+                от&nbsp;компании «СК Поместье» -
+                это&nbsp;современное архитектурное решение, обладающее привлекательным внешним видом, продуманной планировкой
+                и&nbsp;комфортными условиями проживания
               </div>
             </div>
 
@@ -194,8 +192,8 @@ $cases = new WP_Query([
                         Холодный контур
                       </div>
                       <a href="<?php the_permalink(
-                                  CATALOG_PAGE_ID,
-                                ); ?>" class="equipment-card__more">
+                        CATALOG_PAGE_ID,
+                      ); ?>" class="equipment-card__more">
                         смотреть проекты
                       </a>
                     </div>
@@ -225,8 +223,8 @@ $cases = new WP_Query([
                         Круглогодично
                       </div>
                       <a href="<?php the_permalink(
-                                  CATALOG_PAGE_ID,
-                                ); ?>" class="equipment-card__more">
+                        CATALOG_PAGE_ID,
+                      ); ?>" class="equipment-card__more">
                         смотреть проекты
                       </a>
                     </div>
@@ -260,8 +258,8 @@ $cases = new WP_Query([
                 data-feedback-form-action="feedback_form">
                 <input type="hidden" name="submitted" value="">
                 <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(
-                                                            'feedback-nonce',
-                                                          ); ?>">
+                  'feedback-nonce',
+                ); ?>">
                 <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
                 <input type="hidden" name="subject" value="Заказать звонок">
 
@@ -356,8 +354,8 @@ $cases = new WP_Query([
               data-feedback-form-action="feedback_form">
               <input type="hidden" name="submitted" value="">
               <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(
-                                                          'feedback-nonce',
-                                                        ); ?>">
+                'feedback-nonce',
+              ); ?>">
               <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
               <input type="hidden" name="subject" value="Заказать звонок">
 
