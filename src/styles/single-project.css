@@ -1,5 +1,5 @@
 .project-layout {
-  display: grid;
+  /*display: grid;
   grid-template-areas:
     'media . .'
     'media . prices'
@@ -11,13 +11,11 @@
     'discount . benefits'
     '. . .'
     'packages packages packages';
-  grid-template-columns: 1fr calc(50px * var(--global-scale)) 1fr;
+  grid-template-columns: 1fr 50px 1fr;
   grid-template-rows:
-    calc(42px * var(--global-scale)) auto calc(52px * var(--global-scale)) auto calc(
-      24px * var(--global-scale)
-    )
-    1fr calc(32px * var(--global-scale)) auto calc(64px * var(--global-scale)) auto;
-  gap: 0;
+    42px auto 52px auto 24px
+    1fr 32px auto 64px auto;
+  gap: 0;*/
 
   @media (--max-lg) {
     grid-template-columns: 100%;
@@ -40,32 +38,46 @@
 }
 
 .project-layout__media {
-  grid-area: media;
+  /*grid-area: media;*/
+  float: left;
+  width: 50%;
 }
 
 .project-layout__discount {
-  grid-area: discount;
+  /*grid-area: discount;*/
+  float: left;
+  width: 50%;
 }
 
 .project-layout__prices {
-  grid-area: prices;
+  /*grid-area: prices;*/
+  float: left;
+  width: 50%;
 }
 
 .project-layout__params {
-  grid-area: params;
+  /*grid-area: params;*/
+  float: left;
+  width: 50%;
 }
 
 .project-layout__contact {
-  grid-area: contact;
+  /*grid-area: contact;*/
+  float: left;
+  width: 50%;
 }
 
 .project-layout__benefits {
   grid-area: benefits;
-  display: flex;
+  /*display: flex;*/
+  float: left;
+  width: 50%;
 }
 
 .project-layout__packages {
-  grid-area: packages;
+  /*grid-area: packages;*/
+  float: left;
+  width: 50%;
 }
 
 .project-layout__prices-inner {
@@ -709,7 +721,7 @@
 }
 
 .project-benefits__item-txt {
-  font-size: 18px;
+  font-size: 20px;
   color: rgb(193, 155, 75);
   line-height: 1.2;
   text-wrap: balance;

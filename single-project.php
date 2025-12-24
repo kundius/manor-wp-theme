@@ -70,9 +70,8 @@ $similar = new WP_Query([
           <span class="font-for-number"><?php echo $dimensions; ?></span> «<?php the_title(); ?>»
         </h1>
 
-        <div class="project-layout">
-          <div class="project-layout__media">
-
+        <div class="project-layout" data-project-layout>
+          <div class="project-layout__media" data-project-layout-item>
             <div class="gallery" data-gallery>
               <div class="gallery-main">
                 <div class="gallery-main__viewport" data-gallery-main-viewport>
@@ -80,9 +79,9 @@ $similar = new WP_Query([
                     <?php if (has_post_thumbnail()): ?>
                       <div class="gallery-main__slide">
                         <a href="<?php echo get_the_post_thumbnail_url(
-                                    get_the_ID(),
-                                    'full',
-                                  ); ?>" data-fslightbox="gallery" target="_blank">
+                          get_the_ID(),
+                          'full',
+                        ); ?>" data-fslightbox="gallery" target="_blank">
                           <?php the_post_thumbnail('custom-large'); ?>
                           <span class="gallery-main__loupe">
                             <span class="icon icon-search"></span>
@@ -167,9 +166,8 @@ $similar = new WP_Query([
                 </button>
               </div>
             </div>
-
           </div>
-          <div class="project-layout__prices">
+          <div class="project-layout__prices" data-project-layout-item>
             <div class="project-layout__prices-inner">
               <?php if ($packages->have_posts()): ?>
                 <div class="project-prices">
@@ -220,7 +218,7 @@ $similar = new WP_Query([
               <?php endif; ?>
             </div>
           </div>
-          <div class="project-layout__params">
+          <div class="project-layout__params" data-project-layout-item>
             <div class="project-params">
               <div class="project-params__title">Технические характеристики:</div>
               <div class="project-params__list">
@@ -295,7 +293,7 @@ $similar = new WP_Query([
               </div>
             </div>
           </div>
-          <div class="project-layout__contact">
+          <div class="project-layout__contact" data-project-layout-item>
             <div class="project-contact">
               <div class="project-contact__title">
                 Не знаете с чего начать? Наши менеджеры дадут подробную бесплатную консультацию
@@ -303,11 +301,11 @@ $similar = new WP_Query([
               <div class="project-contact__desc">Деловое общение, без спама, без sms</div>
               <button type="button" class="project-contact__feedback"
                 data-order-button="<?php echo $type_label[$type] .
-                                      ' ' .
-                                      $dimensions .
-                                      ' «' .
-                                      get_the_title() .
-                                      '»'; ?>">Проконсультироваться</button>
+                  ' ' .
+                  $dimensions .
+                  ' «' .
+                  get_the_title() .
+                  '»'; ?>">Проконсультироваться</button>
               <div class="project-contact__socials">
                 <a href="whatsapp://send?text=Hello&phone=+79602097933" class="project-contact__social project-contact__social--whatsapp">
                   <span class="project-contact__social-ico">
@@ -339,7 +337,7 @@ $similar = new WP_Query([
               </div>
             </div>
           </div>
-          <div class="project-layout__discount">
+          <div class="project-layout__discount" data-project-layout-item>
             <div class="project-discount">
               <div class="project-discount__sticker"></div>
               <div class="project-discount__header">
@@ -358,7 +356,7 @@ $similar = new WP_Query([
               </div>
             </div>
           </div>
-          <div class="project-layout__benefits">
+          <div class="project-layout__benefits" data-project-layout-item>
             <div class="project-benefits">
               <div class="project-benefits__item">
                 <div class="project-benefits__item-ico">
@@ -371,7 +369,7 @@ $similar = new WP_Query([
             </div>
           </div>
           <?php if ($packages->have_posts()): ?>
-            <div class="project-layout__packages">
+            <div class="project-layout__packages" data-project-layout-item>
               <div class="project-packages">
                 <div class="project-packages__title">
                   Подробные комплектации
@@ -388,9 +386,9 @@ $similar = new WP_Query([
                     <?php if ($is_active): ?>
                       <?php $index++; ?>
                       <button data-project-packages-tab="<?php echo get_the_ID(); ?>" type="button" class="project-packages__tab<?php echo $index ===
-                                                                                                                                  1
-                                                                                                                                  ? ' active'
-                                                                                                                                  : ''; ?>">
+1
+  ? ' active'
+  : ''; ?>">
                         <?php echo $display_name; ?>
                       </button>
                     <?php endif; ?>
@@ -407,9 +405,9 @@ $similar = new WP_Query([
                     <?php if ($is_active): ?>
                       <?php $index++; ?>
                       <div data-project-packages-content="<?php echo get_the_ID(); ?>" class="project-packages__content<?php echo $index ===
-                                                                                                                          1
-                                                                                                                          ? ' active'
-                                                                                                                          : ''; ?>">
+1
+  ? ' active'
+  : ''; ?>">
                         <?php the_content(); ?>
                       </div>
                     <?php endif; ?>

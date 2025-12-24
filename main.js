@@ -34,6 +34,7 @@ import { initCatalogFilter } from './src/scripts/catalog-filter'
 import { initOrderButton } from './src/scripts/order-button'
 import { initCallbackButton } from './src/scripts/callback-button'
 import { initFeedbackForm } from './src/scripts/feedback-form'
+import { initProjectLayout } from './src/scripts/project-layout'
 
 new MaskInput('[data-maska]')
 
@@ -52,3 +53,4 @@ initCatalogFilter()
 initOrderButton()
 initCallbackButton()
 initFeedbackForm()
+initProjectLayout()
