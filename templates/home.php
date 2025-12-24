@@ -188,14 +188,16 @@ $cases = new WP_Query([
                       <div class="equipment-card__icon">
                         <span class="icon icon-snowflake"></span>
                       </div>
-                      <div class="equipment-card__title">
-                        Холодный контур
+                      <div class="equipment-card__headline">
+                        <div class="equipment-card__title">
+                          Холодный контур
+                        </div>
+                        <a href="<?php the_permalink(
+                          CATALOG_PAGE_ID,
+                        ); ?>" class="equipment-card__more">
+                          смотреть проекты
+                        </a>
                       </div>
-                      <a href="<?php the_permalink(
-                        CATALOG_PAGE_ID,
-                      ); ?>" class="equipment-card__more">
-                        смотреть проекты
-                      </a>
                     </div>
                     <div class="equipment-card__desc">
                       Включает стены, кровлю и оконные проёмы без внутренней отделки и отопления
@@ -219,14 +221,16 @@ $cases = new WP_Query([
                       <div class="equipment-card__icon">
                         <span class="icon icon-sun"></span>
                       </div>
-                      <div class="equipment-card__title">
-                        Круглогодично
+                      <div class="equipment-card__headline">
+                        <div class="equipment-card__title">
+                          Круглогодично
+                        </div>
+                        <a href="<?php the_permalink(
+                          CATALOG_PAGE_ID,
+                        ); ?>" class="equipment-card__more">
+                          смотреть проекты
+                        </a>
                       </div>
-                      <a href="<?php the_permalink(
-                        CATALOG_PAGE_ID,
-                      ); ?>" class="equipment-card__more">
-                        смотреть проекты
-                      </a>
                     </div>
                     <div class="equipment-card__desc">
                       Для круглогодичного проживания, включает утепление и полноценную внутреннюю отделку
