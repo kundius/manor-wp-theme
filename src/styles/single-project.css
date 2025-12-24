@@ -83,7 +83,7 @@
 .project-layout__packages {
   /*grid-area: packages;*/
   float: left;
-  width: 50%;
+  width: 100%;
 }
 
 .project-layout__prices-inner {
