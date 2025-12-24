@@ -272,6 +272,10 @@
     margin-right: calc(var(--container-padding) * -1);
   }
 
+  @media (--max-xl) {
+    margin-top: 18px;
+  }
+
   @media (--max-md) {
     flex-direction: column;
   }
@@ -1291,6 +1295,7 @@
   @media (--max-xl) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    margin-top: 0;
   }
 
   @media (--max-md) {
