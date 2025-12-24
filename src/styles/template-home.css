@@ -986,7 +986,7 @@
 .equipment-main {
   background: #c9413c url('../images/equipment-lights.png') no-repeat 100% 0;
   /*padding: 48px 60px 60px 116px;*/
-  padding: 48px 56px;
+  padding: 48px 56px 56px;
   min-width: 0;
   background-position: calc(100% + (40% - (40% * var(--progress)))) 0;
   zoom: var(--global-scale);
@@ -1004,7 +1004,7 @@
   font-size: 24px;
   color: rgb(255, 255, 255);
   line-height: 1.2;
-  margin-bottom: 55px;
+  margin-bottom: 56px;
   text-wrap: balance;
 
   @media (--max-lg) {
