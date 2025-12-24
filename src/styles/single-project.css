@@ -67,6 +67,10 @@
 
 .project-layout__params {
   margin-bottom: 40px;
+
+  @media (--max-2xl) {
+    margin-bottom: 20px;
+  }
 }
 
 .project-layout__prices {
@@ -75,6 +79,11 @@
 
   @media (--max-3xl) {
     margin-bottom: 40px;
+  }
+
+  @media (--max-2xl) {
+    margin-bottom: 20px;
+    margin-top: 0;
   }
 }
 
@@ -100,6 +109,10 @@
 
   @media (--max-3xl) {
     padding-bottom: 40px;
+  }
+
+  @media (--max-2xl) {
+    padding-bottom: 20px;
   }
 
   @media (--max-lg) {
@@ -449,6 +462,12 @@
     right: auto;
   }
 
+  @media (--max-2xl) {
+    gap: 8px;
+    left: 8px;
+    bottom: 8px;
+  }
+
   @media (--max-lg) {
     right: 112px;
   }
@@ -639,6 +658,7 @@
 .project-contact__social {
   display: flex;
   align-items: center;
+  justify-content: center;
   min-height: 72px;
   gap: 12px;
   padding: 12px 20px;
@@ -691,6 +711,10 @@
 
   @media (--max-3xl) {
     font-size: 14px;
+  }
+
+  @media (--max-2xl) {
+    display: none;
   }
 
   @media (--max-md) {
@@ -784,6 +808,11 @@
     top: 8px;
   }
 
+  @media (--max-2xl) {
+    left: 0;
+    top: 0;
+  }
+
   @media (--max-md) {
     display: none;
   }
@@ -804,6 +833,10 @@
   font-style: italic;
   line-height: 1;
 
+  @media (--max-2xl) {
+    font-size: 24px;
+  }
+
   @media (--max-md) {
     font-size: 24px;
   }
@@ -823,6 +856,10 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
+
+  @media (--max-2xl) {
+    min-height: 48px;
+  }
 
   @media (--max-md) {
     min-height: 36px;
@@ -1033,6 +1070,11 @@
     padding-right: 64px;
   }
 
+  @media (--max-2xl) {
+    padding-left: 0;
+    padding-right: 40px;
+  }
+
   @media (--max-lg) {
     width: 100%;
     padding: 0;
@@ -1193,6 +1235,11 @@
     margin-right: 32px;
   }
 
+  @media (--max-2xl) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   @media (--max-lg) {
     margin-left: 0;
     margin-right: 0;
@@ -1301,6 +1348,11 @@
   @media (--max-3xl) {
     margin-left: 32px;
     margin-right: 32px;
+  }
+
+  @media (--max-2xl) {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @media (--max-lg) {
@@ -1576,7 +1628,7 @@
 }
 
 .work-scheme__item-desc {
-  font-size: 14px;
+  font-size: 16px;
   color: rgb(48, 52, 55);
   line-height: 1.429;
   margin-top: 16px;
