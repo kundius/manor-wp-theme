@@ -163,6 +163,10 @@
   border-bottom: 1px solid #dfdfdf;
   padding-bottom: 12px;
 
+  @media (--max-2xl) {
+    padding-left: 64px;
+  }
+
   @media (--max-md) {
     padding-left: 48px;
     font-size: 24px;
@@ -206,6 +210,11 @@
   color: #131313;
   padding-left: 116px;
   padding-right: 116px;
+
+  @media (--max-2xl) {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
 
   p {
     margin: 0;
