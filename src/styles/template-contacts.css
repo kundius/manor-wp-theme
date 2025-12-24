@@ -229,7 +229,7 @@
 
 .contacts-info__groups {
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 
 .contacts-info__groups-item {

@@ -24,9 +24,9 @@
       <span class="header-phone__number">
         <?php echo $phone_number; ?>
       </span>
-      <?php if ($phone_desc = carbon_get_post_meta(CONTACTS_PAGE_ID, 'phone_desc')): ?>
+      <?php if ($email = carbon_get_post_meta(CONTACTS_PAGE_ID, 'email')): ?>
       <span class="header-phone__time">
-        <?php echo $phone_desc; ?>
+        <?php echo $email; ?>
       </span>
       <?php endif; ?>
     </a>
