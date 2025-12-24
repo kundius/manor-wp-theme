@@ -37,57 +37,61 @@
   }
 }
 
-.project-layout::after {
+[data-project-layout-item] {
+  width: calc(50% - 25px);
+}
+
+[data-project-layout-column] {
+  width: calc(50% - 25px);
+}
+
+[data-project-layout-gutter] {
+  width: 50px;
+}
+
+/*.project-layout::after {
   content: '';
   display: block;
   clear: both;
 }
 
 .project-layout__media {
-  /*grid-area: media;*/
   float: left;
-  width: 50%;
+  width: calc(50% - 25px);
 }
 
 .project-layout__discount {
-  /*grid-area: discount;*/
   float: left;
-  width: 50%;
+  width: calc(50% - 25px);
 }
 
 .project-layout__prices {
-  /*grid-area: prices;*/
   float: left;
-  width: 50%;
+  width: calc(50% - 25px);
 }
 
 .project-layout__params {
-  /*grid-area: params;*/
   float: left;
-  width: 50%;
+  width: calc(50% - 25px);
 }
 
 .project-layout__contact {
-  /*grid-area: contact;*/
   float: left;
-  width: 50%;
+  width: calc(50% - 25px);
 }
 
 .project-layout__benefits {
   grid-area: benefits;
-  /*display: flex;*/
   float: left;
-  width: 50%;
-}
+  width: calc(50% - 25px);
+}*/
 
 .project-layout__packages {
-  /*grid-area: packages;*/
-  float: left;
   width: 100%;
 }
 
 .project-layout__prices-inner {
-  margin-left: calc(50px * var(--global-scale) * -1);
+  margin-left: calc(50px * -1);
 
   @media (--max-lg) {
     margin-left: 0;

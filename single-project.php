@@ -385,10 +385,11 @@ $similar = new WP_Query([
                     ); ?>
                     <?php if ($is_active): ?>
                       <?php $index++; ?>
-                      <button data-project-packages-tab="<?php echo get_the_ID(); ?>" type="button" class="project-packages__tab<?php echo $index ===
-1
-  ? ' active'
-  : ''; ?>">
+                      <button
+                        data-project-packages-tab="<?php echo get_the_ID(); ?>"
+                        type="button"
+                        class="project-packages__tab<?php echo $index === 1 ? ' active' : ''; ?>"
+                      >
                         <?php echo $display_name; ?>
                       </button>
                     <?php endif; ?>
@@ -404,10 +405,12 @@ $similar = new WP_Query([
                     ); ?>
                     <?php if ($is_active): ?>
                       <?php $index++; ?>
-                      <div data-project-packages-content="<?php echo get_the_ID(); ?>" class="project-packages__content<?php echo $index ===
-1
-  ? ' active'
-  : ''; ?>">
+                      <div
+                        data-project-packages-content="<?php echo get_the_ID(); ?>"
+                        class="project-packages__content<?php echo $index === 1
+                          ? ' active'
+                          : ''; ?>"
+                      >
                         <?php the_content(); ?>
                       </div>
                     <?php endif; ?>
@@ -417,6 +420,8 @@ $similar = new WP_Query([
             </div>
             <?php wp_reset_postdata(); ?>
           <?php endif; ?>
+          <div data-project-layout-column></div>
+          <div data-project-layout-gutter></div>
         </div>
       </div>
     </section>

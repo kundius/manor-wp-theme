@@ -6,6 +6,8 @@ export function initProjectLayout() {
   if (!layout) return
 
   var msnry = new Masonry(layout, {
+    columnWidth: '[data-project-layout-column]',
+    gutter: '[data-project-layout-gutter]',
     itemSelector: '[data-project-layout-item]',
     percentPosition: true,
     gutter: 50
