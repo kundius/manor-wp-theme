@@ -1256,6 +1256,7 @@
   @media (--max-2xl) {
     margin-left: 0;
     margin-right: 0;
+    padding-left: 200px;
   }
 
   @media (--max-lg) {
@@ -1371,7 +1372,6 @@
   @media (--max-2xl) {
     margin-left: 0;
     margin-right: 0;
-    padding-left: 200px;
   }
 
   @media (--max-lg) {
