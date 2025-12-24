@@ -501,7 +501,7 @@
 
 .catalog-preview__content {
   margin-left: 116px;
-  padding-left: 116px;
+  padding-right: 116px;
   max-width: 536px;
   position: relative;
   font-size: 24px;
@@ -512,7 +512,6 @@
     font-size: 18px;
     max-width: initial;
     margin-left: 0;
-    margin-right: 0;
     padding-right: 24px;
   }
 }
