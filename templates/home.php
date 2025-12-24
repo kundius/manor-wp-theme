@@ -178,7 +178,7 @@ $cases = new WP_Query([
 
             <div class="equipment-main" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
               <div class="equipment-main__title">
-                Мы предлагаем 2 вида комплектации: теплый контур и холодный контур:
+                Мы предлагаем 2 вида комплектации:
               </div>
               <div class="equipment-main__grid">
                 <div class="equipment-main__cell">
@@ -186,7 +186,7 @@ $cases = new WP_Query([
                   <div class="equipment-card">
                     <div class="equipment-card__header">
                       <div class="equipment-card__icon">
-                        <span class="icon icon-sun"></span>
+                        <span class="icon icon-snowflake"></span>
                       </div>
                       <div class="equipment-card__title">
                         Холодный контур
@@ -217,7 +217,7 @@ $cases = new WP_Query([
                   <div class="equipment-card">
                     <div class="equipment-card__header">
                       <div class="equipment-card__icon">
-                        <span class="icon icon-snowflake"></span>
+                        <span class="icon icon-sun"></span>
                       </div>
                       <div class="equipment-card__title">
                         Круглогодично
