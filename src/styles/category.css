@@ -4,14 +4,22 @@
   column-gap: 48px;
   row-gap: 96px;
 
+  @media (--max-2xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 64px;
+  }
+
   @media (--max-xl) {
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    column-gap: 32px;
     row-gap: 48px;
   }
 
   @media (--max-md) {
     grid-template-columns: 1fr;
+    column-gap: 24px;
+    row-gap: 36px;
   }
 }
 
@@ -63,40 +71,32 @@
   }
 }
 
-.action-card__header {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 64px;
-  text-align: right;
-
-  @media (--max-md) {
-    padding: 24px;
-  }
-}
-
 .action-card__image {
   display: block;
   width: 100%;
   height: auto;
 }
 
+.action-card__header {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 24px;
+
+  @media (--max-md) {
+  }
+}
+
 .action-card__date {
   position: relative;
   z-index: 20;
   font-size: 16px;
-  color: rgb(255, 255, 255);
+  color: #303437;
   font-weight: 500;
   line-height: 1.2;
   font-family: 'Gilroy';
   display: flex;
   gap: 12px;
-  background-color: rgba(0, 0, 0, 0.231);
-  margin-bottom: 20px;
-
-  @media (--max-md) {
-    margin-bottom: 16px;
-  }
 }
 
 .action-card__date::before {
@@ -108,17 +108,13 @@
 }
 
 .action-card__title {
-  font-size: 60px;
-  color: rgb(255, 255, 255);
+  margin-top: 16px;
+  font-size: 32px;
+  color: #303437;
   font-weight: bold;
   line-height: 1.2;
-  filter: drop-shadow(0px 0px 1em #000);
   position: relative;
   z-index: 10;
-
-  @media (--max-md) {
-    font-size: 32px;
-  }
 }
 
 .action-card__content {
@@ -126,11 +122,6 @@
   color: rgb(48, 52, 55);
   font-style: italic;
   line-height: 1.25;
-  padding: 48px 64px;
-
-  @media (--max-md) {
-    padding: 24px;
-  }
 
   em {
     background: #c9413c;
@@ -158,11 +149,23 @@
 
 .action-card__more {
   display: block;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .action-card__more-link {
-  display: inline-block;
+  padding: 0px 32px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(237, 239, 245);
+  font-size: 16px;
+  color: rgb(167, 167, 167);
+}
+
+.action-card__more-link:hover {
+  background-color: rgb(225, 229, 238);
+  color: rgb(118, 118, 118);
 }
 
 .action-card__more-link::before {
