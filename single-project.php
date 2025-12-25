@@ -341,7 +341,11 @@ $similar = new WP_Query([
               <div class="project-discount__sticker"></div>
               <div class="project-discount__header">
                 <div class="project-discount__title">Скидка + подарки</div>
-                <div class="project-discount__date"><span>до 11.11.25</span></div>
+                <?php if ($result = getLastDayAndMonth()): ?>
+                <div class="project-discount__date">
+                  <span><?php echo "до {$result['day']} {$result['month']}"; ?></span>
+                </div>
+                <?php endif; ?>
               </div>
               <div class="project-discount__desc">
                 <ul>
