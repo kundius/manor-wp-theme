@@ -79,9 +79,9 @@ $similar = new WP_Query([
                     <?php if (has_post_thumbnail()): ?>
                       <div class="gallery-main__slide">
                         <a href="<?php echo get_the_post_thumbnail_url(
-                          get_the_ID(),
-                          'full',
-                        ); ?>" data-fslightbox="gallery" target="_blank">
+                                    get_the_ID(),
+                                    'full',
+                                  ); ?>" data-fslightbox="gallery" target="_blank">
                           <?php the_post_thumbnail('custom-large'); ?>
                           <span class="gallery-main__loupe">
                             <span class="icon icon-search"></span>
@@ -300,11 +300,11 @@ $similar = new WP_Query([
               <div class="project-contact__desc">Деловое общение, без спама, без sms</div>
               <button type="button" class="project-contact__feedback"
                 data-order-button="<?php echo $type_label[$type] .
-                  ' ' .
-                  $dimensions .
-                  ' «' .
-                  get_the_title() .
-                  '»'; ?>">Проконсультироваться</button>
+                                      ' ' .
+                                      $dimensions .
+                                      ' «' .
+                                      get_the_title() .
+                                      '»'; ?>">Проконсультироваться</button>
               <div class="project-contact__socials">
                 <a href="whatsapp://send?text=Hello&phone=+79602097933" class="project-contact__social project-contact__social--whatsapp">
                   <span class="project-contact__social-ico">
@@ -342,9 +342,9 @@ $similar = new WP_Query([
               <div class="project-discount__header">
                 <div class="project-discount__title">Скидка + подарки</div>
                 <?php if ($result = getLastDayAndMonth()): ?>
-                <div class="project-discount__date">
-                  <span><?php echo "до {$result['day']} {$result['month']}"; ?></span>
-                </div>
+                  <div class="project-discount__date">
+                    <span><?php echo "до {$result['day']} {$result['month']}"; ?></span>
+                  </div>
                 <?php endif; ?>
               </div>
               <div class="project-discount__desc">
@@ -371,61 +371,58 @@ $similar = new WP_Query([
               </div>
             </div>
           </div>
-          <?php if ($packages->have_posts()): ?>
-            <div class="project-layout__packages" data-project-layout-item>
-              <div class="project-packages">
-                <div class="project-packages__title">
-                  Подробные комплектации
-                </div>
-                <div class="project-packages__tabs">
-                  <?php $index = 0; ?>
-                  <?php while ($packages->have_posts()): ?>
-                    <?php $packages->the_post(); ?>
-                    <?php $display_name = carbon_get_the_post_meta('display_name'); ?>
-                    <?php $is_active = carbon_get_post_meta(
-                      $current_post_id,
-                      'package_' . get_the_ID() . '_is_active',
-                    ); ?>
-                    <?php if ($is_active): ?>
-                      <?php $index++; ?>
-                      <button
-                        data-project-packages-tab="<?php echo get_the_ID(); ?>"
-                        type="button"
-                        class="project-packages__tab<?php echo $index === 1 ? ' active' : ''; ?>"
-                      >
-                        <?php echo $display_name; ?>
-                      </button>
-                    <?php endif; ?>
-                  <?php endwhile; ?>
-                </div>
-                <div class="project-packages__contents">
-                  <?php $index = 0; ?>
-                  <?php while ($packages->have_posts()): ?>
-                    <?php $packages->the_post(); ?>
-                    <?php $is_active = carbon_get_post_meta(
-                      $current_post_id,
-                      'package_' . get_the_ID() . '_is_active',
-                    ); ?>
-                    <?php if ($is_active): ?>
-                      <?php $index++; ?>
-                      <div
-                        data-project-packages-content="<?php echo get_the_ID(); ?>"
-                        class="project-packages__content<?php echo $index === 1
-                          ? ' active'
-                          : ''; ?>"
-                      >
-                        <?php the_content(); ?>
-                      </div>
-                    <?php endif; ?>
-                  <?php endwhile; ?>
-                </div>
-              </div>
-            </div>
-            <?php wp_reset_postdata(); ?>
-          <?php endif; ?>
           <div data-project-layout-column></div>
           <div data-project-layout-gutter></div>
         </div>
+
+        <?php if ($packages->have_posts()): ?>
+          <div class="project-packages">
+            <div class="project-packages__title">
+              Подробные комплектации
+            </div>
+            <div class="project-packages__tabs">
+              <?php $index = 0; ?>
+              <?php while ($packages->have_posts()): ?>
+                <?php $packages->the_post(); ?>
+                <?php $display_name = carbon_get_the_post_meta('display_name'); ?>
+                <?php $is_active = carbon_get_post_meta(
+                  $current_post_id,
+                  'package_' . get_the_ID() . '_is_active',
+                ); ?>
+                <?php if ($is_active): ?>
+                  <?php $index++; ?>
+                  <button
+                    data-project-packages-tab="<?php echo get_the_ID(); ?>"
+                    type="button"
+                    class="project-packages__tab<?php echo $index === 1 ? ' active' : ''; ?>">
+                    <?php echo $display_name; ?>
+                  </button>
+                <?php endif; ?>
+              <?php endwhile; ?>
+            </div>
+            <div class="project-packages__contents">
+              <?php $index = 0; ?>
+              <?php while ($packages->have_posts()): ?>
+                <?php $packages->the_post(); ?>
+                <?php $is_active = carbon_get_post_meta(
+                  $current_post_id,
+                  'package_' . get_the_ID() . '_is_active',
+                ); ?>
+                <?php if ($is_active): ?>
+                  <?php $index++; ?>
+                  <div
+                    data-project-packages-content="<?php echo get_the_ID(); ?>"
+                    class="project-packages__content<?php echo $index === 1
+                                                      ? ' active'
+                                                      : ''; ?>">
+                    <?php the_content(); ?>
+                  </div>
+                <?php endif; ?>
+              <?php endwhile; ?>
+            </div>
+          </div>
+          <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
       </div>
     </section>
 

@@ -89,15 +89,6 @@
   }
 }
 
-.project-layout__packages {
-  width: 100%;
-  margin-top: 64px;
-
-  @media (--max-lg) {
-    margin-top: 48px;
-  }
-}
-
 .project-layout__prices-inner {
   margin-left: calc(50px * -1);
 
@@ -953,6 +944,11 @@
 }
 
 .project-packages {
+  margin-top: 64px;
+
+  @media (--max-lg) {
+    margin-top: 48px;
+  }
 }
 
 .project-packages__title {
