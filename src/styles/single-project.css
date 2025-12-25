@@ -869,6 +869,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 12px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
