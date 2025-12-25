@@ -882,9 +882,6 @@
   @media (--max-xl) {
     font-size: 24px;
   }
-  @media (--max-md) {
-    font-size: 24px;
-  }
 }
 
 .project-discount__date {
