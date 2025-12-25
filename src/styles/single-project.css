@@ -881,6 +881,7 @@
 
   @media (--max-xl) {
     font-size: 24px;
+    display: none;
   }
 
   @media (--max-md) {
