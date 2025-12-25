@@ -879,7 +879,7 @@
   font-style: italic;
   line-height: 1;
 
-  @media (--max-2xl) {
+  @media (--max-xl) {
     font-size: 24px;
   }
 
@@ -903,7 +903,8 @@
   justify-content: center;
   gap: 4px;
 
-  @media (--max-2xl) {
+  @media (--max-xl) {
+    font-size: 20px;
     min-height: 48px;
   }
 
