@@ -10,23 +10,37 @@ export function initCatalogFilter() {
 
   toggles.forEach((toggle) => {
     const [option, param] = toggle.dataset.catalogFilterToggle.split(':')
-    const currentParams = searchParams.has(option) ? searchParams.get(option).split(',') : []
+    // const currentParams = searchParams.has(option) ? searchParams.get(option).split(',') : []
 
     toggle.addEventListener('click', () => {
-      const index = currentParams.indexOf(param)
-      if (index === -1) {
-        currentParams.push(param)
-      } else {
-        currentParams.splice(index, 1)
-      }
-      if (currentParams.length === 0) {
+      if (searchParams.get(option) === param) {
         searchParams.delete(option)
       } else {
-        searchParams.set(option, currentParams.join(','))
+        searchParams.set(option, param)
       }
       location.href = `${permalink}?${searchParams.toString()}`
     })
   })
+
+  // toggles.forEach((toggle) => {
+  //   const [option, param] = toggle.dataset.catalogFilterToggle.split(':')
+  //   const currentParams = searchParams.has(option) ? searchParams.get(option).split(',') : []
+
+  //   toggle.addEventListener('click', () => {
+  //     const index = currentParams.indexOf(param)
+  //     if (index === -1) {
+  //       currentParams.push(param)
+  //     } else {
+  //       currentParams.splice(index, 1)
+  //     }
+  //     if (currentParams.length === 0) {
+  //       searchParams.delete(option)
+  //     } else {
+  //       searchParams.set(option, currentParams.join(','))
+  //     }
+  //     location.href = `${permalink}?${searchParams.toString()}`
+  //   })
+  // })
 
   const sort = document.querySelector('[data-catalog-filter-sort]')
   if (sort) {
