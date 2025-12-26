@@ -81,8 +81,8 @@
   height: 49px;
 
   @media (--max-md) {
-    width: calc(133px * 0.6);
-    height: calc(49px * 0.6);
+    width: calc(133px * 0.5);
+    height: calc(49px * 0.5);
   }
 }
 
@@ -231,6 +231,7 @@
   color: rgb(48, 52, 55);
   font-weight: bold;
   display: block;
+  white-space: nowrap;
 }
 
 .header-phone__time {
