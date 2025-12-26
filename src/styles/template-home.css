@@ -2309,8 +2309,8 @@
   }
 
   @media (--max-md) {
-    font-size: 36px;
-    margin-bottom: 24px;
+    font-size: 32px;
+    margin-bottom: 0;
   }
 }
 
@@ -2326,6 +2326,7 @@
   }
   @media (--max-md) {
     min-height: initial;
+    display: none;
   }
 }
 
