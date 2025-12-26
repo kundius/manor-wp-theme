@@ -41,25 +41,6 @@
   flex-grow: 1;
 }
 
-.case-card__date {
-  font-size: 14px;
-  line-height: 1;
-  color: #959595;
-  font-weight: 500;
-  font-family: 'Gilroy';
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.case-card__date::before {
-  content: '[';
-}
-
-.case-card__date::after {
-  content: ']';
-}
-
 .case-card__title {
   font-size: 26px;
   line-height: 28px;

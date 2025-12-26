@@ -225,11 +225,13 @@
   letter-spacing: 0.025em;
   color: #fff;
   transition: 150ms ease;
+  padding: 0 36px;
 
   @media (--max-xl) {
     gap: 16px;
     font-size: 16px;
     height: 48px;
+    padding: 0 24px;
   }
 }
 
@@ -486,15 +488,11 @@
   bottom: -3px;
   z-index: 10;
   transform: scale(0.99);
-  transition:
-    transform 150ms,
-    box-shadow 300ms;
+  transition: transform 150ms, box-shadow 300ms;
 }
 
 .showcase:hover::before {
-  transition:
-    transform 300ms,
-    box-shadow 600ms;
+  transition: transform 300ms, box-shadow 600ms;
   transform: scale(1);
   box-shadow: -2.079px 9.781px 16.2px 1.8px rgba(53, 94, 135, 0.64);
 }

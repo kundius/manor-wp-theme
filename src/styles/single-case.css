@@ -1,8 +1,6 @@
 .case-layout {
   display: grid;
   grid-template-areas:
-    'date date date' /* 1 */
-    '. . .' /* 2 */
     'media . .' /* 3 */
     'media . params' /* 4 */
     'media . .' /* 5 */
@@ -12,8 +10,6 @@
     '. . .' /* 9 */
     'gallery gallery gallery' /* 10 */;
   grid-template-rows:
-    auto /* 1 */
-    20px /* 2 */
     40px /* 3 */
     auto /* 4 */
     80px /* 5 */
@@ -26,8 +22,6 @@
 
   @media (--max-xl) {
     grid-template-areas:
-      'date' /* 1 */
-      '.' /* 2 */
       'params' /* 3 */
       '.' /* 4 */
       'media' /* 5 */
@@ -39,8 +33,6 @@
       'gallery' /* 11 */;
     grid-template-columns: 1fr;
     grid-template-rows:
-      auto /* 1 */
-      20px /* 2 */
       auto /* 3 */
       24px /* 4 */
       auto /* 5 */
@@ -51,10 +43,6 @@
       48px /* 10 */
       auto /* 11 */;
   }
-}
-
-.case-layout__date {
-  grid-area: date;
 }
 
 .case-layout__specifications {
@@ -80,22 +68,6 @@
 
 .case-layout__gallery {
   grid-area: gallery;
-}
-
-.case-details-date {
-  font-size: 26px;
-  line-height: 1;
-  color: #959595;
-  font-weight: 500;
-  font-family: 'Gilroy';
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  @media (--max-md) {
-    margin-left: 0;
-    font-size: 18px;
-  }
 }
 
 .case-details-date::before {

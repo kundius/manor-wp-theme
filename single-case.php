@@ -66,14 +66,6 @@ $similar = new WP_Query([
         </h1>
 
         <div class="case-layout">
-          <div class="case-layout__date">
-            <?php if ($date = get_the_date('d.m.Y')): ?>
-            <div class="case-details-date">
-              <span class="icon icon-calendar"></span>
-              <?php echo $date; ?>
-            </div>
-            <?php endif; ?>
-          </div>
           <div class="case-layout__media">
             <?php if (has_post_thumbnail()): ?>
               <div class="case-details-thumbnail">
