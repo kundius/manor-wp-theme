@@ -178,7 +178,7 @@ $cases = new WP_Query([
 
             <div class="equipment-main" data-scroll data-scroll-css-progress data-scroll-position="start, middle" data-scroll-offset="0, 40%">
               <div class="equipment-main__title">
-                Мы предлагаем 2 вида комплектации:
+                Мы предлагаем 2 вида комплектаций:
               </div>
               <div class="equipment-main__grid">
                 <div class="equipment-main__cell">
@@ -193,8 +193,8 @@ $cases = new WP_Query([
                           Холодный контур
                         </div>
                         <a href="<?php the_permalink(
-                          CATALOG_PAGE_ID,
-                        ); ?>" class="equipment-card__more">
+                                    CATALOG_PAGE_ID,
+                                  ); ?>" class="equipment-card__more">
                           смотреть проекты
                         </a>
                       </div>
@@ -226,8 +226,8 @@ $cases = new WP_Query([
                           Круглогодично
                         </div>
                         <a href="<?php the_permalink(
-                          CATALOG_PAGE_ID,
-                        ); ?>" class="equipment-card__more">
+                                    CATALOG_PAGE_ID,
+                                  ); ?>" class="equipment-card__more">
                           смотреть проекты
                         </a>
                       </div>
@@ -262,8 +262,8 @@ $cases = new WP_Query([
                 data-feedback-form-action="feedback_form">
                 <input type="hidden" name="submitted" value="">
                 <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(
-                  'feedback-nonce',
-                ); ?>">
+                                                            'feedback-nonce',
+                                                          ); ?>">
                 <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
                 <input type="hidden" name="subject" value="Заказать звонок">
 
@@ -358,8 +358,8 @@ $cases = new WP_Query([
               data-feedback-form-action="feedback_form">
               <input type="hidden" name="submitted" value="">
               <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(
-                'feedback-nonce',
-              ); ?>">
+                                                          'feedback-nonce',
+                                                        ); ?>">
               <input type="hidden" name="page" value="<?php echo esc_html(get_self_link()); ?>">
               <input type="hidden" name="subject" value="Заказать звонок">
 

@@ -2292,50 +2292,6 @@
   overflow: hidden;
 }
 
-.portfolio-card__year {
-  float: left;
-  margin: 18px 32px 18px 6px;
-  font-size: 21px;
-  font-weight: 500;
-  font-family: 'Gilroy';
-  color: rgb(19, 19, 19);
-  line-height: 1;
-  padding: 0 20px;
-  position: relative;
-
-  @media (--max-md) {
-    font-size: 18px;
-    margin: 12px 24px 12px 4px;
-    padding: 0 16px;
-  }
-}
-
-.portfolio-card__year::before {
-  content: '';
-  width: 5px;
-  height: 19px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  border-left: 2px solid currentColor;
-  border-top: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-}
-
-.portfolio-card__year::after {
-  content: '';
-  width: 5px;
-  height: 19px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  border-right: 2px solid currentColor;
-  border-top: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-}
-
 .portfolio-card__title {
   font-size: 72px;
   line-height: 1.2;

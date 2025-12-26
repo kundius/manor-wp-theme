@@ -122,10 +122,10 @@
   padding: 40px;
   background-color: rgba(255, 255, 255, 0.8);
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
 
   @media (--max-3xl) {
-    flex-wrap: wrap;
     row-gap: 20px;
   }
 
@@ -145,6 +145,10 @@
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.case-params__item--wide {
+  width: 100%;
 }
 
 .case-params__item-ico {

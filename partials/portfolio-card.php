@@ -28,11 +28,6 @@
 
   <div class="portfolio-card__content">
     <div class="portfolio-card__header">
-      <?php if ($date = get_the_date('d.m.Y')): ?>
-      <div class="portfolio-card__year">
-        <?php echo $date; ?>
-      </div>
-      <?php endif; ?>
       <div class="portfolio-card__title">
         <?php the_title(); ?>
       </div>
