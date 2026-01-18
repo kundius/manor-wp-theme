@@ -139,7 +139,10 @@ function register_carbon_fields_blocks()
 
   // Страницы параметров
   Container::make('theme_options', 'Параметры')
-    ->add_tab('Общее', [Field::make('textarea', 'crb_form_rules', 'Согласие в форме')->set_rows(4)])
+    ->add_tab('Общее', [
+      Field::make('textarea', 'crb_counters', 'Копирайт')->set_rows(2),
+      Field::make('textarea', 'crb_form_rules', 'Согласие в форме')->set_rows(4)
+    ])
     ->add_tab('Подвал', [
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
       Field::make('textarea', 'crb_footer_no_oferta', 'Не оферта')->set_rows(2),
