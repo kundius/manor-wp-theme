@@ -306,16 +306,16 @@ $similar = new WP_Query([
                                       get_the_title() .
                                       '»'; ?>">Проконсультироваться</button>
               <div class="project-contact__socials">
-                <a href="whatsapp://send?text=Hello&phone=+79602097933" class="project-contact__social project-contact__social--whatsapp">
+                <a href="https://max.ru/u/f9LHodD0cOK9YYiDi37ZPNZlISXHYgxjsAXez_-vDwou6rqXqANICgWCjAA" class="project-contact__social project-contact__social--max" target="_blank">
                   <span class="project-contact__social-ico">
-                    <span class="icon icon-whatsapp"></span>
+                    <span class="icon icon-max"></span>
                   </span>
                   <span class="project-contact__social-lbl">
                     Написать в<br>
-                    Whatsapp
+                    MAX
                   </span>
                 </a>
-                <a href="tg://resolve?domain=skpomestie" class="project-contact__social project-contact__social--telegram">
+                <a href="tg://resolve?domain=skpomestie" class="project-contact__social project-contact__social--telegram" target="_blank">
                   <span class="project-contact__social-ico">
                     <span class="icon icon-telegram"></span>
                   </span>
@@ -324,7 +324,7 @@ $similar = new WP_Query([
                     Telegram
                   </span>
                 </a>
-                <a href="https://vk.com/public210077234" class="project-contact__social project-contact__social--vk">
+                <a href="https://vk.com/public210077234" class="project-contact__social project-contact__social--vk" target="_blank">
                   <span class="project-contact__social-ico">
                     <span class="icon icon-vk"></span>
                   </span>
