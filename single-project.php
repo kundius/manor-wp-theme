@@ -306,7 +306,7 @@ $similar = new WP_Query([
                                       get_the_title() .
                                       '»'; ?>">Проконсультироваться</button>
               <div class="project-contact__socials">
-                <a href="https://max.ru/u/f9LHodD0cOK9YYiDi37ZPNZlISXHYgxjsAXez_-vDwou6rqXqANICgWCjAA" class="project-contact__social project-contact__social--max" target="_blank">
+                <a href="https://max.ru/u/f9LHodD0cOIMs5jSqM-iZP8eQBFPbRqYROlZg_ktXdSdnCfgqVmMydMTGjs" class="project-contact__social project-contact__social--max" target="_blank">
                   <span class="project-contact__social-ico">
                     <span class="icon icon-max"></span>
                   </span>
@@ -315,7 +315,7 @@ $similar = new WP_Query([
                     MAX
                   </span>
                 </a>
-                <a href="tg://resolve?domain=skpomestie" class="project-contact__social project-contact__social--telegram" target="_blank">
+                <a href="https://t.me/SK_karkasdoma" class="project-contact__social project-contact__social--telegram" target="_blank">
                   <span class="project-contact__social-ico">
                     <span class="icon icon-telegram"></span>
                   </span>
