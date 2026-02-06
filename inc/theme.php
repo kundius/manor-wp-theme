@@ -12,7 +12,7 @@ add_image_size('custom-large', 800, 600, true);
 
 // Add the theme support basic elements
 add_theme_support('align-wide');
-add_theme_support('title-tag');
+// add_theme_support('title-tag');
 add_theme_support('responsive-embeds');
 add_theme_support('editor-styles');
 add_theme_support('wp-block-styles');
