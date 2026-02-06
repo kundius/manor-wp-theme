@@ -17,15 +17,13 @@
 
   @media (--max-2xl) {
     grid-template-columns:
-      auto 24px auto 1fr minmax(min-content, 260px) 1fr minmax(min-content, 200px)
-      24px auto;
+      auto 24px auto 1fr minmax(min-content, 260px) 1fr minmax(min-content, 200px) 24px auto;
     grid-template-rows: auto 24px 1fr;
   }
 
   @media (--max-xl) {
     grid-template-columns:
-      auto 12px auto 1fr minmax(min-content, 260px) 1fr minmax(min-content, 200px)
-      12px auto;
+      auto 12px auto 1fr minmax(min-content, 260px) 1fr minmax(min-content, 200px) 12px auto;
     grid-template-rows: auto 12px 1fr;
   }
 
@@ -133,6 +131,7 @@
 
   @media (--max-md) {
     padding: 0;
+
     .v-social {
       flex-direction: row;
       justify-content: center;
@@ -215,6 +214,10 @@
   }
 }
 
+.footer__logo img {
+  width: 160px;
+}
+
 .footer-contacts {
   display: flex;
   gap: 48px;
@@ -261,8 +264,7 @@
   font-size: 40px;
 }
 
-.footer-contacts__item-body {
-}
+.footer-contacts__item-body {}
 
 .footer-contacts__item-val {
   font-size: 16px;

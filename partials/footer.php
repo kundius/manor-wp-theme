@@ -3,9 +3,7 @@
     <div class="footer-primary">
       <div class="footer-primary__logo">
         <a href="/" class="footer__logo" target="_blank">
-          <img src="<?php bloginfo(
-                      'template_url',
-                    ); ?>/assets/logo.svg" alt="" />
+          <img src="<?php bloginfo('template_url'); ?>/assets/logo.svg" alt="" />
         </a>
       </div>
       <div class="footer-primary__phone">
