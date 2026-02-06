@@ -71,12 +71,16 @@
   display: flex;
   grid-area: logo;
   flex-shrink: 0;
-  width: 133px;
-  /* height: 49px; */
+  width: auto;
+  height: 48px;
+  /* width: 133px;
+  height: 49px; */
 
   @media (--max-md) {
-    width: calc(133px * 0.5);
-    /* height: calc(49px * 0.5); */
+    width: 64px;
+    height: auto;
+    /* width: calc(133px * 0.5);
+    height: calc(49px * 0.5); */
   }
 }
 
