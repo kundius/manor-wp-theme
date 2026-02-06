@@ -5,7 +5,7 @@
         <a href="/" class="footer__logo" target="_blank">
           <img src="<?php bloginfo(
                       'template_url',
-                    ); ?>/assets/logo-footer.png" alt="" width="163" height="60" />
+                    ); ?>/assets/logo.svg" alt="" />
         </a>
       </div>
       <div class="footer-primary__phone">
