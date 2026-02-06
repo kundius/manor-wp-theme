@@ -1,8 +1,6 @@
 .float-contacts {
   position: absolute;
-  top: calc(
-    16px + var(--header-before) + var(--header-height) + var(--wp-admin--admin-bar--height, 0px)
-  );
+  top: calc(16px + var(--header-before) + var(--header-height) + var(--wp-admin--admin-bar--height, 0px));
   right: calc(((100vw - var(--container-width)) / 2) + var(--container-padding));
   display: flex;
   flex-direction: column;
@@ -13,9 +11,7 @@
   margin: 0 24px;
 
   @media (--max-xl) {
-    top: calc(
-      (12px + var(--header-before) + var(--header-height) + var(--wp-admin--admin-bar--height, 0px))
-    );
+    top: calc((12px + var(--header-before) + var(--header-height) + var(--wp-admin--admin-bar--height, 0px)));
     /* top: calc((32px + var(--header-before) + var(--header-height))); */
   }
 
@@ -25,9 +21,7 @@
 }
 
 .page-template-template-home .float-contacts {
-  top: calc(
-    108px + var(--header-before) + var(--header-height) + var(--wp-admin--admin-bar--height, 0px)
-  );
+  top: calc(108px + var(--header-before) + var(--header-height) + var(--wp-admin--admin-bar--height, 0px));
 }
 
 .header {
@@ -78,16 +72,15 @@
   grid-area: logo;
   flex-shrink: 0;
   width: 133px;
-  height: 49px;
+  /* height: 49px; */
 
   @media (--max-md) {
     width: calc(133px * 0.5);
-    height: calc(49px * 0.5);
+    /* height: calc(49px * 0.5); */
   }
 }
 
-.header-logo img {
-}
+.header-logo img {}
 
 .header-toggle {
   grid-area: toggle;
@@ -126,6 +119,7 @@
     margin-left: calc(var(--container-padding) / 2 * -1);
   }
 }
+
 .header-toggle:hover {
   color: #c93f3b;
 }
