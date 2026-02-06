@@ -8,7 +8,7 @@
     </button>
 
     <a href="/" class="header-logo">
-      <img src="<?php bloginfo('template_url'); ?>/assets/logo.png" alt="" />
+      <img src="<?php bloginfo('template_url'); ?>/assets/logo.svg" alt="" />
     </a>
 
     <div class="header-nav">
@@ -20,16 +20,16 @@
     </div>
 
     <?php if ($phone_number = carbon_get_post_meta(CONTACTS_PAGE_ID, 'phone_number')): ?>
-    <a href="tel:<?php echo $phone_number; ?>" class="header-phone" data-call-button>
-      <span class="header-phone__number">
-        <?php echo $phone_number; ?>
-      </span>
-      <?php if ($email = carbon_get_post_meta(CONTACTS_PAGE_ID, 'email')): ?>
-      <span class="header-phone__time">
-        <?php echo $email; ?>
-      </span>
-      <?php endif; ?>
-    </a>
+      <a href="tel:<?php echo $phone_number; ?>" class="header-phone" data-call-button>
+        <span class="header-phone__number">
+          <?php echo $phone_number; ?>
+        </span>
+        <?php if ($email = carbon_get_post_meta(CONTACTS_PAGE_ID, 'email')): ?>
+          <span class="header-phone__time">
+            <?php echo $email; ?>
+          </span>
+        <?php endif; ?>
+      </a>
     <?php endif; ?>
 
     <button type="button" class="header-callback" data-callback-button>
@@ -51,12 +51,12 @@
 
 <div class="float-contacts">
   <?php if ($groups = carbon_get_post_meta(CONTACTS_PAGE_ID, 'groups')): ?>
-  <div class="v-social">
-    <?php foreach ($groups as $group): ?>
-    <a href="<?php echo $group['link']; ?>" class="v-social__item">
-      <?php echo $group['icon']; ?>
-    </a>
-    <?php endforeach; ?>
-  </div>
+    <div class="v-social">
+      <?php foreach ($groups as $group): ?>
+        <a href="<?php echo $group['link']; ?>" class="v-social__item">
+          <?php echo $group['icon']; ?>
+        </a>
+      <?php endforeach; ?>
+    </div>
   <?php endif; ?>
 </div>
