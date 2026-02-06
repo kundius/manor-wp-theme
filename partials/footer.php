@@ -88,7 +88,7 @@
       <div class="footer-secondary__copyright">
         <div class="footer__copyright">
           <?php echo carbon_get_theme_option('crb_counters'); ?>
-          <?php echo nl2br(carbon_get_theme_option('crb_footer_counters')); ?>
+          <?php echo nl2br(carbon_get_theme_option('crb_footer_copyright')); ?>
         </div>
       </div>
       <div class="footer-secondary__sitemap">
