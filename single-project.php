@@ -315,15 +315,6 @@ $similar = new WP_Query([
                     MAX
                   </span>
                 </a>
-                <a href="https://t.me/SK_karkasdoma" class="project-contact__social project-contact__social--telegram" target="_blank">
-                  <span class="project-contact__social-ico">
-                    <span class="icon icon-telegram"></span>
-                  </span>
-                  <span class="project-contact__social-lbl">
-                    Написать в<br>
-                    Telegram
-                  </span>
-                </a>
                 <a href="https://vk.com/public210077234" class="project-contact__social project-contact__social--vk" target="_blank">
                   <span class="project-contact__social-ico">
                     <span class="icon icon-vk"></span>
