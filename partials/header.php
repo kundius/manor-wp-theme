@@ -5,7 +5,7 @@
   <link itemprop="logo" href="https://karkasdoma53.ru/wp-content/themes/manor-wp-theme/assets/logo.svg">
   <link itemprop="url" href="https://karkasdoma53.ru/">
 
-  <?php if ($addresses = carbon_get_the_post_meta(CONTACTS_PAGE_ID, 'addresses')): ?>
+  <?php if ($addresses = carbon_get_post_meta(CONTACTS_PAGE_ID, 'addresses')): ?>
     <?php foreach ($addresses as $key => $address): ?>
     <meta itemprop="address" content="<?php echo esc_attr($content); ?>">
     <?php endforeach; ?>
