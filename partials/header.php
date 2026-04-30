@@ -7,7 +7,9 @@
 
   <?php if ($addresses = carbon_get_post_meta(CONTACTS_PAGE_ID, 'addresses')): ?>
     <?php foreach ($addresses as $key => $address): ?>
-    <meta itemprop="address" content="<?php echo esc_attr($content); ?>">
+      <?php if ($content = $address['content']): ?>
+        <meta itemprop="address" content="<?php echo esc_attr($content); ?>">
+      <?php endif; ?>
     <?php endforeach; ?>
   <?php endif; ?>
 
