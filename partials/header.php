@@ -1,6 +1,16 @@
 <div class="header-before"></div>
 <div class="header-anchor" data-sticky-header-anchor></div>
-<div class="header" data-sticky-header data-mobile-menu="closed">
+<div class="header" data-sticky-header data-mobile-menu="closed" itemscope itemtype="https://schema.org/LocalBusiness">
+  <meta itemprop="name" content="Каркасдома53">
+  <link itemprop="logo" href="https://karkasdoma53.ru/wp-content/themes/manor-wp-theme/assets/logo.svg">
+  <link itemprop="url" href="https://karkasdoma53.ru/">
+  
+  <?php if ($addresses = carbon_get_the_post_meta('addresses')): ?>
+    <?php foreach ($addresses as $key => $address): ?>
+    <meta itemprop="address" content="<?php echo esc_attr($content); ?>">
+    <?php endforeach; ?>
+  <?php endif; ?>
+
   <div class="container header-container">
     <button type="button" class="header-toggle" data-mobile-menu-toggle>
       <span class="icon icon-menu"></span>
@@ -21,11 +31,11 @@
 
     <?php if ($phone_number = carbon_get_post_meta(CONTACTS_PAGE_ID, 'phone_number')): ?>
       <a href="tel:<?php echo $phone_number; ?>" class="header-phone" data-call-button>
-        <span class="header-phone__number">
+        <span class="header-phone__number" itemprop="telephone">
           <?php echo $phone_number; ?>
         </span>
         <?php if ($email = carbon_get_post_meta(CONTACTS_PAGE_ID, 'email')): ?>
-          <span class="header-phone__time">
+          <span class="header-phone__time" itemprop="email">
             <?php echo $email; ?>
           </span>
         <?php endif; ?>
