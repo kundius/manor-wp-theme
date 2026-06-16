@@ -1,5 +1,4 @@
 <meta charset="<?php bloginfo('charset'); ?>" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset'); ?>" />
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon">
