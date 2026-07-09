@@ -315,7 +315,7 @@ $similar = new WP_Query([
                     MAX
                   </span>
                 </a>
-                <a href="https://vk.com/public210077234" class="project-contact__social project-contact__social--vk" target="_blank">
+                <a href="https://vk.ru/karkas_doma53" class="project-contact__social project-contact__social--vk" target="_blank">
                   <span class="project-contact__social-ico">
                     <span class="icon icon-vk"></span>
                   </span>
