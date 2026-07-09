@@ -658,6 +658,30 @@
   }
 }
 
+.project-contact__social-info {
+  /* color: #ffde00; */
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 600;
+  position: relative;
+}
+
+.project-contact__social-info::before {
+  content: '';
+  background: url('../images/left-arrow-red.png') no-repeat 50% 50%;
+  background-size: 100% 100%;
+  position: absolute;
+  left: -32px;
+  top: 0;
+  width: 64px;
+  height: 17px;
+}
+
 .project-contact__social {
   display: flex;
   align-items: center;
