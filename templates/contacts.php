@@ -115,7 +115,7 @@ Template Name: Контакты
                 <?php if ($groups = carbon_get_the_post_meta('groups')): ?>
                   <div class="contacts-info__groups">
                     <?php foreach ($groups as $group): ?>
-                      <a href="<?php echo $group['link']; ?>" class="contacts-info__groups-item">
+                      <a href="<?php echo $group['link']; ?>" class="contacts-info__groups-item" target="_blank" rel="nofollow noopener noreferrer">
                         <?php echo $group['icon']; ?>
                       </a>
                     <?php endforeach; ?>
