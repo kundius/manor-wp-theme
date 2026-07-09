@@ -669,6 +669,10 @@
   line-height: 1.5;
   font-weight: 600;
   position: relative;
+
+  @media (--max-md) {
+    font-size: 14px;
+  }
 }
 
 .project-contact__social-info::before {
@@ -676,8 +680,8 @@
   background: url('../images/left-arrow-red.png') no-repeat 50% 50%;
   background-size: 100% 100%;
   position: absolute;
-  left: -32px;
-  top: 0;
+  left: -8px;
+  top: -8px;
   width: 64px;
   height: 17px;
 }
