@@ -76,7 +76,7 @@
         <?php if ($groups = carbon_get_post_meta(CONTACTS_PAGE_ID, 'groups')): ?>
           <div class="v-social v-social--light">
             <?php foreach ($groups as $group): ?>
-              <a href="<?php echo $group['link']; ?>" class="v-social__item">
+              <a href="<?php echo $group['link']; ?>" class="v-social__item" target="_blank" rel="nofollow noopener noreferrer">
                 <?php echo $group['icon']; ?>
               </a>
             <?php endforeach; ?>
