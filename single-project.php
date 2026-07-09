@@ -324,7 +324,7 @@ $similar = new WP_Query([
                     Вконтакте
                   </span>
                 </a>
-                <div class="project-contact__social-info">Подписка ВК<br> даёт скидку</div>
+                <div class="project-contact__social-info">Подписка в ВК<br> даёт скидку</div>
               </div>
             </div>
           </div>
