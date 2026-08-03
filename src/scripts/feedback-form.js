@@ -17,7 +17,15 @@ export function applyFeedbackForm(form) {
       method: 'post',
       body: formData
     })
-      .then((response) => response.json())
+      .then(async (response) => {
+        const text = await response.text()
+
+        try {
+          return JSON.parse(text)
+        } catch (error) {
+          throw new Error(`Ошибка разбора JSON: ${error?.message || 'неизвестная ошибка'}${text ? `\n${text}` : ''}`)
+        }
+      })
       .then((result) => {
         if (!result.success) {
           errors.innerHTML = Object.values(result.data).join('<br>')
@@ -38,10 +46,17 @@ export function applyFeedbackForm(form) {
             form.removeAttribute('data-feedback-form-status')
           }, 4000)
         }
-
-        submit.removeAttribute('disabled', '')
       })
-      .catch((error) => console.error(error))
+      .catch((error) => {
+        console.error(error)
+        form.setAttribute('data-feedback-form-status', 'failure')
+        if (errors) {
+          errors.innerHTML = `Ошибка отправки формы. ${error.message}`
+        }
+      })
+      .finally(() => {
+        submit.removeAttribute('disabled')
+      })
   })
 
   reset.addEventListener('click', () => {
