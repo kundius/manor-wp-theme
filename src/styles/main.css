@@ -838,6 +838,22 @@ a.breadcrumbs__item {
   }
 }
 
+[data-smartcaptcha-container] {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 12px;
+
+  @media (--max-md) {
+    margin-top: 16px;
+    margin-bottom: 10px;
+  }
+}
+
+[data-smartcaptcha-container] iframe {
+  max-width: 100%;
+}
+
 .feedback-form__submit {
   border: 1px solid #d97a77;
   background-color: rgb(255, 255, 255);
