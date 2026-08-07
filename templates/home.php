@@ -277,6 +277,8 @@ $cases = new WP_Query([
                   <span class="phone-control__label">Ваш телефон</span>
                   <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="phone-control__input" required>
                 </div>
+                <div data-smartcaptcha-container></div>
+                <input type="hidden" name="smartcaptcha-token" value="">
                 <button type="submit" class="equipment-help__submit">Проконсультироваться</button>
                 <div class="equipment-help__rules">
                   <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
@@ -373,6 +375,8 @@ $cases = new WP_Query([
                 <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="advantage-calc__form-input" required>
                 <button type="submit" class="advantage-calc__form-submit">Отправить заявку</button>
               </div>
+              <div data-smartcaptcha-container></div>
+              <input type="hidden" name="smartcaptcha-token" value="">
               <div class="advantage-calc__rules">
                 <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
               </div>

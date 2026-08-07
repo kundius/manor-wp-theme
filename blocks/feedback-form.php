@@ -46,6 +46,8 @@
       <span class="phone-control__label">Ваш телефон</span>
       <input type="text" value="" name="phone" data-maska="+7 (###) ###-##-##" placeholder="+7 (000) 000-00-00" class="phone-control__input" required>
     </div>
+    <div data-smartcaptcha-container></div>
+    <input type="hidden" name="smartcaptcha-token" value="">
     <button type="submit" class="feedback-form__submit">Отправить заявку</button>
     <div class="feedback-form__rules">
       <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>

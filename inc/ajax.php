@@ -6,6 +6,7 @@ function ajax_data()
 {
   wp_localize_script('scripts', 'theme_ajax', [
     'url' => admin_url('admin-ajax.php'),
+    'smartCaptchaSiteKey' => 'ysc1_TpRDM3b1kJ84MhPQknbbOfRVYBt3bNkef3588gxM30eaf546',
   ]);
 }
 
@@ -25,6 +26,9 @@ function feedback_form_callback()
   }
   if (empty($_POST['phone'])) {
     $errors['phone'] = 'Укажите Ваш телефон.';
+  }
+  if (empty($_POST['smartcaptcha-token'])) {
+    $errors['captcha'] = 'Подтвердите, что вы не робот.';
   }
   if ($errors) {
     wp_send_json_error($errors);

@@ -1,3 +1,43 @@
+function setCaptchaToken(form, token) {
+  const captchaInput = form.querySelector('[name="smartcaptcha-token"]')
+
+  if (captchaInput) {
+    captchaInput.value = token || ''
+  }
+}
+
+function initSmartCaptchaForForm(form) {
+  if (form.dataset.smartCaptchaInitialized === 'true') {
+    return
+  }
+
+  const container = form.querySelector('[data-smartcaptcha-container]')
+  const captchaInput = form.querySelector('[name="smartcaptcha-token"]')
+
+  if (!container || !captchaInput || typeof window.smartCaptcha?.render !== 'function') {
+    return
+  }
+
+  const widget = window.smartCaptcha.render(container, {
+    sitekey: theme_ajax?.smartCaptchaSiteKey || '',
+    callback: (token) => setCaptchaToken(form, token),
+  })
+
+  const widgetId = typeof widget === 'object' ? widget.id || widget.widgetId || widget : widget
+
+  if (widgetId) {
+    form.dataset.smartCaptchaWidgetId = String(widgetId)
+  }
+
+  form.dataset.smartCaptchaInitialized = 'true'
+}
+
+window.initSmartCaptcha = () => {
+  const items = document.querySelectorAll('[data-feedback-form]') || []
+
+  Array.from(items).forEach(initSmartCaptchaForForm)
+}
+
 export function applyFeedbackForm(form) {
   const submit = form.querySelector('[type="submit"]')
   const errors = form.querySelector('[data-feedback-form-errors]')
@@ -9,6 +49,14 @@ export function applyFeedbackForm(form) {
     errors.innerHTML = ''
     form.setAttribute('data-feedback-form-status', 'loading')
     submit.setAttribute('disabled', '')
+
+    const captchaInput = form.querySelector('[name="smartcaptcha-token"]')
+    if (captchaInput && !captchaInput.value) {
+      form.setAttribute('data-feedback-form-status', 'failure')
+      errors.innerHTML = 'Подтвердите, что вы не робот.'
+      submit.removeAttribute('disabled')
+      return
+    }
 
     const formData = new FormData(e.target)
     formData.append('action', form.dataset.feedbackFormAction)
@@ -33,6 +81,11 @@ export function applyFeedbackForm(form) {
         } else {
           form.setAttribute('data-feedback-form-status', 'success')
           form.reset()
+          setCaptchaToken(form, '')
+
+          if (form.dataset.smartCaptchaWidgetId && typeof window.smartCaptcha?.reset === 'function') {
+            window.smartCaptcha.reset(form.dataset.smartCaptchaWidgetId)
+          }
 
           if (form.dataset.feedbackFormGoal && typeof ym !== 'undefined') {
             const elYmId = document.querySelector('[data-ym-id]')
@@ -68,4 +121,5 @@ export function initFeedbackForm() {
   const items = document.querySelectorAll('[data-feedback-form]') || []
 
   Array.from(items).forEach(applyFeedbackForm)
+  window.initSmartCaptcha()
 }

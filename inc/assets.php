@@ -9,6 +9,7 @@ add_action('wp', function () {
 
 add_action('wp_enqueue_scripts', function () {
   wp_enqueue_script('scripts');
+  wp_enqueue_script('smartcaptcha', 'https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=initSmartCaptcha', [], null, true);
 });
 
 add_action('wp_print_styles', function () {

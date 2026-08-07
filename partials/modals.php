@@ -27,6 +27,9 @@
             </label>
           </div>
 
+          <div data-smartcaptcha-container></div>
+          <input type="hidden" name="smartcaptcha-token" value="">
+
           <div class="modal-form__rules">
             <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
           </div>
@@ -84,6 +87,9 @@
               <input class="text-field__input" type="text" name="phone" value="" data-maska="+ 7 (###) - ### - ## - ##" placeholder="+ 7 (___)  - ___ - __ - __" required>
             </label>
           </div>
+
+          <div data-smartcaptcha-container></div>
+          <input type="hidden" name="smartcaptcha-token" value="">
 
           <div class="modal-form__rules">
             <?php echo nl2br(carbon_get_theme_option('crb_form_rules')); ?>
